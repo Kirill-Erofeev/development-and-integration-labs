@@ -68,16 +68,29 @@ def predict(
     return predictions
 
 
+def format_predictions(predictions: list[dict[str, int | str]], output_format: str = "json") -> str:
+    """Render predictions without changing their order or the inference result."""
+    if output_format == "json":
+        return json.dumps(predictions, ensure_ascii=False)
+    if output_format == "text":
+        return "\n".join(
+            f"predicted_class={item['predicted_class']} predicted_name={item['predicted_name']}"
+            for item in predictions
+        )
+    raise ValueError(f"Неизвестный формат вывода: {output_format}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Предсказать классы Iris по сохранённой модели")
     parser.add_argument("--model-path", type=Path, default=DEFAULT_MODEL_PATH, help="Путь к модели")
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT_PATH, help="CSV с четырьмя признаками")
+    parser.add_argument("--output-format", choices=("json", "text"), default="json", help="Формат вывода предсказаний")
     args = parser.parse_args()
     try:
         predictions = predict(args.input, args.model_path)
     except (OSError, ValueError, TypeError, EOFError, pickle.UnpicklingError, csv.Error) as exc:
         parser.exit(2, f"Ошибка: {exc}\n")
-    print(json.dumps(predictions, ensure_ascii=False))
+    print(format_predictions(predictions, args.output_format))
     return 0
 
 
