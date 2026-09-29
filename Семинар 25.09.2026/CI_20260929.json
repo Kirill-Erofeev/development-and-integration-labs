@@ -1,0 +1,155 @@
+{
+  "conclusion": "success",
+  "created_at": "2026-09-29T16:15:47Z",
+  "event": "push",
+  "head_branch": "main",
+  "head_sha": "8145a8252febca4b93b7580a40008f508aeb9e68",
+  "html_url": "https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596424256",
+  "id": 36596424256,
+  "name": "CI",
+  "run_attempt": 1,
+  "status": "completed",
+  "updated_at": "2026-09-29T16:16:46Z",
+  "jobs": [
+    {
+      "completed_at": "2026-09-29T16:16:16Z",
+      "conclusion": "success",
+      "id": 109502386037,
+      "name": "check",
+      "started_at": "2026-09-29T16:15:50Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-09-29T16:15:51Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-09-29T16:15:50Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:15:52Z",
+          "conclusion": "success",
+          "name": "Check out repository",
+          "number": 2,
+          "started_at": "2026-09-29T16:15:51Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:15:53Z",
+          "conclusion": "success",
+          "name": "Set up Python",
+          "number": 3,
+          "started_at": "2026-09-29T16:15:52Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:06Z",
+          "conclusion": "success",
+          "name": "Install pinned dependencies",
+          "number": 4,
+          "started_at": "2026-09-29T16:15:53Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:06Z",
+          "conclusion": "success",
+          "name": "Check Python syntax",
+          "number": 5,
+          "started_at": "2026-09-29T16:16:06Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:14Z",
+          "conclusion": "success",
+          "name": "Run all tests",
+          "number": 6,
+          "started_at": "2026-09-29T16:16:06Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:14Z",
+          "conclusion": "success",
+          "name": "Post Set up Python",
+          "number": 11,
+          "started_at": "2026-09-29T16:16:14Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:14Z",
+          "conclusion": "success",
+          "name": "Post Check out repository",
+          "number": 12,
+          "started_at": "2026-09-29T16:16:14Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:14Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "started_at": "2026-09-29T16:16:14Z",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "completed_at": "2026-09-29T16:16:45Z",
+      "conclusion": "success",
+      "id": 109502585068,
+      "name": "build-image",
+      "started_at": "2026-09-29T16:16:21Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-09-29T16:16:22Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-09-29T16:16:21Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:23Z",
+          "conclusion": "success",
+          "name": "Check out repository",
+          "number": 2,
+          "started_at": "2026-09-29T16:16:22Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:41Z",
+          "conclusion": "success",
+          "name": "Build API image",
+          "number": 3,
+          "started_at": "2026-09-29T16:16:23Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:44Z",
+          "conclusion": "success",
+          "name": "Build client image",
+          "number": 4,
+          "started_at": "2026-09-29T16:16:41Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:44Z",
+          "conclusion": "success",
+          "name": "Post Check out repository",
+          "number": 8,
+          "started_at": "2026-09-29T16:16:44Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:16:44Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 9,
+          "started_at": "2026-09-29T16:16:44Z",
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}

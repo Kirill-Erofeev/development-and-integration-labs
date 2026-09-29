@@ -1,0 +1,23 @@
+Dry run: version test-fdc377f0d347f3ee1232871f07787daa4ad8b0e7; no image is built or published here.
+
+Dry run: proposed checks for registry.example.invalid/ml-api:test-fdc377f0d347f3ee1232871f07787daa4ad8b0e7; requests are not executed.
+curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health
+curl --fail-with-body --max-time 10 -X POST http://127.0.0.1:8080/predict -H 'Content-Type: application/json' --data '{"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}'
+
+README.md exists; review it for delivery and rollback instructions.
+
+Dry run: the following commands are printed only.
+docker pull registry.example.invalid/ml-api:test-fdc377f0d347f3ee1232871f07787daa4ad8b0e7
+docker stop ml-api-test || true
+docker rm ml-api-test || true
+docker run -d --name ml-api-test -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl registry.example.invalid/ml-api:test-fdc377f0d347f3ee1232871f07787daa4ad8b0e7
+
+curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health
+curl --fail-with-body --max-time 10 -X POST http://127.0.0.1:8080/predict -H 'Content-Type: application/json' --data '{"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}'
+
+Dry run: if smoke checks failed, restore the previous verified version.
+docker pull registry.example.invalid/ml-api:previous-stable
+docker stop ml-api-test || true
+docker rm ml-api-test || true
+docker run -d --name ml-api-test -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl registry.example.invalid/ml-api:previous-stable
+curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health

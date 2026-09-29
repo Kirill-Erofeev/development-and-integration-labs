@@ -1,9 +1,8 @@
 # Практическая работа 5. Контейнеризация API
 
-На 19 сентября 2026 года подготовлены
-[Dockerfile](<../Dockerfile>) и
-[.dockerignore](<../.dockerignore>).
-Ниже приведён сценарий последующей ручной проверки, а ответы обозначают ожидания.
+29 сентября 2026 года выполнены сборка и два запуска контейнера из одного образа.
+Оба запуска подтвердили HTTP-контракты; диагностика и состав образа проверены.
+Рабочий каталог команд — корень репозитория.
 
 ## Реализация
 
@@ -36,7 +35,7 @@ docker version
 docker build -t ml-api:practice5 .
 if ($LASTEXITCODE -ne 0) { throw 'API image build failed' }
 docker image ls ml-api
-docker run -d --name ml-api-p5 --cpus 1 --memory 512m `
+docker run -d --name ml-api-practice5-20260929 --cpus 1 --memory 512m `
     -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl ml-api:practice5
 if ($LASTEXITCODE -ne 0) { throw 'API container start failed' }
 ```
@@ -52,7 +51,7 @@ Docker Desktop/WSL целиком или предшествующей сборк
 После сообщения о готовности приложения в логах выполните:
 
 ```powershell
-docker logs ml-api-p5
+docker logs ml-api-practice5-20260929
 Invoke-RestMethod -Uri http://127.0.0.1:8080/health -TimeoutSec 10 | ConvertTo-Json
 $irisRequest = @{
     sepal_length = 5.1
@@ -62,16 +61,15 @@ $irisRequest = @{
 } | ConvertTo-Json
 Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8080/predict `
     -ContentType 'application/json' -Body $irisRequest -TimeoutSec 10 | ConvertTo-Json
-docker ps --filter name=ml-api-p5
-docker exec ml-api-p5 pwd
-docker exec ml-api-p5 ls -la /app
-docker stats --no-stream ml-api-p5
+docker ps --filter name=ml-api-practice5-20260929
+docker exec ml-api-practice5-20260929 pwd
+docker exec ml-api-practice5-20260929 ls -la /app
+docker stats --no-stream ml-api-practice5-20260929
 ```
 
 Ожидаются успешные HTTP-ответы: `/health` возвращает
 `{"status":"ok","model_ready":true}`, а `/predict` для приведённого примера —
-`{"prediction":0,"class_name":"setosa"}`. Это контрольные ожидания, а не результаты
-запуска контейнера. `pwd` должен вывести `/app`; в нём должны быть приложение,
+`{"prediction":0,"class_name":"setosa"}`. Оба ответа подтверждены реальным запуском 29.09.2026. `pwd` должен вывести `/app`; в нём должны быть приложение,
 runtime-модули и модель.
 
 Дополнительная проверка обоих маршрутов одной командой после запуска API:
@@ -85,24 +83,24 @@ py -3.11 scripts/check_api.py --base-url http://127.0.0.1:8080
 
 ## Повторный запуск
 
-Следующие команды останавливают и удаляют только созданный выше `ml-api-p5`.
+Следующие команды останавливают и удаляют только созданный выше `ml-api-practice5-20260929`.
 После удаления создайте контейнер из того же образа:
 
 ```powershell
-docker stop ml-api-p5
-docker rm ml-api-p5
-docker run -d --name ml-api-p5 --cpus 1 --memory 512m `
+docker stop ml-api-practice5-20260929
+docker rm ml-api-practice5-20260929
+docker run -d --name ml-api-practice5-20260929 --cpus 1 --memory 512m `
     -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl ml-api:practice5
 if ($LASTEXITCODE -ne 0) { throw 'API container restart failed' }
-docker logs ml-api-p5
+docker logs ml-api-practice5-20260929
 ```
 
 Дождитесь готовности API и повторите запросы `/health` и `/predict` из предыдущего
 раздела. Сопоставьте оба ответа с первым запуском. Затем освободите порт для практики 6:
 
 ```powershell
-docker stop ml-api-p5
-docker rm ml-api-p5
+docker stop ml-api-practice5-20260929
+docker rm ml-api-practice5-20260929
 ```
 
 ## Что объяснить и зафиксировать
@@ -113,11 +111,24 @@ docker rm ml-api-p5
 принимать запросы на сетевом интерфейсе контейнера. Логи доступны через `logs`,
 диагностические команды внутри работающего контейнера — через `exec`.
 
-После ручного прогона нужны скриншоты успешной сборки, `docker ps`, обоих HTTP-ответов
-и фрагмента логов; отдельно зафиксируйте диагностику и повторный запуск. Эти доказательства
-фиксируются при выполнении сценариев.
-Word-отчёт отменён пользователем; локальная история подготовлена в ветке
-`feature/api-container`, публикация в GitHub не выполняется.
+## Выполненные проверки, 29.09.2026
+
+| Проверка | Фактический результат |
+| --- | --- |
+| Сборка `ml-api:practice5` | Код `0`, 99.766 с |
+| `/health` | HTTP `200`, `{"status":"ok","model_ready":true}` |
+| `/predict` | HTTP `200`, `{"prediction":0,"class_name":"setosa"}` |
+| Диагностика | `ps`, `logs`, `exec pwd`, `exec ls`, `stats --no-stream`: код `0` |
+| Рабочий каталог | `/app` |
+| Лимиты | 1 CPU / 512 MiB |
+| Пересоздание | Повторные `/health` и `/predict` успешны; ответы совпали |
+| Состав образа | Нужные runtime-файлы и модель существуют; исключённые пути отсутствуют |
+
+[Сборка](screenshots/practice5-build.png),
+[работа и диагностика](screenshots/practice5-runtime.png),
+[повторный запуск](screenshots/practice5-repeat.png).
+Полный протокол и список проверенных путей — [CHECKS.md](CHECKS.md).
+Отдельная проверка воспроизводимости: [отчёт чистого клона и CI/CD](<../Семинар 25.09.2026/CHECKS.md>).
 
 ## Выполненные проверки, 19.09.2026
 
@@ -125,4 +136,4 @@ Word-отчёт отменён пользователем; локальная и
 за 1,33 секунды. HTTP-ответы имитировались; сеть и модель не использовались.
 Проверены существование путей `COPY`, список разрешённых файлов контекста,
 синтаксис Python и зависимости по установленным метаданным для целевого Linux
-с Python 3.11. 
+с Python 3.11.

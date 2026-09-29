@@ -1,0 +1,183 @@
+{
+  "conclusion": "success",
+  "created_at": "2026-09-29T16:19:13Z",
+  "event": "workflow_dispatch",
+  "head_branch": "main",
+  "head_sha": "8145a8252febca4b93b7580a40008f508aeb9e68",
+  "html_url": "https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596835394",
+  "id": 36596835394,
+  "name": "Delivery Dry Run",
+  "run_attempt": 1,
+  "status": "completed",
+  "updated_at": "2026-09-29T16:19:38Z",
+  "jobs": [
+    {
+      "completed_at": "2026-09-29T16:19:20Z",
+      "conclusion": "success",
+      "id": 109503819431,
+      "name": "build",
+      "started_at": "2026-09-29T16:19:17Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-09-29T16:19:18Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-09-29T16:19:18Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:18Z",
+          "conclusion": "success",
+          "name": "Set image tag",
+          "number": 2,
+          "started_at": "2026-09-29T16:19:18Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:18Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 3,
+          "started_at": "2026-09-29T16:19:18Z",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "completed_at": "2026-09-29T16:19:26Z",
+      "conclusion": "success",
+      "id": 109503860089,
+      "name": "docs_checks",
+      "started_at": "2026-09-29T16:19:22Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-09-29T16:19:23Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-09-29T16:19:23Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:24Z",
+          "conclusion": "success",
+          "name": "Check out repository",
+          "number": 2,
+          "started_at": "2026-09-29T16:19:23Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:24Z",
+          "conclusion": "success",
+          "name": "Check README exists",
+          "number": 3,
+          "started_at": "2026-09-29T16:19:24Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:25Z",
+          "conclusion": "success",
+          "name": "Post Check out repository",
+          "number": 6,
+          "started_at": "2026-09-29T16:19:24Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:25Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 7,
+          "started_at": "2026-09-29T16:19:25Z",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "completed_at": "2026-09-29T16:19:25Z",
+      "conclusion": "success",
+      "id": 109503860254,
+      "name": "smoke_api_tests_stub",
+      "started_at": "2026-09-29T16:19:22Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-09-29T16:19:23Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-09-29T16:19:23Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:23Z",
+          "conclusion": "success",
+          "name": "Print proposed API checks",
+          "number": 2,
+          "started_at": "2026-09-29T16:19:23Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:23Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 3,
+          "started_at": "2026-09-29T16:19:23Z",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "completed_at": "2026-09-29T16:19:34Z",
+      "conclusion": "success",
+      "id": 109503907601,
+      "name": "deploy_dry_run",
+      "started_at": "2026-09-29T16:19:29Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-09-29T16:19:30Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-09-29T16:19:30Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:30Z",
+          "conclusion": "success",
+          "name": "Print deploy commands",
+          "number": 2,
+          "started_at": "2026-09-29T16:19:30Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:30Z",
+          "conclusion": "success",
+          "name": "Print smoke test commands",
+          "number": 3,
+          "started_at": "2026-09-29T16:19:30Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:30Z",
+          "conclusion": "success",
+          "name": "Print rollback commands",
+          "number": 4,
+          "started_at": "2026-09-29T16:19:30Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:19:30Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 5,
+          "started_at": "2026-09-29T16:19:30Z",
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}

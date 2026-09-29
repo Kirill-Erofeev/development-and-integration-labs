@@ -184,6 +184,8 @@ HTTP 200
 ## Git и границы выполнения
 
 Изменения разделены на общий сервис модели, HTTP API и документацию.
-Новые коммиты пока локальны. Реальный PR и слияние на GitHub ещё не выполнены;
-план публикации находится в [GITHUB.md](GITHUB.md).
+Обновление 29.09.2026: [PR #2](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/2) из `feature/model-api` слит в `main` обычным merge commit [`96a4bae`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/96a4baefad0f9c4a204ee7caf689fb3344596ea0).
+Восемь HTTP-проверок и снимки выше сохраняют результаты этапа 18.09.2026.
+Публикация и последующая проверка feature-клона описаны в [GITHUB.md](GITHUB.md);
+итоговый клон `main` на коммите [`8145a82`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/8145a8252febca4b93b7580a40008f508aeb9e68) (`8145a8252febca4b93b7580a40008f508aeb9e68`) проверен: **95 passed in 15.75s** и **8 реальных HTTP-сценариев**. Протокол: [CHECKS.md семинара 25.09.2026](<../Семинар 25.09.2026/CHECKS.md>).
 Word-отчёт отменён пользователем; результаты сохранены в Markdown.

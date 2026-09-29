@@ -1,0 +1,612 @@
+
+=== preflight.python311 ===
+{
+  "sequence": 1,
+  "label": "preflight.python311",
+  "kind": "assertion",
+  "started_at": "2026-09-29T16:13:36.041+00:00",
+  "status": "passed",
+  "version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "finished_at": "2026-09-29T16:13:36.042+00:00"
+}
+
+=== preflight.clone_exists ===
+{
+  "sequence": 2,
+  "label": "preflight.clone_exists",
+  "kind": "assertion",
+  "started_at": "2026-09-29T16:13:36.044+00:00",
+  "status": "passed",
+  "path": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\final-main-clone",
+  "finished_at": "2026-09-29T16:13:36.045+00:00"
+}
+
+=== 003 preflight.git_root ===
+Started: 2026-09-29T16:13:36.047+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\final-main-clone
+Command: git --no-optional-locks rev-parse --show-toplevel
+--- stdout ---
+C:/Users/user/Desktop/Институт/Магистратура/Разработка и интеграция/Семинар 04.09.2026/.verification/final-main-clone
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.047s ---
+
+=== preflight.clone_root ===
+{
+  "sequence": 4,
+  "label": "preflight.clone_root",
+  "kind": "assertion",
+  "started_at": "2026-09-29T16:13:36.093+00:00",
+  "status": "passed",
+  "actual": "C:/Users/user/Desktop/Институт/Магистратура/Разработка и интеграция/Семинар 04.09.2026/.verification/final-main-clone",
+  "finished_at": "2026-09-29T16:13:36.094+00:00"
+}
+
+=== 005 preflight.git_head ===
+Started: 2026-09-29T16:13:36.096+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\final-main-clone
+Command: git --no-optional-locks rev-parse HEAD
+--- stdout ---
+8145a8252febca4b93b7580a40008f508aeb9e68
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.032s ---
+
+=== preflight.expected_commit ===
+{
+  "sequence": 6,
+  "label": "preflight.expected_commit",
+  "kind": "assertion",
+  "started_at": "2026-09-29T16:13:36.139+00:00",
+  "status": "passed",
+  "expected": "8145a8252febca4b93b7580a40008f508aeb9e68",
+  "actual": "8145a8252febca4b93b7580a40008f508aeb9e68",
+  "finished_at": "2026-09-29T16:13:36.140+00:00"
+}
+
+=== 007 preflight.git_status ===
+Started: 2026-09-29T16:13:36.142+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\final-main-clone
+Command: git --no-optional-locks status --porcelain=v1 --untracked-files=all
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.046s ---
+
+=== preflight.clean_clone ===
+{
+  "sequence": 8,
+  "label": "preflight.clean_clone",
+  "kind": "assertion",
+  "started_at": "2026-09-29T16:13:36.188+00:00",
+  "status": "passed",
+  "finished_at": "2026-09-29T16:13:36.189+00:00"
+}
+
+=== 009 preflight.runtime_tree ===
+Started: 2026-09-29T16:13:36.191+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\final-main-clone
+Command: git --no-optional-locks diff --quiet --no-ext-diff --no-textconv fdc377f HEAD -- app src tests scripts client Dockerfile .dockerignore compose.yaml requirements.txt pytest.ini models data_sample .github
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.031s ---
+
+=== preflight.port_8000 ===
+{
+  "sequence": 10,
+  "label": "preflight.port_8000",
+  "kind": "assertion",
+  "started_at": "2026-09-29T16:13:36.237+00:00",
+  "status": "passed",
+  "address": "127.0.0.1:8000",
+  "finished_at": "2026-09-29T16:13:36.239+00:00"
+}
+
+=== 011 baseline.pytest ===
+Started: 2026-09-29T16:13:36.240+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\final-main-clone
+Command: C:\Users\user\AppData\Local\Programs\Python\Python311\python.exe -B -m pytest -q -p no:cacheprovider
+--- stdout ---
+........................................................................ [ 75%]
+.......................                                                  [100%]
+95 passed in 15.75s
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=23.000s ---
+
+=== baseline.readiness ===
+{
+  "sequence": 13,
+  "label": "baseline.readiness",
+  "kind": "http_readiness",
+  "started_at": "2026-09-29T16:13:59.266+00:00",
+  "status": "passed",
+  "url": "http://127.0.0.1:8000/health",
+  "attempts": [
+    {
+      "at": "2026-09-29T16:13:59.271+00:00",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "at": "2026-09-29T16:14:03.293+00:00",
+      "http_status": 200,
+      "body": "{\"status\":\"ok\",\"model_ready\":true}"
+    }
+  ],
+  "finished_at": "2026-09-29T16:14:03.508+00:00"
+}
+
+=== baseline.health ===
+{
+  "sequence": 14,
+  "label": "baseline.health",
+  "kind": "http",
+  "started_at": "2026-09-29T16:14:03.510+00:00",
+  "status": "passed",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/health",
+  "request_json": null,
+  "expected_json": {
+    "status": "ok",
+    "model_ready": true
+  },
+  "http_status": 200,
+  "response_text": "{\"status\":\"ok\",\"model_ready\":true}",
+  "response_json": {
+    "status": "ok",
+    "model_ready": true
+  },
+  "finished_at": "2026-09-29T16:14:03.539+00:00"
+}
+
+=== baseline.predict ===
+{
+  "sequence": 15,
+  "label": "baseline.predict",
+  "kind": "http",
+  "started_at": "2026-09-29T16:14:03.544+00:00",
+  "status": "passed",
+  "method": "POST",
+  "url": "http://127.0.0.1:8000/predict",
+  "request_json": {
+    "sepal_length": 5.1,
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+  },
+  "expected_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "http_status": 200,
+  "response_text": "{\"prediction\":0,\"class_name\":\"setosa\"}",
+  "response_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "finished_at": "2026-09-29T16:14:03.593+00:00"
+}
+
+=== baseline.missing_field ===
+{
+  "sequence": 16,
+  "label": "baseline.missing_field",
+  "kind": "http",
+  "started_at": "2026-09-29T16:14:03.595+00:00",
+  "status": "passed",
+  "method": "POST",
+  "url": "http://127.0.0.1:8000/predict",
+  "request_json": {
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+  },
+  "expected_http_status": 422,
+  "http_status": 422,
+  "response_text": "{\"detail\":[{\"loc\":[\"body\",\"sepal_length\"],\"msg\":\"Field required\",\"type\":\"missing\"}]}",
+  "content_type": "application/json",
+  "response_json": {
+    "detail": [
+      {
+        "loc": [
+          "body",
+          "sepal_length"
+        ],
+        "msg": "Field required",
+        "type": "missing"
+      }
+    ]
+  },
+  "finished_at": "2026-09-29T16:14:03.633+00:00"
+}
+
+=== baseline.string_number ===
+{
+  "sequence": 17,
+  "label": "baseline.string_number",
+  "kind": "http",
+  "started_at": "2026-09-29T16:14:03.636+00:00",
+  "status": "passed",
+  "method": "POST",
+  "url": "http://127.0.0.1:8000/predict",
+  "request_json": {
+    "sepal_length": "5.1",
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+  },
+  "expected_http_status": 422,
+  "http_status": 422,
+  "response_text": "{\"detail\":[{\"loc\":[\"body\",\"sepal_length\"],\"msg\":\"Input should be a valid number\",\"type\":\"float_type\"}]}",
+  "content_type": "application/json",
+  "response_json": {
+    "detail": [
+      {
+        "loc": [
+          "body",
+          "sepal_length"
+        ],
+        "msg": "Input should be a valid number",
+        "type": "float_type"
+      }
+    ]
+  },
+  "finished_at": "2026-09-29T16:14:03.730+00:00"
+}
+
+=== baseline.boolean ===
+{
+  "sequence": 18,
+  "label": "baseline.boolean",
+  "kind": "http",
+  "started_at": "2026-09-29T16:14:03.745+00:00",
+  "status": "passed",
+  "method": "POST",
+  "url": "http://127.0.0.1:8000/predict",
+  "request_json": {
+    "sepal_length": true,
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+  },
+  "expected_http_status": 422,
+  "http_status": 422,
+  "response_text": "{\"detail\":[{\"loc\":[\"body\",\"sepal_length\"],\"msg\":\"Input should be a valid number\",\"type\":\"float_type\"}]}",
+  "content_type": "application/json",
+  "response_json": {
+    "detail": [
+      {
+        "loc": [
+          "body",
+          "sepal_length"
+        ],
+        "msg": "Input should be a valid number",
+        "type": "float_type"
+      }
+    ]
+  },
+  "finished_at": "2026-09-29T16:14:03.756+00:00"
+}
+
+=== baseline.negative_number ===
+{
+  "sequence": 19,
+  "label": "baseline.negative_number",
+  "kind": "http",
+  "started_at": "2026-09-29T16:14:03.758+00:00",
+  "status": "passed",
+  "method": "POST",
+  "url": "http://127.0.0.1:8000/predict",
+  "request_json": {
+    "sepal_length": -1.0,
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+  },
+  "expected_http_status": 422,
+  "http_status": 422,
+  "response_text": "{\"detail\":[{\"loc\":[\"body\",\"sepal_length\"],\"msg\":\"Input should be greater than 0\",\"type\":\"greater_than\"}]}",
+  "content_type": "application/json",
+  "response_json": {
+    "detail": [
+      {
+        "loc": [
+          "body",
+          "sepal_length"
+        ],
+        "msg": "Input should be greater than 0",
+        "type": "greater_than"
+      }
+    ]
+  },
+  "finished_at": "2026-09-29T16:14:03.811+00:00"
+}
+
+=== baseline.docs ===
+{
+  "sequence": 20,
+  "label": "baseline.docs",
+  "kind": "http",
+  "started_at": "2026-09-29T16:14:03.837+00:00",
+  "status": "passed",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/docs",
+  "request_json": null,
+  "expected_http_status": 200,
+  "http_status": 200,
+  "response_text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css\">\n    <link rel=\"shortcut icon\" href=\"https://fastapi.tiangolo.com/img/favicon.png\">\n    <title>API классификации ирисов - Swagger UI</title>\n    </head>\n    <body>\n    <div id=\"swagger-ui\">\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js\"></script>\n    <!-- `SwaggerUIBundle` is now available on the page -->\n    <script>\n    const ui = SwaggerUIBundle({\n        url: '/openapi.json',\n    \"dom_id\": \"#swagger-ui\",\n\"layout\": \"BaseLayout\",\n\"deepLinking\": true,\n\"showExtensions\": true,\n\"showCommonExtensions\": true,\noauth2RedirectUrl: window.location.origin + '/docs/oauth2-redirect',\n    presets: [\n        SwaggerUIBundle.presets.apis,\n        SwaggerUIBundle.SwaggerUIStandalonePreset\n        ],\n    })\n    </script>\n    </body>\n    </html>\n    ",
+  "content_type": "text/html; charset=utf-8",
+  "finished_at": "2026-09-29T16:14:04.297+00:00"
+}
+
+=== baseline.openapi ===
+{
+  "sequence": 21,
+  "label": "baseline.openapi",
+  "kind": "http",
+  "started_at": "2026-09-29T16:14:04.299+00:00",
+  "status": "passed",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/openapi.json",
+  "request_json": null,
+  "expected_http_status": 200,
+  "http_status": 200,
+  "response_text": "{\"openapi\":\"3.1.0\",\"info\":{\"title\":\"API классификации ирисов\",\"description\":\"Предсказание класса Iris по четырём признакам сохранённой моделью.\",\"version\":\"0.1.0\"},\"paths\":{\"/health\":{\"get\":{\"summary\":\"Проверить состояние сервиса и готовность модели\",\"operationId\":\"health_health_get\",\"responses\":{\"200\":{\"description\":\"Successful Response\",\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HealthResponse\"}}}}}}},\"/predict\":{\"post\":{\"summary\":\"Предсказать класс одного ириса\",\"operationId\":\"predict_predict_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/PredictRequest\"}}},\"required\":true},\"responses\":{\"200\":{\"description\":\"Successful Response\",\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/PredictResponse\"}}}},\"422\":{\"description\":\"Validation Error\",\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}}}}}}},\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"type\":\"array\",\"title\":\"Detail\"}},\"type\":\"object\",\"title\":\"HTTPValidationError\"},\"HealthResponse\":{\"properties\":{\"status\":{\"type\":\"string\",\"const\":\"ok\",\"title\":\"Status\",\"description\":\"Состояние сервиса\"},\"model_ready\":{\"type\":\"boolean\",\"title\":\"Model Ready\",\"description\":\"Модель загружена и готова к предсказаниям\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"status\",\"model_ready\"],\"title\":\"HealthResponse\"},\"PredictRequest\":{\"properties\":{\"sepal_length\":{\"type\":\"number\",\"exclusiveMinimum\":0.0,\"title\":\"Sepal Length\",\"description\":\"Длина чашелистика\"},\"sepal_width\":{\"type\":\"number\",\"exclusiveMinimum\":0.0,\"title\":\"Sepal Width\",\"description\":\"Ширина чашелистика\"},\"petal_length\":{\"type\":\"number\",\"exclusiveMinimum\":0.0,\"title\":\"Petal Length\",\"description\":\"Длина лепестка\"},\"petal_width\":{\"type\":\"number\",\"exclusiveMinimum\":0.0,\"title\":\"Petal Width\",\"description\":\"Ширина лепестка\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"sepal_length\",\"sepal_width\",\"petal_length\",\"petal_width\"],\"title\":\"PredictRequest\"},\"PredictResponse\":{\"properties\":{\"prediction\":{\"type\":\"integer\",\"title\":\"Prediction\",\"description\":\"Идентификатор предсказанного класса\"},\"class_name\":{\"type\":\"string\",\"title\":\"Class Name\",\"description\":\"Название предсказанного класса\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"prediction\",\"class_name\"],\"title\":\"PredictResponse\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"type\":\"array\",\"title\":\"Location\"},\"msg\":{\"type\":\"string\",\"title\":\"Message\"},\"type\":{\"type\":\"string\",\"title\":\"Error Type\"}},\"type\":\"object\",\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\"}}}}",
+  "content_type": "application/json",
+  "response_json": {
+    "openapi": "3.1.0",
+    "info": {
+      "title": "API классификации ирисов",
+      "description": "Предсказание класса Iris по четырём признакам сохранённой моделью.",
+      "version": "0.1.0"
+    },
+    "paths": {
+      "/health": {
+        "get": {
+          "summary": "Проверить состояние сервиса и готовность модели",
+          "operationId": "health_health_get",
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/HealthResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/predict": {
+        "post": {
+          "summary": "Предсказать класс одного ириса",
+          "operationId": "predict_predict_post",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PredictResponse"
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/HTTPValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "HTTPValidationError": {
+          "properties": {
+            "detail": {
+              "items": {
+                "$ref": "#/components/schemas/ValidationError"
+              },
+              "type": "array",
+              "title": "Detail"
+            }
+          },
+          "type": "object",
+          "title": "HTTPValidationError"
+        },
+        "HealthResponse": {
+          "properties": {
+            "status": {
+              "type": "string",
+              "const": "ok",
+              "title": "Status",
+              "description": "Состояние сервиса"
+            },
+            "model_ready": {
+              "type": "boolean",
+              "title": "Model Ready",
+              "description": "Модель загружена и готова к предсказаниям"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "status",
+            "model_ready"
+          ],
+          "title": "HealthResponse"
+        },
+        "PredictRequest": {
+          "properties": {
+            "sepal_length": {
+              "type": "number",
+              "exclusiveMinimum": 0.0,
+              "title": "Sepal Length",
+              "description": "Длина чашелистика"
+            },
+            "sepal_width": {
+              "type": "number",
+              "exclusiveMinimum": 0.0,
+              "title": "Sepal Width",
+              "description": "Ширина чашелистика"
+            },
+            "petal_length": {
+              "type": "number",
+              "exclusiveMinimum": 0.0,
+              "title": "Petal Length",
+              "description": "Длина лепестка"
+            },
+            "petal_width": {
+              "type": "number",
+              "exclusiveMinimum": 0.0,
+              "title": "Petal Width",
+              "description": "Ширина лепестка"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "sepal_length",
+            "sepal_width",
+            "petal_length",
+            "petal_width"
+          ],
+          "title": "PredictRequest"
+        },
+        "PredictResponse": {
+          "properties": {
+            "prediction": {
+              "type": "integer",
+              "title": "Prediction",
+              "description": "Идентификатор предсказанного класса"
+            },
+            "class_name": {
+              "type": "string",
+              "title": "Class Name",
+              "description": "Название предсказанного класса"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "prediction",
+            "class_name"
+          ],
+          "title": "PredictResponse"
+        },
+        "ValidationError": {
+          "properties": {
+            "loc": {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              },
+              "type": "array",
+              "title": "Location"
+            },
+            "msg": {
+              "type": "string",
+              "title": "Message"
+            },
+            "type": {
+              "type": "string",
+              "title": "Error Type"
+            }
+          },
+          "type": "object",
+          "required": [
+            "loc",
+            "msg",
+            "type"
+          ],
+          "title": "ValidationError"
+        }
+      }
+    }
+  },
+  "finished_at": "2026-09-29T16:14:04.332+00:00"
+}
+
+=== 012 baseline.uvicorn ===
+Started: 2026-09-29T16:13:59.248+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\final-main-clone
+Command: C:\Users\user\AppData\Local\Programs\Python\Python311\python.exe -B -m uvicorn app.api:app --host 127.0.0.1 --port 8000
+--- stdout ---
+INFO:     127.0.0.1:55432 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55433 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55434 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55435 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:55436 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:55437 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:55438 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:55439 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55442 - "GET /openapi.json HTTP/1.1" 200 OK
+
+--- stderr ---
+INFO:     Started server process [14780]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+
+--- exit=1; timeout=False; interrupted=False; elapsed=5.109s ---
+
+=== final.eight_http_contracts ===
+{
+  "sequence": 22,
+  "label": "final.eight_http_contracts",
+  "kind": "assertion",
+  "started_at": "2026-09-29T16:14:04.359+00:00",
+  "status": "passed",
+  "expected_labels": [
+    "baseline.health",
+    "baseline.predict",
+    "baseline.missing_field",
+    "baseline.string_number",
+    "baseline.boolean",
+    "baseline.negative_number",
+    "baseline.docs",
+    "baseline.openapi"
+  ],
+  "actual_labels": [
+    "baseline.health",
+    "baseline.predict",
+    "baseline.missing_field",
+    "baseline.string_number",
+    "baseline.boolean",
+    "baseline.negative_number",
+    "baseline.docs",
+    "baseline.openapi"
+  ],
+  "finished_at": "2026-09-29T16:14:04.362+00:00"
+}

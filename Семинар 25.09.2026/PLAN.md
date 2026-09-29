@@ -1,26 +1,31 @@
-# План семинара 25.09.2026
+# План и результаты семинара 25.09.2026
 
-Статус: **действует**. Дата фиксации: **29.09.2026**. Реализация ориентирована на GitHub Actions, основную ветку `main` и runtime в корне общего репозитория. Этот план заменяет параметры GitVerse только для практик 7–8; требования других семинаров не меняются.
+Статус: **действует**. Дата: **29.09.2026**. Runtime находится в корне репозитория.
+Проверенная опубликованная версия: [`fdc377f`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/fdc377f0d347f3ee1232871f07787daa4ad8b0e7),
+ветка `feature/delivery-dry-run`. GitVerse в практиках 7–8 адаптирован к GitHub Actions.
 
 | Требование | Реализация | Проверка и текущий статус | Артефакт |
 | --- | --- | --- | --- |
-| CI по push в `main`, pull request и вручную | Три события; отмена предыдущего запуска для того же ref | Описание событий проверено actionlint; реальные события GitHub ещё нужно подтвердить | [ci.yaml](../.github/workflows/ci.yaml), будущий URL CI run |
-| Python 3.11, фиксированные зависимости, синтаксис и полный pytest | Job `check`, оба requirements, `compileall`, `pytest -q` | Локальный baseline: **95 passed in 11.36s**; успешная CI job ещё не зафиксирована | Локальный результат, будущий лог `check` |
-| Сборка после тестов | `build-image` с `needs: check`; Docker API из `.` и клиента из `client/`; без push | Зависимость проверена статически; обе Docker-сборки ещё требуется подтвердить | [Dockerfile](../Dockerfile), [client/Dockerfile](../client/Dockerfile), будущий лог `build-image` |
-| Явный ручной запуск доставки | Только `workflow_dispatch`; deploy только при успехе зависимостей и `refs/heads/main` | Статическая проверка пройдена; запуски `main` и рабочей ветки ещё не зафиксированы | [delivery.yaml](../.github/workflows/delivery.yaml), будущие URL runs |
-| Один тег для всего сценария | `test-<GITHUB_SHA>` → `$GITHUB_OUTPUT` → job output `image-tag` → env `IMAGE_TAG` | Имена и выражения проверены; фактический output ожидает запуска | Лог `build` и последующих jobs |
-| Параллельные проверки | `smoke_api_tests_stub` и `docs_checks` имеют только `needs: build`; в docs выполняется checkout | Граф и порядок шагов проверены; фактический граф ожидает запуска | Граф delivery, логи обеих jobs |
-| Безопасный dry run и откат | Только печать Docker/curl; фиктивный registry; синтетический POST; `previous-stable`; путь модели и порты | actionlint: exit 0; `bash -n`: 11 блоков без исполнения; фактический лог ожидает запуска | Логи обновления, smoke test и rollback |
-| Ограничения workflow | `contents: read`, timeout jobs, закреплённые SHA actions, checkout без сохранения credentials | Проверено по YAML; внешние ShellCheck и Pyflakes в actionlint отключены | Оба workflow |
-| Документация и защита | Описание jobs, переходов, self-check, ограничений и способа проверки | Markdown подготовлен; доказательства GitHub добавляются по факту | [Практика 7](PRACTICE_7.md), [Практика 8](PRACTICE_8.md), [README](README.md) |
+| Проверить полный pytest и зависимости | Python 3.11, requirements и job check | CI `95 passed in 5.13s`; итоговая main `95 passed in 15.75s`; исходный feature-клон Windows/Linux сохранён в отчёте | [CI #36596424256](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596424256), [CHECKS.md](CHECKS.md) |
+| Собрать оба образа после тестов | needs check; API и client | CI check/build-image и оба шага сборки success | [CI #36596424256](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596424256), [CI_20260929.log](CI_20260929.log) |
+| Подтвердить интеграцию | Compose, healthcheck, сеть, bind mount | API healthy, client exit 0; localhost exit 1; исправление exit 0; JSON сохранился после down | [CHECKS.md](CHECKS.md) |
+| CI по push, PR и вручную | Три события в ci.yaml | Реальный запуск: event `push`, ref main, conclusion success; YAML проверен actionlint | [CI #36596424256](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596424256), [PR #6](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/6) |
+| Ручная доставка и ограничение main | workflow_dispatch и условие main | На main четыре jobs success; на feature deploy skipped, остальные success | [Delivery main #36596835394](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596835394), [Delivery feature #36596569372](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596569372) |
+| Один тег и outputs | test-SHA, GITHUB_OUTPUT и IMAGE_TAG | В реальном delivery подтверждён `test-8145a8252febca4b93b7580a40008f508aeb9e68` | [DELIVERY_MAIN_20260929.log](DELIVERY_MAIN_20260929.log) |
+| Параллельные проверочные jobs | Обе зависят только от build | Обе jobs завершились success; времена jobs сохранены в JSON | [Delivery main #36596835394](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596835394), [DELIVERY_MAIN_20260929.json](DELIVERY_MAIN_20260929.json) |
+| Учебная доставка и откат | Печать Docker/curl и previous-stable | Реальный deploy_dry_run success; команды и откат присутствуют в логе | [Delivery main #36596835394](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596835394) |
+| Ограничить workflow | contents read, timeout, закреплённые SHA actions | Проверено по YAML; внешние ShellCheck и Pyflakes отключены | Оба workflow |
+| Зафиксировать доказательства | Markdown, PNG, JSON и журналы | PR, три Actions run и итоговый main-клон подтверждены | [CHECKS.md](CHECKS.md), screenshots/ |
 
 Проверенный локально actionlint **1.7.12** получен из официального Windows amd64 release, SHA256 архива сверена с официальным `checksums.txt`. Команда проверки двух workflow завершилась с кодом 0 после исправления YAML-команды установки зависимостей. Внешние анализаторы ShellCheck и Pyflakes были отключены; это не полный прогон всех возможных линтеров. Отдельный `bash -n` подтвердил синтаксис 11 блоков `run` без исполнения их команд.
 
-Оставшиеся действия:
+## Выполненные внешние проверки
 
-1. Собрать оба Docker-образа из корня проекта и зафиксировать результат.
-2. Запустить CI в GitHub, проверить `check` и обе сборки `build-image`, сохранить URL успешного run и SHA.
-3. Вручную запустить delivery для проверенной версии `main`, сохранить граф, output и логи; проверить пропуск deploy на другой ветке.
-4. Внести фактические URL и результаты в [README семинара](README.md) и страницы практик. Сохранить снимки экрана для отчёта без вымышленных статусов.
+- CI на `main`: [CI #36596424256](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596424256); pytest `95 passed in 5.13s`, обе сборки успешны.
+- Delivery на `main`: [Delivery main #36596835394](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596835394); все четыре jobs успешны.
+- Delivery на feature: [Delivery feature #36596569372](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596569372); deploy пропущен, остальные jobs успешны.
+- Семь PR слиты; [история публикации](<../Семинар 11.09.2026/GITHUB.md>).
+- Новый клон `main` `8145a8252febca4b93b7580a40008f508aeb9e68`: `95 passed in 15.75s` и восемь HTTP-сценариев.
 
-Критерий готовности: все пункты таблицы подтверждены соответствующими локальными или GitHub-артефактами; каждая невыполненная внешняя проверка явно отмечена. Успешный dry-run не трактуется как реальная доставка. Номер коммита и статус публикации фиксируются только после соответствующих Git-действий; этот план сам по себе их не подтверждает.
+Полные подтверждения — [CHECKS.md](CHECKS.md). Учебный delivery выводит команды;
+обновление внешнего сервиса этим workflow не выполняется.

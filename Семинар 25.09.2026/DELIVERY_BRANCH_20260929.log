@@ -1,0 +1,263 @@
+build	Set up job	﻿2026-09-29T16:17:05.2926811Z Current runner version: '2.337.0'
+build	Set up job	2026-09-29T16:17:05.2950448Z ##[group]Runner Image Provisioner
+build	Set up job	2026-09-29T16:17:05.2951234Z Hosted Compute Agent
+build	Set up job	2026-09-29T16:17:05.2951787Z Version: 20260828.587
+build	Set up job	2026-09-29T16:17:05.2952312Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+build	Set up job	2026-09-29T16:17:05.2952892Z Build Date: 2026-08-28T16:44:25Z
+build	Set up job	2026-09-29T16:17:05.2953520Z Worker ID: {5a7aeee7-f5a9-4635-9c7b-60becaa06d5e}
+build	Set up job	2026-09-29T16:17:05.2954138Z Azure Region: westcentralus
+build	Set up job	2026-09-29T16:17:05.2954660Z ##[endgroup]
+build	Set up job	2026-09-29T16:17:05.2955841Z ##[group]Operating System
+build	Set up job	2026-09-29T16:17:05.2956351Z Ubuntu
+build	Set up job	2026-09-29T16:17:05.2956984Z 24.04.5
+build	Set up job	2026-09-29T16:17:05.2957478Z LTS
+build	Set up job	2026-09-29T16:17:05.2957933Z ##[endgroup]
+build	Set up job	2026-09-29T16:17:05.2958397Z ##[group]Runner Image
+build	Set up job	2026-09-29T16:17:05.2958886Z Image: ubuntu-24.04
+build	Set up job	2026-09-29T16:17:05.2959386Z Version: 20260920.314.1
+build	Set up job	2026-09-29T16:17:05.2960285Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+build	Set up job	2026-09-29T16:17:05.2961954Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+build	Set up job	2026-09-29T16:17:05.2962730Z ##[endgroup]
+build	Set up job	2026-09-29T16:17:05.2963749Z ##[group]GITHUB_TOKEN Permissions
+build	Set up job	2026-09-29T16:17:05.2965500Z Contents: read
+build	Set up job	2026-09-29T16:17:05.2966062Z Metadata: read
+build	Set up job	2026-09-29T16:17:05.2966668Z ##[endgroup]
+build	Set up job	2026-09-29T16:17:05.2968370Z Secret source: Actions
+build	Set up job	2026-09-29T16:17:05.2969276Z Cache mode: write
+build	Set up job	2026-09-29T16:17:05.2969842Z Prepare workflow directory
+build	Set up job	2026-09-29T16:17:05.3308373Z Prepare all required actions
+build	Set up job	2026-09-29T16:17:05.3361422Z Complete job name: build
+build	Set image tag	﻿2026-09-29T16:17:05.4019770Z ##[group]Run [[ "${GITHUB_SHA}" =~ ^([0-9a-f]{40}|[0-9a-f]{64})$ ]]
+build	Set image tag	2026-09-29T16:17:05.4020929Z ^[[36;1m[[ "${GITHUB_SHA}" =~ ^([0-9a-f]{40}|[0-9a-f]{64})$ ]]^[[0m
+build	Set image tag	2026-09-29T16:17:05.4022062Z ^[[36;1mprintf 'image-tag=test-%s\n' "${GITHUB_SHA}" >> "${GITHUB_OUTPUT}"^[[0m
+build	Set image tag	2026-09-29T16:17:05.4023494Z ^[[36;1mprintf 'Dry run: version test-%s; no image is built or published here.\n' "${GITHUB_SHA}"^[[0m
+build	Set image tag	2026-09-29T16:17:06.1328040Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Set image tag	2026-09-29T16:17:06.1329112Z env:
+build	Set image tag	2026-09-29T16:17:06.1329877Z   IMAGE_NAME: registry.example.invalid/ml-api
+build	Set image tag	2026-09-29T16:17:06.1330647Z   PREVIOUS_TAG: previous-stable
+build	Set image tag	2026-09-29T16:17:06.1331463Z   PREDICT_PAYLOAD: {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}
+build	Set image tag	2026-09-29T16:17:06.1332304Z ##[endgroup]
+build	Set image tag	2026-09-29T16:17:06.1667705Z Dry run: version test-fdc377f0d347f3ee1232871f07787daa4ad8b0e7; no image is built or published here.
+build	Complete job	﻿2026-09-29T16:17:06.1802329Z Evaluate and set job outputs
+build	Complete job	2026-09-29T16:17:06.1830574Z Set output 'image-tag'
+build	Complete job	2026-09-29T16:17:06.1832235Z Cleaning up orphan processes
+smoke_api_tests_stub	Set up job	﻿2026-09-29T16:17:11.3502622Z Current runner version: '2.337.0'
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3529093Z ##[group]Runner Image Provisioner
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3530050Z Hosted Compute Agent
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3530676Z Version: 20260828.587
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3531348Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3532589Z Build Date: 2026-08-28T16:44:25Z
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3533424Z Worker ID: {bcc6ce27-6e7d-471d-9eaf-7edf75c0135b}
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3534237Z Azure Region: centralus
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3534851Z ##[endgroup]
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3536568Z ##[group]Operating System
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3537317Z Ubuntu
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3537856Z 24.04.5
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3538359Z LTS
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3538959Z ##[endgroup]
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3539593Z ##[group]Runner Image
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3540285Z Image: ubuntu-24.04
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3540872Z Version: 20260920.314.1
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3541930Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3545212Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3547189Z ##[endgroup]
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3549078Z ##[group]GITHUB_TOKEN Permissions
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3552438Z Contents: read
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3553548Z Metadata: read
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3554421Z ##[endgroup]
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3557307Z Secret source: Actions
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3558296Z Cache mode: write
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.3560330Z Prepare workflow directory
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.4107529Z Prepare all required actions
+smoke_api_tests_stub	Set up job	2026-09-29T16:17:11.4170370Z Complete job name: smoke_api_tests_stub
+smoke_api_tests_stub	Print proposed API checks	﻿2026-09-29T16:17:11.4818771Z ##[group]Run printf 'Dry run: proposed checks for %s:%s; requests are not executed.\n' "${IMAGE_NAME}" "${IMAGE_TAG}"
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.4820368Z ^[[36;1mprintf 'Dry run: proposed checks for %s:%s; requests are not executed.\n' "${IMAGE_NAME}" "${IMAGE_TAG}"^[[0m
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.4821499Z ^[[36;1mprintf '%s\n' \^[[0m
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.4822539Z ^[[36;1m  'curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health' \^[[0m
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.4824284Z ^[[36;1m  "curl --fail-with-body --max-time 10 -X POST http://127.0.0.1:8080/predict -H 'Content-Type: application/json' --data '${PREDICT_PAYLOAD}'"^[[0m
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.5841453Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.5843019Z env:
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.5843816Z   IMAGE_NAME: registry.example.invalid/ml-api
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.5844595Z   PREVIOUS_TAG: previous-stable
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.5845521Z   PREDICT_PAYLOAD: {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.5846705Z   IMAGE_TAG: test-fdc377f0d347f3ee1232871f07787daa4ad8b0e7
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.5847568Z ##[endgroup]
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.6065836Z Dry run: proposed checks for registry.example.invalid/ml-api:test-fdc377f0d347f3ee1232871f07787daa4ad8b0e7; requests are not executed.
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.6068591Z curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health
+smoke_api_tests_stub	Print proposed API checks	2026-09-29T16:17:11.6071701Z curl --fail-with-body --max-time 10 -X POST http://127.0.0.1:8080/predict -H 'Content-Type: application/json' --data '{"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}'
+smoke_api_tests_stub	Complete job	﻿2026-09-29T16:17:11.6240859Z Cleaning up orphan processes
+docs_checks	Set up job	﻿2026-09-29T16:17:12.7516893Z Current runner version: '2.337.0'
+docs_checks	Set up job	2026-09-29T16:17:12.7542597Z ##[group]Runner Image Provisioner
+docs_checks	Set up job	2026-09-29T16:17:12.7543504Z Hosted Compute Agent
+docs_checks	Set up job	2026-09-29T16:17:12.7544157Z Version: 20260828.587
+docs_checks	Set up job	2026-09-29T16:17:12.7544830Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+docs_checks	Set up job	2026-09-29T16:17:12.7545553Z Build Date: 2026-08-28T16:44:25Z
+docs_checks	Set up job	2026-09-29T16:17:12.7546285Z Worker ID: {edc66c01-01d0-4f2f-ad3f-6748c93b7436}
+docs_checks	Set up job	2026-09-29T16:17:12.7546994Z Azure Region: westus
+docs_checks	Set up job	2026-09-29T16:17:12.7547534Z ##[endgroup]
+docs_checks	Set up job	2026-09-29T16:17:12.7549691Z ##[group]Operating System
+docs_checks	Set up job	2026-09-29T16:17:12.7550376Z Ubuntu
+docs_checks	Set up job	2026-09-29T16:17:12.7551005Z 24.04.5
+docs_checks	Set up job	2026-09-29T16:17:12.7551513Z LTS
+docs_checks	Set up job	2026-09-29T16:17:12.7551999Z ##[endgroup]
+docs_checks	Set up job	2026-09-29T16:17:12.7552640Z ##[group]Runner Image
+docs_checks	Set up job	2026-09-29T16:17:12.7553233Z Image: ubuntu-24.04
+docs_checks	Set up job	2026-09-29T16:17:12.7553817Z Version: 20260920.314.1
+docs_checks	Set up job	2026-09-29T16:17:12.7554918Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+docs_checks	Set up job	2026-09-29T16:17:12.7556745Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+docs_checks	Set up job	2026-09-29T16:17:12.7557716Z ##[endgroup]
+docs_checks	Set up job	2026-09-29T16:17:12.7558851Z ##[group]GITHUB_TOKEN Permissions
+docs_checks	Set up job	2026-09-29T16:17:12.7561215Z Contents: read
+docs_checks	Set up job	2026-09-29T16:17:12.7561932Z Metadata: read
+docs_checks	Set up job	2026-09-29T16:17:12.7562492Z ##[endgroup]
+docs_checks	Set up job	2026-09-29T16:17:12.7564490Z Secret source: Actions
+docs_checks	Set up job	2026-09-29T16:17:12.7565533Z Cache mode: write
+docs_checks	Set up job	2026-09-29T16:17:12.7566289Z Prepare workflow directory
+docs_checks	Set up job	2026-09-29T16:17:12.8038612Z Prepare all required actions
+docs_checks	Set up job	2026-09-29T16:17:12.8085917Z Getting action download info
+docs_checks	Set up job	2026-09-29T16:17:13.1734617Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+docs_checks	Set up job	2026-09-29T16:17:13.3505921Z Complete job name: docs_checks
+docs_checks	Check out repository	﻿2026-09-29T16:17:13.4485695Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+docs_checks	Check out repository	2026-09-29T16:17:13.4486869Z with:
+docs_checks	Check out repository	2026-09-29T16:17:13.4487561Z   persist-credentials: false
+docs_checks	Check out repository	2026-09-29T16:17:13.4488274Z   repository: Kirill-Erofeev/development-and-integration-labs
+docs_checks	Check out repository	2026-09-29T16:17:13.4493751Z   token: ***
+docs_checks	Check out repository	2026-09-29T16:17:13.4494216Z   ssh-strict: true
+docs_checks	Check out repository	2026-09-29T16:17:13.4494768Z   ssh-user: git
+docs_checks	Check out repository	2026-09-29T16:17:13.4495187Z   clean: true
+docs_checks	Check out repository	2026-09-29T16:17:13.4495632Z   sparse-checkout-cone-mode: true
+docs_checks	Check out repository	2026-09-29T16:17:13.4496159Z   fetch-depth: 1
+docs_checks	Check out repository	2026-09-29T16:17:13.4496605Z   fetch-tags: false
+docs_checks	Check out repository	2026-09-29T16:17:13.4497048Z   show-progress: true
+docs_checks	Check out repository	2026-09-29T16:17:13.4497497Z   lfs: false
+docs_checks	Check out repository	2026-09-29T16:17:13.4497909Z   submodules: false
+docs_checks	Check out repository	2026-09-29T16:17:13.4498355Z   set-safe-directory: true
+docs_checks	Check out repository	2026-09-29T16:17:13.4498926Z   allow-unsafe-pr-checkout: false
+docs_checks	Check out repository	2026-09-29T16:17:13.4499973Z env:
+docs_checks	Check out repository	2026-09-29T16:17:13.4500475Z   IMAGE_NAME: registry.example.invalid/ml-api
+docs_checks	Check out repository	2026-09-29T16:17:13.4501097Z   PREVIOUS_TAG: previous-stable
+docs_checks	Check out repository	2026-09-29T16:17:13.4501945Z   PREDICT_PAYLOAD: {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}
+docs_checks	Check out repository	2026-09-29T16:17:13.4502785Z ##[endgroup]
+docs_checks	Check out repository	2026-09-29T16:17:13.5523154Z Syncing repository: Kirill-Erofeev/development-and-integration-labs
+docs_checks	Check out repository	2026-09-29T16:17:13.5525614Z ##[group]Getting Git version info
+docs_checks	Check out repository	2026-09-29T16:17:13.5526853Z Working directory is '/home/runner/work/development-and-integration-labs/development-and-integration-labs'
+docs_checks	Check out repository	2026-09-29T16:17:13.5528366Z [command]/usr/bin/git version
+docs_checks	Check out repository	2026-09-29T16:17:13.5603209Z git version 2.55.0
+docs_checks	Check out repository	2026-09-29T16:17:13.5631981Z ##[endgroup]
+docs_checks	Check out repository	2026-09-29T16:17:13.5638809Z Temporarily overriding HOME='/home/runner/work/_temp/20aa4735-613f-4291-85f7-dc84a333da00' before making global git config changes
+docs_checks	Check out repository	2026-09-29T16:17:13.5641541Z Adding repository directory to the temporary git global config as a safe directory
+docs_checks	Check out repository	2026-09-29T16:17:13.5646223Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/development-and-integration-labs/development-and-integration-labs
+docs_checks	Check out repository	2026-09-29T16:17:13.5703128Z Deleting the contents of '/home/runner/work/development-and-integration-labs/development-and-integration-labs'
+docs_checks	Check out repository	2026-09-29T16:17:13.5705958Z ##[group]Determining repository object format
+docs_checks	Check out repository	2026-09-29T16:17:13.5710896Z ##[endgroup]
+docs_checks	Check out repository	2026-09-29T16:17:13.5712219Z ##[group]Initializing the repository
+docs_checks	Check out repository	2026-09-29T16:17:13.5714366Z [command]/usr/bin/git init /home/runner/work/development-and-integration-labs/development-and-integration-labs
+docs_checks	Check out repository	2026-09-29T16:17:13.5825404Z hint: Using 'master' as the name for the initial branch. This default branch name
+docs_checks	Check out repository	2026-09-29T16:17:13.5827306Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+docs_checks	Check out repository	2026-09-29T16:17:13.5829047Z hint: to use in all of your new repositories, which will suppress this warning,
+docs_checks	Check out repository	2026-09-29T16:17:13.5830711Z hint: call:
+docs_checks	Check out repository	2026-09-29T16:17:13.5831527Z hint:
+docs_checks	Check out repository	2026-09-29T16:17:13.5832477Z hint: 	git config --global init.defaultBranch <name>
+docs_checks	Check out repository	2026-09-29T16:17:13.5833614Z hint:
+docs_checks	Check out repository	2026-09-29T16:17:13.5834726Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+docs_checks	Check out repository	2026-09-29T16:17:13.5836495Z hint: 'development'. The just-created branch can be renamed via this command:
+docs_checks	Check out repository	2026-09-29T16:17:13.5837848Z hint:
+docs_checks	Check out repository	2026-09-29T16:17:13.5838564Z hint: 	git branch -m <name>
+docs_checks	Check out repository	2026-09-29T16:17:13.5839378Z hint:
+docs_checks	Check out repository	2026-09-29T16:17:13.5840784Z hint: Disable this message with "git config set advice.defaultBranchName false"
+docs_checks	Check out repository	2026-09-29T16:17:13.5843230Z Initialized empty Git repository in /home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/
+docs_checks	Check out repository	2026-09-29T16:17:13.5846460Z [command]/usr/bin/git remote add origin https://github.com/Kirill-Erofeev/development-and-integration-labs
+docs_checks	Check out repository	2026-09-29T16:17:13.5897879Z ##[endgroup]
+docs_checks	Check out repository	2026-09-29T16:17:13.5898713Z ##[group]Disabling automatic garbage collection
+docs_checks	Check out repository	2026-09-29T16:17:13.5901521Z [command]/usr/bin/git config --local gc.auto 0
+docs_checks	Check out repository	2026-09-29T16:17:13.5935770Z ##[endgroup]
+docs_checks	Check out repository	2026-09-29T16:17:13.5936859Z ##[group]Setting up auth
+docs_checks	Check out repository	2026-09-29T16:17:13.5937951Z Removing SSH command configuration
+docs_checks	Check out repository	2026-09-29T16:17:13.5942140Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+docs_checks	Check out repository	2026-09-29T16:17:13.5992627Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+docs_checks	Check out repository	2026-09-29T16:17:13.6360969Z Removing HTTP extra header
+docs_checks	Check out repository	2026-09-29T16:17:13.6380514Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+docs_checks	Check out repository	2026-09-29T16:17:13.6410378Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+docs_checks	Check out repository	2026-09-29T16:17:13.6638938Z Removing includeIf entries pointing to credentials config files
+docs_checks	Check out repository	2026-09-29T16:17:13.6644809Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+docs_checks	Check out repository	2026-09-29T16:17:13.6679635Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+docs_checks	Check out repository	2026-09-29T16:17:13.6916883Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+docs_checks	Check out repository	2026-09-29T16:17:13.6960084Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path /home/runner/work/_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config
+docs_checks	Check out repository	2026-09-29T16:17:13.6994192Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config
+docs_checks	Check out repository	2026-09-29T16:17:13.7032797Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config
+docs_checks	Check out repository	2026-09-29T16:17:13.7070834Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config
+docs_checks	Check out repository	2026-09-29T16:17:13.7101516Z ##[endgroup]
+docs_checks	Check out repository	2026-09-29T16:17:13.7102255Z ##[group]Fetching the repository
+docs_checks	Check out repository	2026-09-29T16:17:13.7108664Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fdc377f0d347f3ee1232871f07787daa4ad8b0e7:refs/remotes/origin/feature/delivery-dry-run
+docs_checks	Check out repository	2026-09-29T16:17:14.2994856Z From https://github.com/Kirill-Erofeev/development-and-integration-labs
+docs_checks	Check out repository	2026-09-29T16:17:14.2996036Z  * [new ref]         fdc377f0d347f3ee1232871f07787daa4ad8b0e7 -> origin/feature/delivery-dry-run
+docs_checks	Check out repository	2026-09-29T16:17:14.3004951Z [command]/usr/bin/git branch --list --remote origin/feature/delivery-dry-run
+docs_checks	Check out repository	2026-09-29T16:17:14.3034385Z   origin/feature/delivery-dry-run
+docs_checks	Check out repository	2026-09-29T16:17:14.3043392Z [command]/usr/bin/git rev-parse refs/remotes/origin/feature/delivery-dry-run
+docs_checks	Check out repository	2026-09-29T16:17:14.3070563Z fdc377f0d347f3ee1232871f07787daa4ad8b0e7
+docs_checks	Check out repository	2026-09-29T16:17:14.3074550Z ##[endgroup]
+docs_checks	Check out repository	2026-09-29T16:17:14.3075369Z ##[group]Determining the checkout info
+docs_checks	Check out repository	2026-09-29T16:17:14.3076182Z ##[endgroup]
+docs_checks	Check out repository	2026-09-29T16:17:14.3080650Z [command]/usr/bin/git sparse-checkout disable
+docs_checks	Check out repository	2026-09-29T16:17:14.3136130Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+docs_checks	Check out repository	2026-09-29T16:17:14.3169877Z ##[group]Checking out the ref
+docs_checks	Check out repository	2026-09-29T16:17:14.3176398Z [command]/usr/bin/git checkout --progress --force -B feature/delivery-dry-run refs/remotes/origin/feature/delivery-dry-run
+docs_checks	Check out repository	2026-09-29T16:17:14.3360691Z Switched to a new branch 'feature/delivery-dry-run'
+docs_checks	Check out repository	2026-09-29T16:17:14.3366664Z branch 'feature/delivery-dry-run' set up to track 'origin/feature/delivery-dry-run'.
+docs_checks	Check out repository	2026-09-29T16:17:14.3373957Z ##[endgroup]
+docs_checks	Check out repository	2026-09-29T16:17:14.3421390Z [command]/usr/bin/git log -1 --format=%H
+docs_checks	Check out repository	2026-09-29T16:17:14.3450695Z fdc377f0d347f3ee1232871f07787daa4ad8b0e7
+docs_checks	Check out repository	2026-09-29T16:17:14.3459120Z ##[group]Removing auth
+docs_checks	Check out repository	2026-09-29T16:17:14.3460060Z Removing SSH command configuration
+docs_checks	Check out repository	2026-09-29T16:17:14.3463094Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+docs_checks	Check out repository	2026-09-29T16:17:14.3498391Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+docs_checks	Check out repository	2026-09-29T16:17:14.3733050Z Removing HTTP extra header
+docs_checks	Check out repository	2026-09-29T16:17:14.3736333Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+docs_checks	Check out repository	2026-09-29T16:17:14.3771437Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+docs_checks	Check out repository	2026-09-29T16:17:14.3996989Z Removing includeIf entries pointing to credentials config files
+docs_checks	Check out repository	2026-09-29T16:17:14.4001904Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+docs_checks	Check out repository	2026-09-29T16:17:14.4040228Z includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path
+docs_checks	Check out repository	2026-09-29T16:17:14.4041954Z includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path
+docs_checks	Check out repository	2026-09-29T16:17:14.4043682Z includeif.gitdir:/github/workspace/.git.path
+docs_checks	Check out repository	2026-09-29T16:17:14.4044716Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+docs_checks	Check out repository	2026-09-29T16:17:14.4050949Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path
+docs_checks	Check out repository	2026-09-29T16:17:14.4078014Z /home/runner/work/_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config
+docs_checks	Check out repository	2026-09-29T16:17:14.4090185Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-6bf377b1\-0d79\-45b6\-94ce\-52ff8d036c76\.config
+docs_checks	Check out repository	2026-09-29T16:17:14.4131399Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path
+docs_checks	Check out repository	2026-09-29T16:17:14.4162204Z /home/runner/work/_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config
+docs_checks	Check out repository	2026-09-29T16:17:14.4171461Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-6bf377b1\-0d79\-45b6\-94ce\-52ff8d036c76\.config
+docs_checks	Check out repository	2026-09-29T16:17:14.4208220Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+docs_checks	Check out repository	2026-09-29T16:17:14.4251468Z /github/runner_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config
+docs_checks	Check out repository	2026-09-29T16:17:14.4253928Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-6bf377b1\-0d79\-45b6\-94ce\-52ff8d036c76\.config
+docs_checks	Check out repository	2026-09-29T16:17:14.4302982Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+docs_checks	Check out repository	2026-09-29T16:17:14.4345619Z /github/runner_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config
+docs_checks	Check out repository	2026-09-29T16:17:14.4352164Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-6bf377b1\-0d79\-45b6\-94ce\-52ff8d036c76\.config
+docs_checks	Check out repository	2026-09-29T16:17:14.4386092Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+docs_checks	Check out repository	2026-09-29T16:17:14.4608107Z Removing credentials config '/home/runner/work/_temp/git-credentials-6bf377b1-0d79-45b6-94ce-52ff8d036c76.config'
+docs_checks	Check out repository	2026-09-29T16:17:14.4615686Z ##[endgroup]
+docs_checks	Check README exists	﻿2026-09-29T16:17:14.4816167Z ##[group]Run test -f README.md
+docs_checks	Check README exists	2026-09-29T16:17:14.4816811Z ^[[36;1mtest -f README.md^[[0m
+docs_checks	Check README exists	2026-09-29T16:17:14.4817605Z ^[[36;1mprintf '%s\n' 'README.md exists; review it for delivery and rollback instructions.'^[[0m
+docs_checks	Check README exists	2026-09-29T16:17:14.5104011Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+docs_checks	Check README exists	2026-09-29T16:17:14.5104788Z env:
+docs_checks	Check README exists	2026-09-29T16:17:14.5105306Z   IMAGE_NAME: registry.example.invalid/ml-api
+docs_checks	Check README exists	2026-09-29T16:17:14.5105994Z   PREVIOUS_TAG: previous-stable
+docs_checks	Check README exists	2026-09-29T16:17:14.5106902Z   PREDICT_PAYLOAD: {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}
+docs_checks	Check README exists	2026-09-29T16:17:14.5107841Z ##[endgroup]
+docs_checks	Check README exists	2026-09-29T16:17:14.5211737Z README.md exists; review it for delivery and rollback instructions.
+docs_checks	Post Check out repository	﻿2026-09-29T16:17:14.5357713Z Post job cleanup.
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6187107Z [command]/usr/bin/git version
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6229085Z git version 2.55.0
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6275143Z Temporarily overriding HOME='/home/runner/work/_temp/836950ea-b9d5-4067-9094-6831a795f821' before making global git config changes
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6277553Z Adding repository directory to the temporary git global config as a safe directory
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6281921Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/development-and-integration-labs/development-and-integration-labs
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6312632Z Removing SSH command configuration
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6319435Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6444171Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6610749Z Removing HTTP extra header
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6617560Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6654935Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6907897Z Removing includeIf entries pointing to credentials config files
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6913569Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+docs_checks	Post Check out repository	2026-09-29T16:17:14.6953362Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+docs_checks	Complete job	﻿2026-09-29T16:17:14.7360758Z Cleaning up orphan processes

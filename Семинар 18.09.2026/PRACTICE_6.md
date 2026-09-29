@@ -1,11 +1,9 @@
 # Практическая работа 6. Интеграция через Docker Compose
 
-На 19 сентября 2026 года подготовлены
-[compose.yaml](<../compose.yaml>),
-[клиент](<../client/client.py>), его
-[Dockerfile](<../client/Dockerfile>) и
-[зависимости](<../client/requirements.txt>).
-Ниже приведён сценарий проверки Compose, сети, bind mount и адреса `localhost`.
+29 сентября 2026 года стенд проверен реальным запуском: API `healthy`, клиент
+завершился с кодом `0`, результат сохранён на хосте. Проверены ошибочный
+адрес `localhost`, исправление и сохранность файла после остановки.
+Команды выполняются из корня репозитория.
 
 ## Компоненты и адреса
 
@@ -46,17 +44,21 @@ Desktop/WSL и расход ресурсов сборки. `--parallel 1` пос
 ## Запуск и проверка
 
 Все команды выполняются в PowerShell из корня репозитория. Из папки материалов
-перейдите туда командой ниже. Контейнер `ml-api-p5` из практики 5 должен быть остановлен,
+перейдите туда командой ниже; если терминал уже в корне, пропустите `Set-Location`. Контейнер `ml-api-practice5-20260929` из практики 5 должен быть остановлен,
 чтобы освободить порт `8080`.
 
 ```powershell
 Set-Location -LiteralPath '..'
-docker compose config
+docker compose -p course-labs-20260929 config
 if ($LASTEXITCODE -ne 0) { throw 'Compose configuration is invalid' }
-docker compose --parallel 1 up --build -d
+docker compose -p course-labs-20260929 --parallel 1 build api
+if ($LASTEXITCODE -ne 0) { throw 'API image build failed' }
+docker compose -p course-labs-20260929 --parallel 1 build client
+if ($LASTEXITCODE -ne 0) { throw 'Client image build failed' }
+docker compose -p course-labs-20260929 --parallel 1 up --no-build -d
 if ($LASTEXITCODE -ne 0) { throw 'Compose startup failed' }
-docker compose ps -a
-docker compose logs api client
+docker compose -p course-labs-20260929 ps -a
+docker compose -p course-labs-20260929 logs api client
 Invoke-RestMethod -Uri http://127.0.0.1:8080/health -TimeoutSec 10 | ConvertTo-Json
 ```
 
@@ -68,7 +70,7 @@ mount. После завершения запроса ожидаются `api` �
 Проверьте код завершения клиента и файл:
 
 ```powershell
-$clientContainer = docker compose ps -a -q client
+$clientContainer = docker compose -p course-labs-20260929 ps -a -q client
 if (-not $clientContainer) { throw 'Client container was not found' }
 docker inspect --format '{{.State.ExitCode}}' $clientContainer
 Get-Item -LiteralPath '.\results\prediction.json' | Select-Object FullName, LastWriteTime
@@ -79,14 +81,14 @@ Get-Content -LiteralPath '.\results\prediction.json' -Encoding UTF8
 `{"prediction":0,"class_name":"setosa"}`. Файл сам по себе не доказывает успех
 текущего запуска: он мог остаться от предыдущего. Сопоставьте статус `Exited (0)`,
 код завершения, логи текущего запуска с `http://api:8000` и время изменения файла.
-Приведённый JSON является ожиданием, а не полученным результатом стенда.
+Такой JSON получен в успешном прогоне 29.09.2026.
 
 ## Ошибка адреса и исправление
 
 При работающем API запустите отдельный клиент с ошибочным адресом:
 
 ```powershell
-docker compose run --rm -e API_URL=http://localhost:8000 client
+docker compose -p course-labs-20260929 run --rm -e API_URL=http://localhost:8000 client
 $wrongUrlExitCode = $LASTEXITCODE
 Write-Output "Wrong URL exit code: $wrongUrlExitCode"
 if ($wrongUrlExitCode -eq 0) { throw 'Expected a connection failure' }
@@ -100,7 +102,7 @@ if ($wrongUrlExitCode -eq 0) { throw 'Expected a connection failure' }
 Повторите запуск с адресом из `compose.yaml`:
 
 ```powershell
-docker compose run --rm client
+docker compose -p course-labs-20260929 run --rm client
 $correctUrlExitCode = $LASTEXITCODE
 Write-Output "Correct URL exit code: $correctUrlExitCode"
 if ($correctUrlExitCode -ne 0) { throw 'Corrected client run failed' }
@@ -108,20 +110,20 @@ Get-Content -LiteralPath '.\results\prediction.json' -Encoding UTF8
 ```
 
 Для исправленного запуска ожидаются код `0`, вывод о сохранении проверенного
-ответа и актуальный JSON. `docker compose logs client` относится к сервисному
+ответа и актуальный JSON. `docker compose -p course-labs-20260929 logs client` относится к сервисному
 контейнеру первого запуска и не заменяет вывод этих одноразовых `run --rm`.
 
 ## Остановка и сохранность результата
 
 ```powershell
-docker compose down
+docker compose -p course-labs-20260929 down
 if ($LASTEXITCODE -ne 0) { throw 'Compose shutdown failed' }
 Get-Content -LiteralPath '.\results\prediction.json' -Encoding UTF8
 ```
 
 Ожидается, что контейнеры и сеть этого Compose-проекта удалены, а файл в `./results`
 остаётся на хосте благодаря bind mount. `results/.gitkeep` сохраняет пустой каталог
-в репозитории до первого запуска. По решению пользователя будущий `prediction.json`
+в репозитории до первого запуска. Файл `prediction.json`
 не добавлен в `.gitignore`; после запуска он будет виден в Git-статусе.
 
 ## Что объяснить и зафиксировать
@@ -134,11 +136,22 @@ Dockerfile описывает один образ, Compose — конфигур�
 относится к хосту, правая — к контейнеру. `Exited (0)` означает успешное завершение
 одноразового клиента.
 
-После ручного прогона нужны скриншоты `config`, `ps -a`, логов обоих сервисов,
-`/health`, `prediction.json`, ошибочного и исправленного запуска клиента.
-Отдельно подтвердите сохранность файла после `down`. Все эти доказательства
-и проверку из чистого клона нужно зафиксировать. Word-отчёт отменён пользователем;
-локальная история подготовлена в ветке `feature/compose-client`, публикация в GitHub
-не выполняется.
+## Выполненные проверки, 29.09.2026
 
-Выполненные проверки: [CHECKS.md](CHECKS.md).
+| Проверка | Фактический результат |
+| --- | --- |
+| `compose config` и сборки обоих сервисов | Код `0` |
+| Состояние API | `healthy` |
+| Состояние клиента | `exited`, код `0` |
+| Общая сеть | `app_net`, драйвер `bridge` |
+| Лимиты | API: 1 CPU / 512 MiB; клиент: 0.25 CPU / 128 MiB |
+| Первый результат | `{"prediction":0,"class_name":"setosa"}`, проверено свежее время записи |
+| `API_URL=http://localhost:8000` | Код `1`; содержимое и время записи прежнего файла не изменились |
+| Повтор с `http://api:8000` | Код `0`, свежий результат |
+| `down` | Код `0`; файл сохранился без изменения содержимого |
+
+[Состояние стенда](screenshots/practice6-status.png),
+[ошибка и исправление](screenshots/practice6-localhost.png),
+[сохранность после down](screenshots/practice6-persistence.png).
+Полный протокол — [CHECKS.md](CHECKS.md). Проверка чистого клона:
+[отчёт чистого клона и CI/CD](<../Семинар 25.09.2026/CHECKS.md>); её результат фиксируется отдельно.

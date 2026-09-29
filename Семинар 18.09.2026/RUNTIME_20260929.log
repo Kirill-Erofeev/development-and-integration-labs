@@ -1,0 +1,1822 @@
+
+=== preflight.project_layout ===
+{
+  "sequence": 1,
+  "label": "preflight.project_layout",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:37:02.166+00:00",
+  "status": "passed",
+  "missing": [],
+  "finished_at": "2026-09-29T15:37:02.167+00:00"
+}
+
+=== preflight.docker_executable ===
+{
+  "sequence": 2,
+  "label": "preflight.docker_executable",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:37:02.176+00:00",
+  "status": "passed",
+  "path": "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+  "finished_at": "2026-09-29T15:37:02.177+00:00"
+}
+
+=== preflight.port_8080 ===
+{
+  "sequence": 3,
+  "label": "preflight.port_8080",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:37:02.190+00:00",
+  "status": "passed",
+  "address": "127.0.0.1:8080",
+  "finished_at": "2026-09-29T15:37:02.191+00:00"
+}
+
+=== 004 preflight.docker_version ===
+Started: 2026-09-29T15:37:02.198+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" version
+--- stdout ---
+Client:
+ Version:           27.1.1
+ API version:       1.46
+ Go version:        go1.21.12
+ Git commit:        6312585
+ Built:             Tue Jul 23 19:57:57 2024
+ OS/Arch:           windows/amd64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.33.1 (161083)
+ Engine:
+  Version:          27.1.1
+  API version:      1.46 (minimum version 1.24)
+  Go version:       go1.21.12
+  Git commit:       cc13f95
+  Built:            Tue Jul 23 19:57:19 2024
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.7.19
+  GitCommit:        2bf793ef6dc9a18e00cb12efb64355c2c9d5eb41
+ runc:
+  Version:          1.7.19
+  GitCommit:        v1.1.13-0-g58aa920
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=2.984s ---
+
+=== 005 preflight.compose_version ===
+Started: 2026-09-29T15:37:05.199+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose version
+--- stdout ---
+Docker Compose version v2.29.1-desktop.1
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=2.094s ---
+
+=== 006 preflight.practice5_lookup ===
+Started: 2026-09-29T15:37:07.301+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" ps -a --filter name=^/ml-api-practice5-20260929$ --format {{.ID}}
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.188s ---
+
+=== preflight.practice5_name_unused ===
+{
+  "sequence": 7,
+  "label": "preflight.practice5_name_unused",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:37:07.491+00:00",
+  "status": "passed",
+  "finished_at": "2026-09-29T15:37:07.498+00:00"
+}
+
+=== 008 preflight.compose_containers_lookup ===
+Started: 2026-09-29T15:37:07.506+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" ps -a --filter label=com.docker.compose.project=course-labs-20260929 --format {{.ID}}
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.187s ---
+
+=== preflight.compose_containers_unused ===
+{
+  "sequence": 9,
+  "label": "preflight.compose_containers_unused",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:37:07.703+00:00",
+  "status": "passed",
+  "found": [],
+  "finished_at": "2026-09-29T15:37:07.706+00:00"
+}
+
+=== 010 preflight.compose_networks_lookup ===
+Started: 2026-09-29T15:37:07.709+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" network ls --filter label=com.docker.compose.project=course-labs-20260929 --format {{.ID}}
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.125s ---
+
+=== preflight.compose_networks_unused ===
+{
+  "sequence": 11,
+  "label": "preflight.compose_networks_unused",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:37:07.842+00:00",
+  "status": "passed",
+  "found": [],
+  "finished_at": "2026-09-29T15:37:07.849+00:00"
+}
+
+=== 012 preflight.compose_volumes_lookup ===
+Started: 2026-09-29T15:37:07.852+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" volume ls --filter label=com.docker.compose.project=course-labs-20260929 --format {{.Name}}
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.094s ---
+
+=== preflight.compose_volumes_unused ===
+{
+  "sequence": 13,
+  "label": "preflight.compose_volumes_unused",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:37:07.951+00:00",
+  "status": "passed",
+  "found": [],
+  "finished_at": "2026-09-29T15:37:07.953+00:00"
+}
+
+=== 014 p5.build ===
+Started: 2026-09-29T15:37:07.955+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" build -t ml-api:practice5 .
+--- stdout ---
+
+--- stderr ---
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 585B 0.8s done
+#1 DONE 1.4s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 309B 0.0s done
+#3 DONE 0.2s
+
+#4 [1/7] FROM docker.io/library/python:3.11-slim
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 349B 0.1s done
+#5 DONE 0.2s
+
+#6 [3/7] COPY requirements.txt ./
+#6 CACHED
+
+#7 [4/7] RUN python -m pip install --no-cache-dir --only-binary=:all: -r requirements.txt
+#7 CACHED
+
+#8 [5/7] COPY app ./app
+#8 CACHED
+
+#9 [6/7] COPY src ./src
+#9 CACHED
+
+#10 [2/7] WORKDIR /app
+#10 CACHED
+
+#11 [7/7] COPY models/model.pkl ./models/model.pkl
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers 0.0s done
+#12 writing image sha256:7e107d061fdceab3069a4699bb76125d8b99ad171c6e600d1c34a088e9fc848b 0.1s done
+#12 naming to docker.io/library/ml-api:practice5
+#12 naming to docker.io/library/ml-api:practice5 0.1s done
+#12 DONE 0.6s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/4q288psfu4p6ptnmxwrlobkii
+
+--- exit=0; timeout=False; interrupted=False; elapsed=99.766s ---
+
+=== 015 p5.images ===
+Started: 2026-09-29T15:38:47.711+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" image ls ml-api
+--- stdout ---
+REPOSITORY   TAG         IMAGE ID       CREATED         SIZE
+ml-api       practice5   7e107d061fdc   8 minutes ago   420MB
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.578s ---
+
+=== 016 p5.first.run ===
+Started: 2026-09-29T15:38:48.303+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" run -d --name ml-api-practice5-20260929 --label io.course-labs.runtime-check=69f398c6231243d5a90d252febb5fff5 --cpus 1 --memory 512m -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl ml-api:practice5
+--- stdout ---
+1daaca3065028f72ad44ef1e57ab7ecb3f00771609e303d7533d13c2a6c28aee
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=133.344s ---
+
+=== p5.first.readiness ===
+{
+  "sequence": 17,
+  "label": "p5.first.readiness",
+  "kind": "http_readiness",
+  "started_at": "2026-09-29T15:41:01.663+00:00",
+  "status": "passed",
+  "url": "http://127.0.0.1:8080/health",
+  "attempts": [
+    {
+      "at": "2026-09-29T15:41:01.667+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:04.236+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:06.245+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:08.260+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:10.295+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:12.311+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:14.337+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:16.351+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:18.378+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:20.386+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:22.393+00:00",
+      "error": "timed out"
+    },
+    {
+      "at": "2026-09-29T15:41:26.413+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:29.985+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:32.890+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:34.910+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:41:36.926+00:00",
+      "http_status": 200,
+      "body": "{\"status\":\"ok\",\"model_ready\":true}"
+    }
+  ],
+  "finished_at": "2026-09-29T15:41:38.520+00:00"
+}
+
+=== p5.first.health ===
+{
+  "sequence": 18,
+  "label": "p5.first.health",
+  "kind": "http",
+  "started_at": "2026-09-29T15:41:38.522+00:00",
+  "status": "passed",
+  "method": "GET",
+  "url": "http://127.0.0.1:8080/health",
+  "request_json": null,
+  "expected_json": {
+    "status": "ok",
+    "model_ready": true
+  },
+  "http_status": 200,
+  "response_text": "{\"status\":\"ok\",\"model_ready\":true}",
+  "response_json": {
+    "status": "ok",
+    "model_ready": true
+  },
+  "finished_at": "2026-09-29T15:41:38.577+00:00"
+}
+
+=== p5.first.predict ===
+{
+  "sequence": 19,
+  "label": "p5.first.predict",
+  "kind": "http",
+  "started_at": "2026-09-29T15:41:38.580+00:00",
+  "status": "passed",
+  "method": "POST",
+  "url": "http://127.0.0.1:8080/predict",
+  "request_json": {
+    "sepal_length": 5.1,
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+  },
+  "expected_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "http_status": 200,
+  "response_text": "{\"prediction\":0,\"class_name\":\"setosa\"}",
+  "response_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "finished_at": "2026-09-29T15:41:40.312+00:00"
+}
+
+=== 020 p5.ps ===
+Started: 2026-09-29T15:41:40.316+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" ps --filter name=^/ml-api-practice5-20260929$
+--- stdout ---
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS         PORTS                      NAMES
+1daaca306502   ml-api:practice5   "python -m uvicorn a…"   2 minutes ago   Up 2 minutes   127.0.0.1:8080->8000/tcp   ml-api-practice5-20260929
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=3.797s ---
+
+=== 021 p5.logs ===
+Started: 2026-09-29T15:41:44.140+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" logs ml-api-practice5-20260929
+--- stdout ---
+INFO:     172.17.0.1:45096 - "GET /health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45102 - "GET /health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45114 - "POST /predict HTTP/1.1" 200 OK
+
+--- stderr ---
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.500s ---
+
+=== 022 p5.pwd ===
+Started: 2026-09-29T15:41:44.652+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" exec ml-api-practice5-20260929 pwd
+--- stdout ---
+/app
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.297s ---
+
+=== 023 p5.files ===
+Started: 2026-09-29T15:41:44.960+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" exec ml-api-practice5-20260929 ls -la /app
+--- stdout ---
+total 24
+drwxr-xr-x 1 root root 4096 Sep 29 15:30 .
+drwxr-xr-x 1 root root 4096 Sep 29 15:38 ..
+drwxr-xr-x 2 root root 4096 Sep 29 15:12 app
+drwxr-xr-x 2 root root 4096 Sep 29 15:30 models
+-rwxr-xr-x 1 root root  455 Sep 29 15:12 requirements.txt
+drwxr-xr-x 2 root root 4096 Sep 29 15:12 src
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.359s ---
+
+=== 024 p5.stats ===
+Started: 2026-09-29T15:41:45.334+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" stats --no-stream ml-api-practice5-20260929
+--- stdout ---
+CONTAINER ID   NAME                        CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O    PIDS
+1daaca306502   ml-api-practice5-20260929   0.36%     140.1MiB / 512MiB   27.36%    4.16kB / 2.71kB   117MB / 0B   2
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=11.734s ---
+
+=== 025 p5.runtime_files ===
+Started: 2026-09-29T15:41:57.078+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" exec ml-api-practice5-20260929 python -c "from pathlib import Path; p=Path('/app'); required=['app/api.py','app/schemas.py','src/model_service.py','src/common.py','models/model.pkl']; excluded=['.git','.env','.venv','tests','notebooks','data_sample','client','src/train.py','src/predict.py']; print('Required:', {x:(p/x).is_file() for x in required}); print('Excluded:', {x:(p/x).exists() for x in excluded}); assert all((p/x).is_file() for x in required); assert not any((p/x).exists() for x in excluded)"
+--- stdout ---
+Required: {'app/api.py': True, 'app/schemas.py': True, 'src/model_service.py': True, 'src/common.py': True, 'models/model.pkl': True}
+Excluded: {'.git': False, '.env': False, '.venv': False, 'tests': False, 'notebooks': False, 'data_sample': False, 'client': False, 'src/train.py': False, 'src/predict.py': False}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=1.859s ---
+
+=== 026 p5.limits ===
+Started: 2026-09-29T15:41:58.943+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{.HostConfig.NanoCpus}} {{.HostConfig.Memory}}" ml-api-practice5-20260929
+--- stdout ---
+1000000000 536870912
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.141s ---
+
+=== p5.limits_contract ===
+{
+  "sequence": 27,
+  "label": "p5.limits_contract",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:41:59.088+00:00",
+  "status": "passed",
+  "actual": "1000000000 536870912",
+  "finished_at": "2026-09-29T15:41:59.091+00:00"
+}
+
+=== 028 p5.first_cleanup.lookup ===
+Started: 2026-09-29T15:41:59.093+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" ps -a --filter name=^/ml-api-practice5-20260929$ --format {{.ID}}
+--- stdout ---
+1daaca306502
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.125s ---
+
+=== 029 p5.first_cleanup.ownership ===
+Started: 2026-09-29T15:41:59.211+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --type container --format "{{index .Config.Labels \"io.course-labs.runtime-check\"}}" 1daaca306502
+--- stdout ---
+69f398c6231243d5a90d252febb5fff5
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.125s ---
+
+=== p5.first_cleanup.owned ===
+{
+  "sequence": 30,
+  "label": "p5.first_cleanup.owned",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:41:59.343+00:00",
+  "status": "passed",
+  "container_id": "1daaca306502",
+  "finished_at": "2026-09-29T15:41:59.347+00:00"
+}
+
+=== 031 p5.first_cleanup.stop ===
+Started: 2026-09-29T15:41:59.349+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" stop --time 10 1daaca306502
+--- stdout ---
+1daaca306502
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=18.141s ---
+
+=== 032 p5.first_cleanup.remove ===
+Started: 2026-09-29T15:42:17.498+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" rm 1daaca306502
+--- stdout ---
+1daaca306502
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=4.141s ---
+
+=== 033 p5.second.run ===
+Started: 2026-09-29T15:42:21.662+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" run -d --name ml-api-practice5-20260929 --label io.course-labs.runtime-check=69f398c6231243d5a90d252febb5fff5 --cpus 1 --memory 512m -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl ml-api:practice5
+--- stdout ---
+b28c49b4307fa98723f6b10ef1832ac81e2a8e9077111998ad94c8475d4940b8
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=77.265s ---
+
+=== p5.second.readiness ===
+{
+  "sequence": 34,
+  "label": "p5.second.readiness",
+  "kind": "http_readiness",
+  "started_at": "2026-09-29T15:43:38.930+00:00",
+  "status": "passed",
+  "url": "http://127.0.0.1:8080/health",
+  "attempts": [
+    {
+      "at": "2026-09-29T15:43:38.939+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:40.973+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:42.994+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:45.021+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:47.051+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:49.186+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:51.220+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:53.383+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:55.399+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:57.425+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:43:59.446+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:01.514+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:03.605+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:05.623+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:07.641+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:09.652+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:11.666+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:13.689+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:15.696+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:17.702+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:19.710+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:21.728+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:23.736+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:25.761+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:27.789+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:29.815+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:31.862+00:00",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "at": "2026-09-29T15:44:33.974+00:00",
+      "http_status": 200,
+      "body": "{\"status\":\"ok\",\"model_ready\":true}"
+    }
+  ],
+  "finished_at": "2026-09-29T15:44:34.524+00:00"
+}
+
+=== p5.second.health ===
+{
+  "sequence": 35,
+  "label": "p5.second.health",
+  "kind": "http",
+  "started_at": "2026-09-29T15:44:34.535+00:00",
+  "status": "passed",
+  "method": "GET",
+  "url": "http://127.0.0.1:8080/health",
+  "request_json": null,
+  "expected_json": {
+    "status": "ok",
+    "model_ready": true
+  },
+  "http_status": 200,
+  "response_text": "{\"status\":\"ok\",\"model_ready\":true}",
+  "response_json": {
+    "status": "ok",
+    "model_ready": true
+  },
+  "finished_at": "2026-09-29T15:44:34.546+00:00"
+}
+
+=== p5.second.predict ===
+{
+  "sequence": 36,
+  "label": "p5.second.predict",
+  "kind": "http",
+  "started_at": "2026-09-29T15:44:34.567+00:00",
+  "status": "passed",
+  "method": "POST",
+  "url": "http://127.0.0.1:8080/predict",
+  "request_json": {
+    "sepal_length": 5.1,
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+  },
+  "expected_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "http_status": 200,
+  "response_text": "{\"prediction\":0,\"class_name\":\"setosa\"}",
+  "response_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "finished_at": "2026-09-29T15:44:34.773+00:00"
+}
+
+=== p5.repeat_prediction ===
+{
+  "sequence": 37,
+  "label": "p5.repeat_prediction",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:44:34.789+00:00",
+  "status": "passed",
+  "first": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "second": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "finished_at": "2026-09-29T15:44:34.796+00:00"
+}
+
+=== 038 p5.second.logs ===
+Started: 2026-09-29T15:44:34.800+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" logs ml-api-practice5-20260929
+--- stdout ---
+INFO:     172.17.0.1:41684 - "GET /health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41700 - "GET /health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41702 - "POST /predict HTTP/1.1" 200 OK
+
+--- stderr ---
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+--- exit=0; timeout=False; interrupted=False; elapsed=3.438s ---
+
+=== 039 p5.second_cleanup.lookup ===
+Started: 2026-09-29T15:44:38.263+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" ps -a --filter name=^/ml-api-practice5-20260929$ --format {{.ID}}
+--- stdout ---
+b28c49b4307f
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.515s ---
+
+=== 040 p5.second_cleanup.ownership ===
+Started: 2026-09-29T15:44:38.783+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --type container --format "{{index .Config.Labels \"io.course-labs.runtime-check\"}}" b28c49b4307f
+--- stdout ---
+69f398c6231243d5a90d252febb5fff5
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.469s ---
+
+=== p5.second_cleanup.owned ===
+{
+  "sequence": 41,
+  "label": "p5.second_cleanup.owned",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:44:39.265+00:00",
+  "status": "passed",
+  "container_id": "b28c49b4307f",
+  "finished_at": "2026-09-29T15:44:39.268+00:00"
+}
+
+=== 042 p5.second_cleanup.stop ===
+Started: 2026-09-29T15:44:39.271+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" stop --time 10 b28c49b4307f
+--- stdout ---
+b28c49b4307f
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=4.531s ---
+
+=== 043 p5.second_cleanup.remove ===
+Started: 2026-09-29T15:44:43.834+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" rm b28c49b4307f
+--- stdout ---
+b28c49b4307f
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.438s ---
+
+=== preflight.port_8080 ===
+{
+  "sequence": 44,
+  "label": "preflight.port_8080",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:44:44.334+00:00",
+  "status": "passed",
+  "address": "127.0.0.1:8080",
+  "finished_at": "2026-09-29T15:44:44.350+00:00"
+}
+
+=== 045 p6.config ===
+Started: 2026-09-29T15:44:44.382+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 config
+--- stdout ---
+name: course-labs-20260929
+services:
+  api:
+    build:
+      context: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+      dockerfile: Dockerfile
+    cpus: 1
+    environment:
+      ML_MODEL_PATH: /app/models/model.pkl
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import json, sys, urllib.request; response = json.load(urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2)); sys.exit(0 if response.get('status') == 'ok' and response.get('model_ready') is True else 1)
+      timeout: 3s
+      interval: 10s
+      retries: 6
+      start_period: 15s
+    image: ml-api:practice6
+    mem_limit: "536870912"
+    networks:
+      app_net: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 8000
+        published: "8080"
+        protocol: tcp
+  client:
+    build:
+      context: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\client
+      dockerfile: Dockerfile
+    cpus: 0.25
+    depends_on:
+      api:
+        condition: service_healthy
+        required: true
+    environment:
+      API_URL: http://api:8000
+      RESULT_PATH: /results/prediction.json
+    image: ml-client:practice6
+    mem_limit: "134217728"
+    networks:
+      app_net: null
+    restart: "no"
+    volumes:
+      - type: bind
+        source: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\results
+        target: /results
+        bind:
+          create_host_path: true
+networks:
+  app_net:
+    name: course-labs-20260929_app_net
+    driver: bridge
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=5.125s ---
+
+=== 046 p6.build_api ===
+Started: 2026-09-29T15:44:49.528+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 build api
+--- stdout ---
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [api internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 585B 0.3s done
+#1 DONE 0.5s
+
+#2 [api internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.0s
+
+#3 [api internal] load .dockerignore
+#3 transferring context: 309B done
+#3 DONE 0.0s
+
+#4 [api internal] load build context
+#4 DONE 0.0s
+
+#5 [api 1/7] FROM docker.io/library/python:3.11-slim
+#5 DONE 0.0s
+
+#4 [api internal] load build context
+#4 transferring context: 349B done
+#4 DONE 0.0s
+
+#6 [api 2/7] WORKDIR /app
+#6 CACHED
+
+#7 [api 3/7] COPY requirements.txt ./
+#7 CACHED
+
+#8 [api 4/7] RUN python -m pip install --no-cache-dir --only-binary=:all: -r requirements.txt
+#8 CACHED
+
+#9 [api 5/7] COPY app ./app
+#9 CACHED
+
+#10 [api 6/7] COPY src ./src
+#10 CACHED
+
+#11 [api 7/7] COPY models/model.pkl ./models/model.pkl
+#11 CACHED
+
+#12 [api] exporting to image
+#12 exporting layers done
+#12 writing image sha256:bd21061ed2df86c64643a8670c4151f5f44e123d003ae4fa8b2e19b2d6e9d0c7 0.1s done
+#12 naming to docker.io/library/ml-api:practice6 0.0s done
+#12 DONE 0.3s
+
+#13 [api] resolving provenance for metadata file
+#13 DONE 0.3s
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=9.672s ---
+
+=== 047 p6.build_client ===
+Started: 2026-09-29T15:44:59.204+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 build client
+--- stdout ---
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [client internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 285B done
+#1 DONE 0.2s
+
+#2 [client internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.0s
+
+#3 [client internal] load .dockerignore
+#3 transferring context: 72B done
+#3 DONE 0.1s
+
+#4 [client 1/5] FROM docker.io/library/python:3.11-slim
+#4 DONE 0.0s
+
+#5 [client internal] load build context
+#5 transferring context: 3.45kB 0.0s done
+#5 DONE 0.2s
+
+#6 [client 2/5] WORKDIR /app
+#6 CACHED
+
+#7 [client 3/5] COPY requirements.txt ./
+#7 DONE 0.3s
+
+#8 [client 4/5] RUN python -m pip install --no-cache-dir --only-binary=:all: -r requirements.txt
+#8 27.48 Collecting requests==2.32.3 (from -r requirements.txt (line 1))
+#8 42.56   WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out. (read timeout=15)")': /packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl.metadata
+#8 43.19   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#8 43.42 Collecting certifi==2025.11.12 (from -r requirements.txt (line 2))
+#8 43.49   Downloading certifi-2025.11.12-py3-none-any.whl.metadata (2.5 kB)
+#8 53.55 Collecting charset-normalizer==3.4.0 (from -r requirements.txt (line 3))
+#8 53.61   Downloading charset_normalizer-3.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (34 kB)
+#8 53.78 Collecting idna==3.10 (from -r requirements.txt (line 4))
+#8 53.86   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+#8 53.99 Collecting urllib3==2.5.0 (from -r requirements.txt (line 5))
+#8 54.04   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+#8 54.17 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#8 54.20    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 1.8 MB/s eta 0:00:00
+#8 54.30 Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+#8 54.69    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.4/159.4 kB 449.0 kB/s eta 0:00:00
+#8 54.79 Downloading charset_normalizer-3.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (142 kB)
+#8 55.11    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.6/142.6 kB 447.6 kB/s eta 0:00:00
+#8 55.16 Downloading idna-3.10-py3-none-any.whl (70 kB)
+#8 55.22    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 1.1 MB/s eta 0:00:00
+#8 55.27 Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+#8 55.29    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 12.4 MB/s eta 0:00:00
+#8 56.19 Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+#8 80.98 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 80.98 Successfully installed certifi-2025.11.12 charset-normalizer-3.4.0 idna-3.10 requests-2.32.3 urllib3-2.5.0
+#8 81.69 
+#8 81.69 [notice] A new release of pip is available: 24.0 -> 26.2.1
+#8 81.69 [notice] To update, run: pip install --upgrade pip
+#8 DONE 83.5s
+
+#9 [client 5/5] COPY client.py ./
+#9 DONE 1.3s
+
+#10 [client] exporting to image
+#10 exporting layers
+#10 exporting layers 2.0s done
+#10 writing image sha256:a7a524c67c57a7031486704f8066ab1882980b99a56a2c3fe5b4d399d2ac9414
+#10 writing image sha256:a7a524c67c57a7031486704f8066ab1882980b99a56a2c3fe5b4d399d2ac9414 0.1s done
+#10 naming to docker.io/library/ml-client:practice6
+#10 naming to docker.io/library/ml-client:practice6 0.1s done
+#10 DONE 2.8s
+
+#11 [client] resolving provenance for metadata file
+#11 DONE 5.5s
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=97.484s ---
+
+=== 048 p6.up ===
+Started: 2026-09-29T15:46:36.755+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 up --no-build -d
+--- stdout ---
+
+--- stderr ---
+ Network course-labs-20260929_app_net  Creating
+ Network course-labs-20260929_app_net  Created
+ Container course-labs-20260929-api-1  Creating
+ Container course-labs-20260929-api-1  Created
+ Container course-labs-20260929-client-1  Creating
+ Container course-labs-20260929-client-1  Created
+ Container course-labs-20260929-api-1  Starting
+ Container course-labs-20260929-api-1  Started
+ Container course-labs-20260929-api-1  Waiting
+ Container course-labs-20260929-api-1  Healthy
+ Container course-labs-20260929-client-1  Starting
+ Container course-labs-20260929-client-1  Started
+
+--- exit=0; timeout=False; interrupted=False; elapsed=108.672s ---
+
+=== 049 p6.api_id ===
+Started: 2026-09-29T15:48:25.465+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 ps -a -q api
+--- stdout ---
+3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=1.015s ---
+
+=== 050 p6.client_id ===
+Started: 2026-09-29T15:48:26.486+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 ps -a -q client
+--- stdout ---
+716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.391s ---
+
+=== p6.container_ids ===
+{
+  "sequence": 51,
+  "label": "p6.container_ids",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:48:26.883+00:00",
+  "status": "passed",
+  "api": "3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428",
+  "client": "716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552",
+  "finished_at": "2026-09-29T15:48:26.886+00:00"
+}
+
+=== 052 p6.api_state.1 ===
+Started: 2026-09-29T15:48:26.889+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":18731,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:46:55.58694551Z","FinishedAt":"0001-01-01T00:00:00Z","Health":{"Status":"healthy","FailingStreak":0,"Log":[{"Start":"2026-09-29T15:47:03.416460286Z","End":"2026-09-29T15:47:12.704824066Z","ExitCode":1,"Output":"Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1348, in do_open\n    h.request(req.get_method(), req.selector, req.data, headers,\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1351, in request\n    self._send_request(method, url, body, headers, encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1397, in _send_request\n    self.endheaders(body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1346, in endheaders\n    self._send_output(message_body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1106, in _send_output\n    self.send(msg)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1044, in send\n    self.connect()\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1010, in connect\n    self.sock = self._create_connection(\n                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/socket.py\", line 863, in create_connection\n    raise exceptions[0]\n  File \"/usr/local/lib/python3.11/socket.py\", line 848, in create_connection\n    sock.connect(sa)\nConnectionRefusedError: [Errno 111] Connection refused\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\n"},{"Start":"2026-09-29T15:47:22.705677243Z","End":"2026-09-29T15:47:30.425383966Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:47:40.426172513Z","End":"2026-09-29T15:47:54.276658145Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:04.276161939Z","End":"2026-09-29T15:48:10.227570242Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:20.228691608Z","End":"2026-09-29T15:48:22.679235779Z","ExitCode":0,"Output":""}]}}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.218s ---
+
+=== 053 p6.client_state.1 ===
+Started: 2026-09-29T15:48:27.125+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":19262,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:48:23.30282485Z","FinishedAt":"0001-01-01T00:00:00Z"}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.078s ---
+
+=== 054 p6.api_state.2 ===
+Started: 2026-09-29T15:48:29.213+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":18731,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:46:55.58694551Z","FinishedAt":"0001-01-01T00:00:00Z","Health":{"Status":"healthy","FailingStreak":0,"Log":[{"Start":"2026-09-29T15:47:03.416460286Z","End":"2026-09-29T15:47:12.704824066Z","ExitCode":1,"Output":"Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1348, in do_open\n    h.request(req.get_method(), req.selector, req.data, headers,\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1351, in request\n    self._send_request(method, url, body, headers, encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1397, in _send_request\n    self.endheaders(body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1346, in endheaders\n    self._send_output(message_body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1106, in _send_output\n    self.send(msg)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1044, in send\n    self.connect()\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1010, in connect\n    self.sock = self._create_connection(\n                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/socket.py\", line 863, in create_connection\n    raise exceptions[0]\n  File \"/usr/local/lib/python3.11/socket.py\", line 848, in create_connection\n    sock.connect(sa)\nConnectionRefusedError: [Errno 111] Connection refused\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\n"},{"Start":"2026-09-29T15:47:22.705677243Z","End":"2026-09-29T15:47:30.425383966Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:47:40.426172513Z","End":"2026-09-29T15:47:54.276658145Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:04.276161939Z","End":"2026-09-29T15:48:10.227570242Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:20.228691608Z","End":"2026-09-29T15:48:22.679235779Z","ExitCode":0,"Output":""}]}}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.797s ---
+
+=== 055 p6.client_state.2 ===
+Started: 2026-09-29T15:48:30.385+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":19262,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:48:23.30282485Z","FinishedAt":"0001-01-01T00:00:00Z"}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=1.015s ---
+
+=== 056 p6.api_state.3 ===
+Started: 2026-09-29T15:48:33.584+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":18731,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:46:55.58694551Z","FinishedAt":"0001-01-01T00:00:00Z","Health":{"Status":"healthy","FailingStreak":0,"Log":[{"Start":"2026-09-29T15:47:03.416460286Z","End":"2026-09-29T15:47:12.704824066Z","ExitCode":1,"Output":"Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1348, in do_open\n    h.request(req.get_method(), req.selector, req.data, headers,\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1351, in request\n    self._send_request(method, url, body, headers, encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1397, in _send_request\n    self.endheaders(body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1346, in endheaders\n    self._send_output(message_body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1106, in _send_output\n    self.send(msg)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1044, in send\n    self.connect()\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1010, in connect\n    self.sock = self._create_connection(\n                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/socket.py\", line 863, in create_connection\n    raise exceptions[0]\n  File \"/usr/local/lib/python3.11/socket.py\", line 848, in create_connection\n    sock.connect(sa)\nConnectionRefusedError: [Errno 111] Connection refused\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\n"},{"Start":"2026-09-29T15:47:22.705677243Z","End":"2026-09-29T15:47:30.425383966Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:47:40.426172513Z","End":"2026-09-29T15:47:54.276658145Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:04.276161939Z","End":"2026-09-29T15:48:10.227570242Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:20.228691608Z","End":"2026-09-29T15:48:22.679235779Z","ExitCode":0,"Output":""}]}}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.562s ---
+
+=== 057 p6.client_state.3 ===
+Started: 2026-09-29T15:48:34.770+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":19262,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:48:23.30282485Z","FinishedAt":"0001-01-01T00:00:00Z"}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.172s ---
+
+=== 058 p6.api_state.4 ===
+Started: 2026-09-29T15:48:36.965+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":18731,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:46:55.58694551Z","FinishedAt":"0001-01-01T00:00:00Z","Health":{"Status":"healthy","FailingStreak":0,"Log":[{"Start":"2026-09-29T15:47:03.416460286Z","End":"2026-09-29T15:47:12.704824066Z","ExitCode":1,"Output":"Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1348, in do_open\n    h.request(req.get_method(), req.selector, req.data, headers,\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1351, in request\n    self._send_request(method, url, body, headers, encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1397, in _send_request\n    self.endheaders(body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1346, in endheaders\n    self._send_output(message_body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1106, in _send_output\n    self.send(msg)\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1044, in send\n    self.connect()\n  File \"/usr/local/lib/python3.11/http/client.py\", line 1010, in connect\n    self.sock = self._create_connection(\n                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/socket.py\", line 863, in create_connection\n    raise exceptions[0]\n  File \"/usr/local/lib/python3.11/socket.py\", line 848, in create_connection\n    sock.connect(sa)\nConnectionRefusedError: [Errno 111] Connection refused\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\n"},{"Start":"2026-09-29T15:47:22.705677243Z","End":"2026-09-29T15:47:30.425383966Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:47:40.426172513Z","End":"2026-09-29T15:47:54.276658145Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:04.276161939Z","End":"2026-09-29T15:48:10.227570242Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:20.228691608Z","End":"2026-09-29T15:48:22.679235779Z","ExitCode":0,"Output":""}]}}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.125s ---
+
+=== 059 p6.client_state.4 ===
+Started: 2026-09-29T15:48:37.120+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":19262,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:48:23.30282485Z","FinishedAt":"0001-01-01T00:00:00Z"}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.094s ---
+
+=== 060 p6.api_state.5 ===
+Started: 2026-09-29T15:48:39.235+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":18731,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:46:55.58694551Z","FinishedAt":"0001-01-01T00:00:00Z","Health":{"Status":"healthy","FailingStreak":1,"Log":[{"Start":"2026-09-29T15:47:22.705677243Z","End":"2026-09-29T15:47:30.425383966Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:47:40.426172513Z","End":"2026-09-29T15:47:54.276658145Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:04.276161939Z","End":"2026-09-29T15:48:10.227570242Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:20.228691608Z","End":"2026-09-29T15:48:22.679235779Z","ExitCode":0,"Output":""},{"Start":"2026-09-29T15:48:32.677707003Z","End":"2026-09-29T15:48:38.296658699Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"}]}}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.141s ---
+
+=== 061 p6.client_state.5 ===
+Started: 2026-09-29T15:48:39.395+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":19262,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:48:23.30282485Z","FinishedAt":"0001-01-01T00:00:00Z"}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.235s ---
+
+=== 062 p6.api_state.6 ===
+Started: 2026-09-29T15:48:41.639+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":18731,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:46:55.58694551Z","FinishedAt":"0001-01-01T00:00:00Z","Health":{"Status":"healthy","FailingStreak":1,"Log":[{"Start":"2026-09-29T15:47:22.705677243Z","End":"2026-09-29T15:47:30.425383966Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:47:40.426172513Z","End":"2026-09-29T15:47:54.276658145Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:04.276161939Z","End":"2026-09-29T15:48:10.227570242Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:20.228691608Z","End":"2026-09-29T15:48:22.679235779Z","ExitCode":0,"Output":""},{"Start":"2026-09-29T15:48:32.677707003Z","End":"2026-09-29T15:48:38.296658699Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"}]}}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.157s ---
+
+=== 063 p6.client_state.6 ===
+Started: 2026-09-29T15:48:41.838+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":19262,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:48:23.30282485Z","FinishedAt":"0001-01-01T00:00:00Z"}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.172s ---
+
+=== 064 p6.api_state.7 ===
+Started: 2026-09-29T15:48:44.021+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428
+--- stdout ---
+{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":18731,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:46:55.58694551Z","FinishedAt":"0001-01-01T00:00:00Z","Health":{"Status":"healthy","FailingStreak":1,"Log":[{"Start":"2026-09-29T15:47:22.705677243Z","End":"2026-09-29T15:47:30.425383966Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:47:40.426172513Z","End":"2026-09-29T15:47:54.276658145Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:04.276161939Z","End":"2026-09-29T15:48:10.227570242Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"},{"Start":"2026-09-29T15:48:20.228691608Z","End":"2026-09-29T15:48:22.679235779Z","ExitCode":0,"Output":""},{"Start":"2026-09-29T15:48:32.677707003Z","End":"2026-09-29T15:48:38.296658699Z","ExitCode":-1,"Output":"Health check exceeded timeout (3s)"}]}}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.156s ---
+
+=== 065 p6.client_state.7 ===
+Started: 2026-09-29T15:48:44.196+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{json .State}}" 716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552
+--- stdout ---
+{"Status":"exited","Running":false,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":0,"ExitCode":0,"Error":"","StartedAt":"2026-09-29T15:48:23.30282485Z","FinishedAt":"2026-09-29T15:48:44.12496516Z"}
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=4.156s ---
+
+=== 066 p6.ps ===
+Started: 2026-09-29T15:48:48.371+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 ps -a
+--- stdout ---
+NAME                            IMAGE                 COMMAND                  SERVICE   CREATED         STATUS                        PORTS
+course-labs-20260929-api-1      ml-api:practice6      "python -m uvicorn a…"   api       2 minutes ago   Up About a minute (healthy)   127.0.0.1:8080->8000/tcp
+course-labs-20260929-client-1   ml-client:practice6   "python client.py"       client    2 minutes ago   Exited (0) 5 seconds ago      
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=1.703s ---
+
+=== 067 p6.api_logs ===
+Started: 2026-09-29T15:48:50.114+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 logs --no-color api
+--- stdout ---
+api-1  | INFO:     Started server process [1]
+api-1  | INFO:     Waiting for application startup.
+api-1  | INFO:     Application startup complete.
+api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+api-1  | INFO:     127.0.0.1:45878 - "GET /health HTTP/1.1" 200 OK
+api-1  | INFO:     172.28.0.3:52312 - "POST /predict HTTP/1.1" 200 OK
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.734s ---
+
+=== 068 p6.client_logs ===
+Started: 2026-09-29T15:48:50.889+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 logs --no-color client
+--- stdout ---
+client-1  | API_URL: http://api:8000
+client-1  | RESULT_PATH: /results/prediction.json
+client-1  | Предсказание сохранено в /results/prediction.json: класс 0 (setosa)
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.468s ---
+
+=== p6.completed ===
+{
+  "sequence": 69,
+  "label": "p6.completed",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:48:51.362+00:00",
+  "status": "passed",
+  "api_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 18731,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-09-29T15:46:55.58694551Z",
+    "FinishedAt": "0001-01-01T00:00:00Z",
+    "Health": {
+      "Status": "healthy",
+      "FailingStreak": 1,
+      "Log": [
+        {
+          "Start": "2026-09-29T15:47:22.705677243Z",
+          "End": "2026-09-29T15:47:30.425383966Z",
+          "ExitCode": -1,
+          "Output": "Health check exceeded timeout (3s)"
+        },
+        {
+          "Start": "2026-09-29T15:47:40.426172513Z",
+          "End": "2026-09-29T15:47:54.276658145Z",
+          "ExitCode": -1,
+          "Output": "Health check exceeded timeout (3s)"
+        },
+        {
+          "Start": "2026-09-29T15:48:04.276161939Z",
+          "End": "2026-09-29T15:48:10.227570242Z",
+          "ExitCode": -1,
+          "Output": "Health check exceeded timeout (3s)"
+        },
+        {
+          "Start": "2026-09-29T15:48:20.228691608Z",
+          "End": "2026-09-29T15:48:22.679235779Z",
+          "ExitCode": 0,
+          "Output": ""
+        },
+        {
+          "Start": "2026-09-29T15:48:32.677707003Z",
+          "End": "2026-09-29T15:48:38.296658699Z",
+          "ExitCode": -1,
+          "Output": "Health check exceeded timeout (3s)"
+        }
+      ]
+    }
+  },
+  "client_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-09-29T15:48:23.30282485Z",
+    "FinishedAt": "2026-09-29T15:48:44.12496516Z"
+  },
+  "finished_at": "2026-09-29T15:48:51.379+00:00"
+}
+
+=== 070 p6.network ===
+Started: 2026-09-29T15:48:51.389+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" network inspect --format {{.Driver}} course-labs-20260929_app_net
+--- stdout ---
+bridge
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.110s ---
+
+=== p6.bridge_network ===
+{
+  "sequence": 71,
+  "label": "p6.bridge_network",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:48:51.522+00:00",
+  "status": "passed",
+  "driver": "bridge",
+  "finished_at": "2026-09-29T15:48:51.535+00:00"
+}
+
+=== p6.host.health ===
+{
+  "sequence": 72,
+  "label": "p6.host.health",
+  "kind": "http",
+  "started_at": "2026-09-29T15:48:51.545+00:00",
+  "status": "passed",
+  "method": "GET",
+  "url": "http://127.0.0.1:8080/health",
+  "request_json": null,
+  "expected_json": {
+    "status": "ok",
+    "model_ready": true
+  },
+  "http_status": 200,
+  "response_text": "{\"status\":\"ok\",\"model_ready\":true}",
+  "response_json": {
+    "status": "ok",
+    "model_ready": true
+  },
+  "finished_at": "2026-09-29T15:48:51.783+00:00"
+}
+
+=== p6.host.predict ===
+{
+  "sequence": 73,
+  "label": "p6.host.predict",
+  "kind": "http",
+  "started_at": "2026-09-29T15:48:51.811+00:00",
+  "status": "passed",
+  "method": "POST",
+  "url": "http://127.0.0.1:8080/predict",
+  "request_json": {
+    "sepal_length": 5.1,
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+  },
+  "expected_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "http_status": 200,
+  "response_text": "{\"prediction\":0,\"class_name\":\"setosa\"}",
+  "response_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "finished_at": "2026-09-29T15:48:51.845+00:00"
+}
+
+=== p6.first_result.exists ===
+{
+  "sequence": 74,
+  "label": "p6.first_result.exists",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:48:51.911+00:00",
+  "status": "passed",
+  "path": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\results\\prediction.json",
+  "finished_at": "2026-09-29T15:48:51.939+00:00"
+}
+
+=== p6.first_result ===
+{
+  "sequence": 75,
+  "label": "p6.first_result",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:48:52.033+00:00",
+  "status": "passed",
+  "path": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\results\\prediction.json",
+  "response_text": "{\n  \"prediction\": 0,\n  \"class_name\": \"setosa\"\n}\n",
+  "response_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "size_bytes": 48,
+  "modified_at_ns": 1790696923646605900,
+  "sha256": "8232037d2c7344416c5abbdf6d3a2f889201d8832f86c19af3ee7462945a9ec8",
+  "finished_at": "2026-09-29T15:48:52.038+00:00"
+}
+
+=== p6.first_result.fresh ===
+{
+  "sequence": 76,
+  "label": "p6.first_result.fresh",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:48:52.052+00:00",
+  "status": "passed",
+  "modified_at_ns": 1790696923646605900,
+  "started_at_ns": 1790696796755573300,
+  "finished_at": "2026-09-29T15:48:52.061+00:00"
+}
+
+=== 077 p6.api_limits ===
+Started: 2026-09-29T15:48:52.066+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{.HostConfig.NanoCpus}} {{.HostConfig.Memory}}" 3798b5b60371ba4c00679d3b40168ddcbd6bb11cf3d9ed5c2ca62b9b223cb428
+--- stdout ---
+1000000000 536870912
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.140s ---
+
+=== p6.api_limits_contract ===
+{
+  "sequence": 78,
+  "label": "p6.api_limits_contract",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:48:52.230+00:00",
+  "status": "passed",
+  "actual": "1000000000 536870912",
+  "finished_at": "2026-09-29T15:48:52.244+00:00"
+}
+
+=== 079 p6.client_limits ===
+Started: 2026-09-29T15:48:52.272+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{.HostConfig.NanoCpus}} {{.HostConfig.Memory}}" 716748933cfd3baf69c9d0281ae3fb6beda8e7254721085293c314be52bdc552
+--- stdout ---
+250000000 134217728
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.063s ---
+
+=== p6.client_limits_contract ===
+{
+  "sequence": 80,
+  "label": "p6.client_limits_contract",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:48:52.361+00:00",
+  "status": "passed",
+  "actual": "250000000 134217728",
+  "finished_at": "2026-09-29T15:48:52.367+00:00"
+}
+
+=== 081 p6.wrong_url ===
+Started: 2026-09-29T15:48:52.383+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 run --rm --no-deps -e API_URL=http://localhost:8000 client
+--- stdout ---
+API_URL: http://localhost:8000
+RESULT_PATH: /results/prediction.json
+
+--- stderr ---
+Не удалось получить или сохранить предсказание: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /predict (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7a1c804ae5d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+--- exit=1; timeout=False; interrupted=False; elapsed=27.781s ---
+
+=== p6.result_after_failure.exists ===
+{
+  "sequence": 82,
+  "label": "p6.result_after_failure.exists",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:20.192+00:00",
+  "status": "passed",
+  "path": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\results\\prediction.json",
+  "finished_at": "2026-09-29T15:49:20.209+00:00"
+}
+
+=== p6.result_after_failure ===
+{
+  "sequence": 83,
+  "label": "p6.result_after_failure",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:20.227+00:00",
+  "status": "passed",
+  "path": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\results\\prediction.json",
+  "response_text": "{\n  \"prediction\": 0,\n  \"class_name\": \"setosa\"\n}\n",
+  "response_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "size_bytes": 48,
+  "modified_at_ns": 1790696923646605900,
+  "sha256": "8232037d2c7344416c5abbdf6d3a2f889201d8832f86c19af3ee7462945a9ec8",
+  "finished_at": "2026-09-29T15:49:20.239+00:00"
+}
+
+=== p6.failure_preserves_result ===
+{
+  "sequence": 84,
+  "label": "p6.failure_preserves_result",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:20.321+00:00",
+  "status": "passed",
+  "content_unchanged": true,
+  "timestamp_unchanged": true,
+  "finished_at": "2026-09-29T15:49:20.343+00:00"
+}
+
+=== 085 p6.correct_url ===
+Started: 2026-09-29T15:49:20.371+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 run --rm --no-deps client
+--- stdout ---
+API_URL: http://api:8000
+RESULT_PATH: /results/prediction.json
+Предсказание сохранено в /results/prediction.json: класс 0 (setosa)
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=17.938s ---
+
+=== p6.corrected_result.exists ===
+{
+  "sequence": 86,
+  "label": "p6.corrected_result.exists",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:38.353+00:00",
+  "status": "passed",
+  "path": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\results\\prediction.json",
+  "finished_at": "2026-09-29T15:49:38.369+00:00"
+}
+
+=== p6.corrected_result ===
+{
+  "sequence": 87,
+  "label": "p6.corrected_result",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:38.422+00:00",
+  "status": "passed",
+  "path": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\results\\prediction.json",
+  "response_text": "{\n  \"prediction\": 0,\n  \"class_name\": \"setosa\"\n}\n",
+  "response_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "size_bytes": 48,
+  "modified_at_ns": 1790696977109570700,
+  "sha256": "8232037d2c7344416c5abbdf6d3a2f889201d8832f86c19af3ee7462945a9ec8",
+  "finished_at": "2026-09-29T15:49:38.454+00:00"
+}
+
+=== p6.corrected_result.fresh ===
+{
+  "sequence": 88,
+  "label": "p6.corrected_result.fresh",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:38.463+00:00",
+  "status": "passed",
+  "modified_at_ns": 1790696977109570700,
+  "started_at_ns": 1790696960371696400,
+  "finished_at": "2026-09-29T15:49:38.472+00:00"
+}
+
+=== 089 p6.down.containers ===
+Started: 2026-09-29T15:49:38.516+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" ps -a --filter label=com.docker.compose.project=course-labs-20260929 --format {{.ID}}
+--- stdout ---
+716748933cfd
+3798b5b60371
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.312s ---
+
+=== 090 p6.down.ownership.716748933cfd ===
+Started: 2026-09-29T15:49:38.870+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{index .Config.Labels \"com.docker.compose.project.working_dir\"}}" 716748933cfd
+--- stdout ---
+C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.328s ---
+
+=== p6.down.owned.716748933cfd ===
+{
+  "sequence": 91,
+  "label": "p6.down.owned.716748933cfd",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:39.263+00:00",
+  "status": "passed",
+  "working_dir": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция",
+  "finished_at": "2026-09-29T15:49:39.276+00:00"
+}
+
+=== 092 p6.down.ownership.3798b5b60371 ===
+Started: 2026-09-29T15:49:39.297+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" inspect --format "{{index .Config.Labels \"com.docker.compose.project.working_dir\"}}" 3798b5b60371
+--- stdout ---
+C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.110s ---
+
+=== p6.down.owned.3798b5b60371 ===
+{
+  "sequence": 93,
+  "label": "p6.down.owned.3798b5b60371",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:39.436+00:00",
+  "status": "passed",
+  "working_dir": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция",
+  "finished_at": "2026-09-29T15:49:39.445+00:00"
+}
+
+=== 094 p6.down.final_logs ===
+Started: 2026-09-29T15:49:39.459+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 logs --no-color
+--- stdout ---
+api-1     | INFO:     Started server process [1]
+api-1     | INFO:     Waiting for application startup.
+api-1     | INFO:     Application startup complete.
+client-1  | API_URL: http://api:8000
+api-1     | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+client-1  | RESULT_PATH: /results/prediction.json
+client-1  | Предсказание сохранено в /results/prediction.json: класс 0 (setosa)
+api-1     | INFO:     127.0.0.1:45878 - "GET /health HTTP/1.1" 200 OK
+api-1     | INFO:     172.28.0.3:52312 - "POST /predict HTTP/1.1" 200 OK
+api-1     | INFO:     127.0.0.1:53910 - "GET /health HTTP/1.1" 200 OK
+api-1     | INFO:     172.28.0.1:38152 - "GET /health HTTP/1.1" 200 OK
+api-1     | INFO:     172.28.0.1:38168 - "POST /predict HTTP/1.1" 200 OK
+api-1     | INFO:     127.0.0.1:42298 - "GET /health HTTP/1.1" 200 OK
+api-1     | INFO:     127.0.0.1:42456 - "GET /health HTTP/1.1" 200 OK
+api-1     | INFO:     172.28.0.3:52080 - "POST /predict HTTP/1.1" 200 OK
+api-1     | INFO:     127.0.0.1:60248 - "GET /health HTTP/1.1" 200 OK
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=2.234s ---
+
+=== 095 p6.down.command ===
+Started: 2026-09-29T15:49:41.753+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose --project-directory "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция" -f "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\compose.yaml" -p course-labs-20260929 --parallel 1 down --timeout 10
+--- stdout ---
+
+--- stderr ---
+ Container course-labs-20260929-client-1  Stopping
+ Container course-labs-20260929-client-1  Stopped
+ Container course-labs-20260929-client-1  Removing
+ Container course-labs-20260929-client-1  Removed
+ Container course-labs-20260929-api-1  Stopping
+ Container course-labs-20260929-api-1  Stopped
+ Container course-labs-20260929-api-1  Removing
+ Container course-labs-20260929-api-1  Removed
+ Network course-labs-20260929_app_net  Removing
+ Network course-labs-20260929_app_net  Removed
+
+--- exit=0; timeout=False; interrupted=False; elapsed=4.875s ---
+
+=== 096 p6.down.remaining_containers ===
+Started: 2026-09-29T15:49:46.659+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" ps -a --filter label=com.docker.compose.project=course-labs-20260929 --format {{.ID}}
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.141s ---
+
+=== 097 p6.down.remaining_networks ===
+Started: 2026-09-29T15:49:46.848+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" network ls --filter label=com.docker.compose.project=course-labs-20260929 --format {{.ID}}
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.125s ---
+
+=== 098 p6.down.final_containers ===
+Started: 2026-09-29T15:49:47.011+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" ps -a --filter label=com.docker.compose.project=course-labs-20260929 --format {{.ID}}
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.703s ---
+
+=== cleanup.project_containers_absent ===
+{
+  "sequence": 99,
+  "label": "cleanup.project_containers_absent",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:47.750+00:00",
+  "status": "passed",
+  "finished_at": "2026-09-29T15:49:47.769+00:00"
+}
+
+=== 100 p6.down.final_networks ===
+Started: 2026-09-29T15:49:47.787+00:00
+CWD: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция
+Command: "C:\Program Files\Docker\Docker\resources\bin\docker.exe" network ls --filter label=com.docker.compose.project=course-labs-20260929 --format {{.ID}}
+--- stdout ---
+
+--- stderr ---
+
+--- exit=0; timeout=False; interrupted=False; elapsed=0.203s ---
+
+=== cleanup.project_networks_absent ===
+{
+  "sequence": 101,
+  "label": "cleanup.project_networks_absent",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:48.012+00:00",
+  "status": "passed",
+  "finished_at": "2026-09-29T15:49:48.028+00:00"
+}
+
+=== p6.result_after_down.exists ===
+{
+  "sequence": 102,
+  "label": "p6.result_after_down.exists",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:48.040+00:00",
+  "status": "passed",
+  "path": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\results\\prediction.json",
+  "finished_at": "2026-09-29T15:49:48.048+00:00"
+}
+
+=== p6.result_after_down ===
+{
+  "sequence": 103,
+  "label": "p6.result_after_down",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:48.062+00:00",
+  "status": "passed",
+  "path": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\results\\prediction.json",
+  "response_text": "{\n  \"prediction\": 0,\n  \"class_name\": \"setosa\"\n}\n",
+  "response_json": {
+    "prediction": 0,
+    "class_name": "setosa"
+  },
+  "size_bytes": 48,
+  "modified_at_ns": 1790696977109570700,
+  "sha256": "8232037d2c7344416c5abbdf6d3a2f889201d8832f86c19af3ee7462945a9ec8",
+  "finished_at": "2026-09-29T15:49:48.070+00:00"
+}
+
+=== p6.down_preserves_result ===
+{
+  "sequence": 104,
+  "label": "p6.down_preserves_result",
+  "kind": "assertion",
+  "started_at": "2026-09-29T15:49:48.078+00:00",
+  "status": "passed",
+  "finished_at": "2026-09-29T15:49:48.084+00:00"
+}

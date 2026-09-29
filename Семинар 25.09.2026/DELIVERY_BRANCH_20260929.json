@@ -1,0 +1,142 @@
+{
+  "conclusion": "success",
+  "created_at": "2026-09-29T16:17:00Z",
+  "event": "workflow_dispatch",
+  "head_branch": "feature/delivery-dry-run",
+  "head_sha": "fdc377f0d347f3ee1232871f07787daa4ad8b0e7",
+  "html_url": "https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596569372",
+  "id": 36596569372,
+  "name": "Delivery Dry Run",
+  "run_attempt": 1,
+  "status": "completed",
+  "updated_at": "2026-09-29T16:17:18Z",
+  "jobs": [
+    {
+      "completed_at": "2026-09-29T16:17:07Z",
+      "conclusion": "success",
+      "id": 109502901253,
+      "name": "build",
+      "started_at": "2026-09-29T16:17:04Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-09-29T16:17:05Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-09-29T16:17:05Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:17:06Z",
+          "conclusion": "success",
+          "name": "Set image tag",
+          "number": 2,
+          "started_at": "2026-09-29T16:17:05Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:17:06Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 3,
+          "started_at": "2026-09-29T16:17:06Z",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "completed_at": "2026-09-29T16:17:13Z",
+      "conclusion": "success",
+      "id": 109502943812,
+      "name": "smoke_api_tests_stub",
+      "started_at": "2026-09-29T16:17:10Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-09-29T16:17:11Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-09-29T16:17:11Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:17:11Z",
+          "conclusion": "success",
+          "name": "Print proposed API checks",
+          "number": 2,
+          "started_at": "2026-09-29T16:17:11Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:17:11Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 3,
+          "started_at": "2026-09-29T16:17:11Z",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "completed_at": "2026-09-29T16:17:17Z",
+      "conclusion": "success",
+      "id": 109502943862,
+      "name": "docs_checks",
+      "started_at": "2026-09-29T16:17:11Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-09-29T16:17:13Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-09-29T16:17:12Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:17:14Z",
+          "conclusion": "success",
+          "name": "Check out repository",
+          "number": 2,
+          "started_at": "2026-09-29T16:17:13Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:17:14Z",
+          "conclusion": "success",
+          "name": "Check README exists",
+          "number": 3,
+          "started_at": "2026-09-29T16:17:14Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:17:14Z",
+          "conclusion": "success",
+          "name": "Post Check out repository",
+          "number": 6,
+          "started_at": "2026-09-29T16:17:14Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-09-29T16:17:14Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 7,
+          "started_at": "2026-09-29T16:17:14Z",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "completed_at": "2026-09-29T16:17:17Z",
+      "conclusion": "skipped",
+      "id": 109503009898,
+      "name": "deploy_dry_run",
+      "started_at": "2026-09-29T16:17:18Z",
+      "status": "completed",
+      "steps": []
+    }
+  ]
+}

@@ -1,121 +1,56 @@
-# Черновики публикации практик 2–4
+# Публикация практик 2–4 в GitHub
 
-Цель: [development-and-integration-labs](https://github.com/Kirill-Erofeev/development-and-integration-labs).
-PR ещё не созданы; этот файл содержит готовые тексты и план будущих действий.
-Push, комментарии, merge и клонирование при подготовке документа не выполнялись.
+Обновление: 29.09.2026. Репозиторий — [development-and-integration-labs](https://github.com/Kirill-Erofeev/development-and-integration-labs).
+Первые три PR последовательно слиты в `main` обычными merge commits.
+Номера, ссылки, SHA исходных веток и merge commits взяты из сохранённых
+подтверждений GitHub.
+Публикация учебных CSV/ZIP и создание новых копий при проверках явно разрешены
+пользователем в текущем диалоге. Дополнительного ожидания разрешения нет.
 
-## Последовательность
+## Подтверждённые PR практик 2–4
 
-Локальная `main` — `291ceb6` (документация stdout/stderr); последнее известное
-локально состояние `origin/main` — `0c60448`. Это не новая проверка GitHub.
-Ветки зависят последовательно:
-`feature/predict-output-format` → `feature/model-api` → `feature/api-tests`.
-Каждый PR направляется в `main`; следующий создаётся после merge предыдущего.
-Использовать merge commits, сохраняющие историю. Force-push не применять.
+| PR | Изменение | Ветка → base | Исходный SHA ветки | Состояние | Merge commit |
+| --- | --- | --- | --- | --- | --- |
+| [PR #1](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/1) | feat(cli): добавить выбор формата вывода предсказаний | `feature/predict-output-format` → `main` | `1c6750e9bea04ca417f4c692e599ab92c80d21c4` | Слит | [`63c2cc3`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/63c2cc31e86204ef59613b03bff72ce1b8eb7b06) |
+| [PR #2](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/2) | feat(api): добавить HTTP-интерфейс модели Iris | `feature/model-api` → `main` | `954b603b1a1872c9913c3e1d0c7ca226fb97fbb9` | Слит | [`96a4bae`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/96a4baefad0f9c4a204ee7caf689fb3344596ea0) |
+| [PR #3](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/3) | test(api): проверить HTTP-контракты и ошибки модели | `feature/api-tests` → `main` | `c5470cb6e090bfb4a1cd0909c9394de08face525` | Слит | [`dea7853`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/dea785300a237fd1da659c1c40530b8486b73768) |
 
-1. Получить адресное разрешение на публикацию учебного CSV, ZIP и соответствующих
-   версий в истории в указанном репозитории. Имеющееся разрешение на работу
-   с исходными файлами не распространяется на публикацию и новые копии.
-2. После разрешения проверить удалённое состояние и возможность обычного
-   обновления `origin/main` до локальной `main`; расхождение разрешить до push.
-3. Опубликовать `feature/predict-output-format`, создать первый PR в `main`,
-   проверить его и слить merge commit. Учебный комментарий ниже отправлять
-   только в рамках разрешённой публикации комментария.
-4. Опубликовать `feature/model-api`, создать второй PR в обновлённую `main`
-   и слить merge commit после проверки. Коммиты API: `eac6c81` (refactor),
-   `8787ada` (feat), `954b603` (docs).
-5. Опубликовать подготовленную `feature/api-tests` после второго merge,
-   создать третий PR в `main`, проверить и слить merge commit.
-6. Записать реальные PR-ссылки и итоговые commit ID. Проверку клонирования
-   выполнить отдельно после разрешения, указанного в конце документа.
+## Дополнительные PR по сохранённым данным
 
-## PR 1 — feature/predict-output-format → main
+| PR | Изменение | Ветка → base | Исходный SHA ветки | Состояние | Merge commit |
+| --- | --- | --- | --- | --- | --- |
+| [PR #4](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/4) | build(api): контейнеризировать сервис на Python 3.11 | `feature/api-container` → `main` | `6bf9916d0b552010bb248d0713d022412ddf0ca3` | Слит | [`d172469`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/d172469993f6e30b948b74aed6a5606accf9274c) |
+| [PR #5](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/5) | feat(compose): связать API и клиент через Docker Compose | `feature/compose-client` → `main` | `0d155ffe760abff5f0583a1cf915e5d1c515c443` | Слит | [`eb09789`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/eb0978942952983539a750744cebb462a4eb67ad) |
+| [PR #6](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/6) | ci(github): добавить проверки и сборку двух образов | `feature/github-ci` → `main` | `48f9f1f765801366989d03a265e75412342ce28e` | Слит | [`eb69020`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/eb69020bd7b6a02b7e9b925ee32656273723ca2a) |
+| [PR #7](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/7) | ci(delivery): добавить ручную имитацию доставки | `feature/delivery-dry-run` → `main` | `fdc377f0d347f3ee1232871f07787daa4ad8b0e7` | Слит | [`8145a82`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/8145a8252febca4b93b7580a40008f508aeb9e68) |
 
-Заголовок: `feat(cli): добавить выбор формата вывода предсказаний`.
+## Учебный саморазбор
 
-Готовое тело:
-```markdown
-CLI возвращал только JSON. Параметр --output-format json|text добавляет
-текстовый вывод: одна строка на объект. JSON остаётся форматом по умолчанию;
-поля и порядок результатов сохранены. Результат идёт в stdout, ошибки — в stderr.
-Неизвестный формат отклоняется до загрузки модели с кодом 2.
+Учебный разбор включён в тело [PR #1](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/1) как саморазбор выполненной работы.
+Это не отзыв другого участника и не отдельный опубликованный review-комментарий.
+Замечание относится к проверке неизменности исходного списка и вложенных словарей:
+до форматирования нужна независимая копия через `deepcopy`, после — сравнение.
+Исправление уже присутствовало в историческом коммите `007b270`.
 
-Проверка: первоначально 25 тестов; после двух проверок неизменности
-входа через deepcopy — 27. Исправление учебного review: 007b270.
-Реальный конфликт документации stdout/stderr разрешён merge 1c6750e.
+## Исторические результаты этапа 18.09.2026
 
-Совместимость: прежний вызов без параметра сохраняет JSON-вывод;
-выбор формата не меняет предсказания.
-```
+- Практика 2: сначала прошли 25 тестов, после дополнения проверки неизменности — 27.
+  Реальный конфликт README разрешён merge `1c6750e`; diff и PNG сохранены
+  в [практике 2](PRACTICE_2.md).
+- Практика 3: выполнены восемь сценариев настоящего HTTP-сервера; ответы и снимки
+  приведены в [практике 3](PRACTICE_3.md).
+- Практика 4: после выноса fixtures — **55 passed in 8.98s**;
+  описание проверки и исправления импорта находится в [практике 4](PRACTICE_4.md).
 
-## Учебный review-комментарий
+Эти результаты относятся к версиям первых практик и не заменяются результатами
+последующего полного набора. Сохранённые diff и изображения не изменены.
 
-Готовый текст; это разбор выполненной работы, без роли одногруппника:
-```markdown
-Учебный разбор уже выполненных изменений.
+## Подтверждённая проверка feature-клона
 
-Замечание: для json и text следовало отдельно проверить, что форматирование
-сохраняет входной список, вложенные словари и порядок результатов.
-Перед вызовом нужна независимая копия через deepcopy; после вызова —
-сравнение исходной структуры с этой копией.
+Подтверждён новый клон `feature/delivery-dry-run` на коммите `fdc377f`: Windows — **95 passed in 10.66s**, Linux — **95 passed in 18.70s**. Полный прогон Docker/Compose описан в [CHECKS.md семинара 25.09.2026](<../Семинар 25.09.2026/CHECKS.md>). Эти результаты относятся к feature-версии, а не к итоговой `main`. Итоговый клон `main` на коммите [`8145a82`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/8145a8252febca4b93b7580a40008f508aeb9e68) (`8145a8252febca4b93b7580a40008f508aeb9e68`) проверен: **95 passed in 15.75s** и **8 реальных HTTP-сценариев**. Протокол: [CHECKS.md семинара 25.09.2026](<../Семинар 25.09.2026/CHECKS.md>).
 
-Исправление уже внесено отдельным коммитом 007b270: добавлены обе проверки
-неизменности. Полный набор этапа завершился с 27 тестами вместо прежних 25.
-```
+## Подтверждённая проверка итоговой main
 
-## PR 2 — feature/model-api → main
-
-Создать после слияния PR 1.
-Заголовок: `feat(api): добавить HTTP-интерфейс модели Iris`.
-
-Готовое тело:
-```markdown
-Модель была доступна через локальный CLI. FastAPI добавляет /health,
-/predict, Swagger UI /docs и /openapi.json с отдельными Pydantic-схемами.
-Общий ModelService обслуживает CLI и API; lifespan загружает артефакт
-один раз на процесс. При импорте и запросах обучение не запускается.
-
-POST /predict принимает четыре положительных конечных числа и возвращает
-prediction и class_name. Строки, boolean, лишние/пропущенные поля,
-неверный JSON, NaN и Infinity отклоняются с 422; detail содержит loc/msg/type.
-Путь выбирается через аргумент, ML_MODEL_PATH либо стандартное значение.
-Отсутствующий артефакт вызывает понятную ошибку старта.
-
-Проверка: успешно выполнены 8 сценариев реально запущенного HTTP-сервиса.
-Совместимость: формат артефакта сохранён; CLI возвращает прежний список
-predicted_class/predicted_name, API — один объект prediction/class_name.
-API дополнительно требует положительности признаков.
-```
-
-## PR 3 — feature/api-tests → main
-
-Создать после слияния PR 2.
-Заголовок: `test(api): проверить HTTP-контракты и ошибки модели`.
-
-Готовое тело:
-```markdown
-Новые интерфейсы требуют воспроизводимой проверки успешных и ошибочных
-сценариев. pytest проверяет форматирование, артефакт, HTTP-схемы, ошибки,
-выбор модели, однократную загрузку, отсутствие обучения и OpenAPI.
-Общие fixtures отделены от проверок. TestClient работает без внешнего
-сервера; используются синтетические артефакты и отдельная проверка модели Iris.
-
-Проверка после выноса fixtures: 55 passed за 8.98 s. Также выполнены
-8 реальных HTTP-проверок, получены и визуально проверены 6 PNG.
-Клонирование итоговой main пока не проверено.
-
-Тесты закрепляют действующие интерфейсы и сохраняют проверки CLI.
-```
-
-## Проверка клонирования — пока не выполнена
-
-Нужно отдельное адресное разрешение на клонирование итоговой GitHub main
-и использование новых копий учебного CSV/ZIP при проверках.
-Цель: `C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\clean-clone`.
-После разрешения проверить отсутствие занятого каталога, клонировать итоговую
-main после трёх merge и записать commit ID. Существующие данные не заменять.
-Из корня клона выполнить `py -3.11 -m pytest`, запустить
-`py -3.11 -m uvicorn app.api:app --host 127.0.0.1 --port 8000` и проверить
-/health, корректный и ошибочный /predict, /docs и /openapi.json.
-Сохранить фактические результаты и коды завершения. Глобальный Python 3.11
-остаётся выбранным окружением; проверка из клона не означает чистую установку.
+Итоговый клон `main` на коммите [`8145a82`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/8145a8252febca4b93b7580a40008f508aeb9e68) (`8145a8252febca4b93b7580a40008f508aeb9e68`) проверен: **95 passed in 15.75s** и **8 реальных HTTP-сценариев**. Протокол: [CHECKS.md семинара 25.09.2026](<../Семинар 25.09.2026/CHECKS.md>).
+Команды выполняются из корня клона; для Windows используется глобальный
+`py -3.11`. Проверка клона не означает создание чистого Python-окружения.

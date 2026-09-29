@@ -48,11 +48,36 @@ Workflow использует фиктивное имя `registry.example.invali
 
 Чтобы реализовать доставку позже, понадобятся согласованная тестовая среда, публикация проверенного образа, защищённая настройка доступа к среде и registry, ожидание готовности API и обработка неуспешных smoke tests. Сценарий следует связать с успешным CI той же версии. Эти изменения требуют отдельной реализации; текущий workflow не подключается по SSH, не использует секреты, не выполняет Docker/curl и не изменяет сервисы.
 
+<!-- local-delivery-20260929:start -->
+## Локально выполненные проверки
+
+29.09.2026 исполнены все шесть Bash-блоков версии
+[`fdc377f`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/fdc377f0d347f3ee1232871f07787daa4ad8b0e7) с синтетическим контекстом GitHub;
+каждый завершился с кодом `0`. Подтверждены `test-fdc377f0d347f3ee1232871f07787daa4ad8b0e7`,
+наличие README, `ML_MODEL_PATH`, полный POST и команды отката к `previous-stable`.
+Docker и curl в delivery-блоках только печатаются.
+
+Полный фактический вывод: [DELIVERY_20260929.log](DELIVERY_20260929.log).
+В отдельной проверке тот же опубликованный клон прошёл **95 passed in 18.70s**
+на Linux и реальный Compose-сценарий; см. [CHECKS.md](CHECKS.md).
+Оркестрация, граф jobs и условия ветвей GitHub подтверждаются реальными workflow runs.
+<!-- local-delivery-20260929:end -->
+
 ## Доказательства и самопроверка
 
 После реального ручного запуска сохраните URL run, выбранную ветку и SHA, граф jobs, сформированный `image-tag`, логи предложенного обновления, двух HTTP-запросов и отката. Для проверки ограничения ветки можно отдельно запустить workflow на рабочей ветке и зафиксировать пропуск `deploy_dry_run`.
 
-**Ссылка на успешный delivery run на `main`:** ожидает фактического запуска. **Проверка пропуска deploy вне `main`:** ожидает фактического запуска. Успех dry-run подтверждает порядок jobs и формирование команд; обновление сервиса и HTTP-ответы этим не доказаны.
+**Delivery на main:** [Delivery main #36596835394](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596835394), SHA `8145a8252febca4b93b7580a40008f508aeb9e68`:
+`build`, `smoke_api_tests_stub`, `docs_checks`, `deploy_dry_run` — `success`.
+**Проверка другой ветки:** [Delivery feature #36596569372](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596569372), ref `feature/delivery-dry-run`,
+SHA `fdc377f0d347f3ee1232871f07787daa4ad8b0e7`: первые три jobs — `success`, `deploy_dry_run` — `skipped`.
+Реализация слита через [PR #7](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/7); в логе main подтверждены единый тег
+`test-8145a8252febca4b93b7580a40008f508aeb9e68`, путь модели и команды отката.
+
+[Снимок main](screenshots/practice8-delivery.png),
+[снимок feature](screenshots/practice8-branch.png),
+[лог main](DELIVERY_MAIN_20260929.log), [лог feature](DELIVERY_BRANCH_20260929.log).
+Метаданные jobs и проверка итогового клона — в [CHECKS.md](CHECKS.md). Успех dry-run подтверждает порядок jobs и формирование команд; обновление сервиса и HTTP-ответы этим не доказаны.
 
 | Вопрос | Краткое объяснение |
 | --- | --- |
@@ -66,8 +91,3 @@ Workflow использует фиктивное имя `registry.example.invali
 | Почему необходим предыдущий тег? | Он однозначно задаёт проверенную версию для восстановления после неудачного обновления. |
 
 Официальные материалы, сверенные 29.09.2026: [передача outputs](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/pass-job-outputs), [ручной запуск](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_dispatch), [параметры docker run](https://docs.docker.com/reference/cli/docker/container/run/).
-
-Локально 29.09.2026 исполнены все шесть Bash-блоков этого workflow с
-синтетическим контекстом GitHub. Каждый завершился с кодом 0; проверены
-output тега, путь модели, полный POST и команды отката. Docker и curl в
-этих блоках только печатаются. Эта проверка не заменяет запуск jobs в GitHub.

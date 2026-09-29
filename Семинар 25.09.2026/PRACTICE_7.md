@@ -40,7 +40,28 @@ actionlint -shellcheck= -pyflakes= .github/workflows/ci.yaml .github/workflows/d
 
 Для демонстрации работы с изменениями создайте рабочую ветку, внесите правки workflow и откройте pull request в `main`. В GitHub откройте **Actions → CI**, проверьте логи обеих jobs. Ручной запуск доступен через **Run workflow**, когда файл workflow присутствует в основной ветке. После завершения сохраните URL конкретного запуска, SHA версии и снимки результатов `check` и `build-image`.
 
-**Ссылка на успешный CI run:** ожидает фактического запуска. Подтверждённые локальные результаты и незавершённые проверки находятся в [плане](PLAN.md).
+**Подтверждённый CI:** [CI #36596424256](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596424256); event `push`, ref `main`,
+SHA `8145a8252febca4b93b7580a40008f508aeb9e68`. Jobs `check` и `build-image`, pytest и оба шага сборки
+завершились успешно. Фактический pytest: **95 passed in 5.13s**. Реализация слита через [PR #6](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/6).
+
+[Снимок CI](screenshots/practice7-ci.png), [полный лог](CI_20260929.log),
+[метаданные и jobs](CI_20260929.json). Новый клон этой main-версии прошёл
+**95 passed in 15.75s** и восемь реальных HTTP-сценариев; [протокол](CHECKS.md).
+
+<!-- local-clone-20260929:start -->
+## Локальная проверка из чистого клона
+
+29.09.2026 проверен опубликованный [`fdc377f`](https://github.com/Kirill-Erofeev/development-and-integration-labs/commit/fdc377f0d347f3ee1232871f07787daa4ad8b0e7).
+Полный pytest из клона: Windows — **95 passed in 10.66s**, Linux —
+**95 passed in 18.70s**. Linux использовал `3.11.16 (main, Sep 19 2026, 01:04:43) [GCC 14.2.0]`;
+`pip check` завершился сообщением `No broken requirements found.`.
+
+Из этого же клона успешно собраны API и клиент, выполнены реальные HTTP- и
+Compose-проверки, ошибка `localhost`, исправление адреса и проверка сохранности
+результата после `down`. Полные выводы и JSON: [CHECKS.md](CHECKS.md).
+Эти локальные проверки подтверждают код, зависимости и контейнеры выбранного SHA;
+события и jobs GitHub фиксируются отдельным URL CI run.
+<!-- local-clone-20260929:end -->
 
 ## Самопроверка перед защитой
 

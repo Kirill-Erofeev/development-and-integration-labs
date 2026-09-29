@@ -16,15 +16,30 @@ CI выполняет реальные тесты и сборки на runner. D
 
 | Проверка | Подтверждённый результат |
 | --- | --- |
-| Локальный baseline, Python 3.11 | `95 passed in 11.36s` |
-| actionlint 1.7.12 | Оба YAML прошли встроенную проверку, exit code 0; внешние ShellCheck и Pyflakes отключены |
-| `bash -n` | Разобраны 11 блоков `run`; команды не исполнялись |
-| Локальные Bash-шаги delivery | Все 6 шагов прошли; тег, команды обновления и отката проверены |
-| GitHub Actions | Требуется авторизация CLI и реальный запуск |
+| Baseline после переноса проекта в корень | `95 passed in 11.36s` |
+| Чистый клон опубликованного `fdc377f`, Windows | `95 passed in 10.66s`; реальные health/predict локального API |
+| Тот же клон, Linux | `95 passed in 18.70s`; `Python: 3.11.16 (main, Sep 19 2026, 01:04:43) [GCC 14.2.0]`; `pip check` успешен |
+| Docker из чистого клона | Образы API и клиента собраны; Compose API healthy, client exit 0; ошибка адреса и сохранность JSON проверены |
+| actionlint 1.7.12 | Оба YAML прошли встроенную проверку, exit 0; внешние ShellCheck и Pyflakes отключены |
+| `bash -n` | Разобраны 11 блоков `run` без исполнения команд |
+| Локальные Bash-шаги delivery | Все 6 шагов версии `fdc377f` завершились с кодом 0; тег и команды отката проверены |
+| Итоговый клон main `8145a82` | `95 passed in 15.75s` и 8 реальных HTTP-сценариев |
+| PR и GitHub Actions | Семь PR слиты; [CI #36596424256](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596424256), [Delivery main #36596835394](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596835394), [Delivery feature #36596569372](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596569372): success; deploy в feature пропущен |
 
-Места для доказательств после фактических запусков:
+Подробный [отчёт проверок](CHECKS.md) содержит фактический pytest-вывод,
+версию Python, результаты Compose и ссылки на полные журналы.
 
-- CI: [список запусков](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/workflows/ci.yaml). **Ссылка на успешный run: ожидает запуска.**
-- Delivery: [список запусков](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/workflows/delivery.yaml). **Ссылка на успешный run на `main`: ожидает запуска.**
+## Реальные GitHub Actions и PR
 
-Страница workflow показывает список запусков; она не заменяет ссылку на конкретный результат. Скриншоты и логи добавляются только по фактически выполненным действиям.
+| Запуск | Ref | Проверенный SHA | Результат |
+| --- | --- | --- | --- |
+| [CI #36596424256](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596424256) | `main` | `8145a8252febca4b93b7580a40008f508aeb9e68` | check/build-image success; `95 passed in 5.13s` |
+| [Delivery main #36596835394](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596835394) | `main` | `8145a8252febca4b93b7580a40008f508aeb9e68` | Все четыре jobs success |
+| [Delivery feature #36596569372](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/36596569372) | `feature/delivery-dry-run` | `fdc377f0d347f3ee1232871f07787daa4ad8b0e7` | Три jobs success; deploy_dry_run skipped |
+
+CI опубликован через [PR #6](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/6); delivery — через [PR #7](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/7).
+Все семь слитых PR, jobs, логи, JSON и проверка итоговой main — в [CHECKS.md](CHECKS.md).
+
+- [CI](screenshots/practice7-ci.png).
+- [Delivery на main](screenshots/practice8-delivery.png).
+- [Пропуск deploy на feature](screenshots/practice8-branch.png).
