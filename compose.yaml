@@ -1,0 +1,52 @@
+name: ml-integration-labs
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ml-api:practice6
+    ports:
+      - "127.0.0.1:8080:8000"
+    environment:
+      ML_MODEL_PATH: /app/models/model.pkl
+    cpus: 1.0
+    mem_limit: 512m
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - >-
+          import json, sys, urllib.request;
+          response = json.load(urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2));
+          sys.exit(0 if response.get('status') == 'ok' and response.get('model_ready') is True else 1)
+      interval: 10s
+      timeout: 3s
+      start_period: 15s
+      retries: 6
+    networks:
+      - app_net
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    image: ml-client:practice6
+    environment:
+      API_URL: http://api:8000
+      RESULT_PATH: /results/prediction.json
+    cpus: 0.25
+    mem_limit: 128m
+    depends_on:
+      api:
+        condition: service_healthy
+    volumes:
+      - ./results:/results
+    networks:
+      - app_net
+    restart: "no"
+
+networks:
+  app_net:
+    driver: bridge
