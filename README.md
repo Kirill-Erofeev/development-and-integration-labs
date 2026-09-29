@@ -6,6 +6,7 @@
 ## Работы
 
 - [Семинар 04.09.2026 — организация ML-проекта](<Семинар 04.09.2026/README.md>).
+- [Семинар 11.09.2026 — Git, API и тестирование](<Семинар 11.09.2026/README.md>).
 
 ## Материалы дисциплины
 
@@ -83,6 +84,7 @@ development-and-integration-labs/
 py -3.11 -m pip install -r requirements.txt
 py -3.11 src/train.py
 py -3.11 src/predict.py
+py -3.11 src/predict.py --output-format text
 py -3.11 -m pytest
 ```
 
@@ -113,6 +115,7 @@ python3.11 -m pytest
 | `src/train.py` | `--max-iter` | `300` |
 | `src/predict.py` | `--model-path` | `models/model.pkl` |
 | `src/predict.py` | `--input` | `data_sample/sample.csv` |
+| `src/predict.py` | `--output-format` | `json`; также доступен `text` |
 
 Стандартные пути вычисляются в `src/common.py` от `__file__`, поэтому
 не зависят от рабочего каталога. При запуске из другого каталога укажите
@@ -146,8 +149,13 @@ python3.11 -m pytest
 создавать через `train.py`. Предсказание загружает модель и метаданные,
 не вызывает `fit` и не читает Iris для получения имён классов.
 
-Результат `predict.py` в stdout — JSON-список; диагностика ошибок направляется в stderr.
-Каждой входной строке соответствует объект с полями `predicted_class` (целое число) и `predicted_name` (строка).
+Формат вывода `predict.py`: JSON по умолчанию; `--output-format text` включает текстовый вывод.
+Результаты направляются в stdout, диагностика ошибок — в stderr.
+В JSON возвращается список, по одному объекту на входную строку,
+с полями `predicted_class` (целое число) и `predicted_name` (строка).
+В текстовом формате каждому объекту соответствует строка
+`predicted_class=0 predicted_name=setosa`. Порядок объектов сохраняется.
+Неизвестный формат отклоняется с кодом `2` до загрузки модели.
 Ошибки входных данных, отсутствующих файлов и неподходящего формата артефакта
 сообщаются в stderr с кодом завершения `2`, без traceback.
 
