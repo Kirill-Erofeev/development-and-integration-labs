@@ -8,6 +8,7 @@
 - [Семинар 04.09.2026 — организация ML-проекта](<Семинар 04.09.2026/README.md>).
 - [Семинар 11.09.2026 — Git, API и тестирование](<Семинар 11.09.2026/README.md>).
 - [Семинар 18.09.2026 — Docker и Docker Compose](<Семинар 18.09.2026/README.md>).
+- [Семинар 25.09.2026 — CI и учебная доставка](<Семинар 25.09.2026/README.md>).
 
 ## Материалы дисциплины
 
@@ -109,7 +110,7 @@ development-and-integration-labs/
 Исходный эксперимент проверен на Python 3.11.9.
 
 ```powershell
-py -3.11 -m pip install -r requirements.txt
+py -3.11 -m pip install -r requirements.txt -r client/requirements.txt
 py -3.11 src/train.py
 py -3.11 src/predict.py
 py -3.11 src/predict.py --output-format text
@@ -333,3 +334,17 @@ Notebook хранит исследовательский код без резу�
 Причины — возможность выполнения кода при загрузке и отсутствие гарантии
 совместимости между версиями; см. [документацию scikit-learn 1.7](https://scikit-learn.org/1.7/model_persistence.html)
 (сверено 11 сентября 2026 года).
+
+## CI: практика 7
+
+[`.github/workflows/ci.yaml`](.github/workflows/ci.yaml) проверяет изменения при
+push в `main`, при pull request и по ручному запуску. Job `check` устанавливает
+Python 3.11 и зависимости обоих requirements, проверяет синтаксис и выполняет
+полный pytest. После неё `build-image` собирает образы API и клиента.
+Образы имеют тег с SHA версии и остаются на временном runner.
+
+Описание jobs, адаптации GitVerse к GitHub и проверки результатов находится
+в [практике 7](<Семинар 25.09.2026/PRACTICE_7.md>).
+Локально после переноса проекта в корень прошли **95 тестов за 11.36 с**;
+actionlint 1.7.12 проверил workflow без замечаний. Ссылки на конкретные запуски
+GitHub Actions фиксируются в материалах семинара по результатам публикации.
