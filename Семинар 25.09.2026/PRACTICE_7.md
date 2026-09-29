@@ -33,14 +33,14 @@ docker build --file client/Dockerfile --tag ml-client:local-check client
 При доступном actionlint статическую проверку можно повторить командой:
 
 ```bash
-actionlint -shellcheck= -pyflakes= .github/workflows/ci.yaml
+actionlint -shellcheck= -pyflakes= .github/workflows/ci.yaml .github/workflows/delivery.yaml
 ```
 
 Эта команда отключает внешние ShellCheck и Pyflakes. Она проверяет YAML и правила GitHub Actions, но не исполняет Python, Bash, Docker или HTTP-запросы. Локально также выполнен отдельный разбор Bash через `bash -n`; это проверка синтаксиса без выполнения команд.
 
 Для демонстрации работы с изменениями создайте рабочую ветку, внесите правки workflow и откройте pull request в `main`. В GitHub откройте **Actions → CI**, проверьте логи обеих jobs. Ручной запуск доступен через **Run workflow**, когда файл workflow присутствует в основной ветке. После завершения сохраните URL конкретного запуска, SHA версии и снимки результатов `check` и `build-image`.
 
-**Ссылка на успешный CI run:** ожидает фактического запуска. Локальная проверка: 95 тестов после переноса проекта в корень; actionlint завершился с кодом 0.
+**Ссылка на успешный CI run:** ожидает фактического запуска. Подтверждённые локальные результаты и незавершённые проверки находятся в [плане](PLAN.md).
 
 ## Самопроверка перед защитой
 
