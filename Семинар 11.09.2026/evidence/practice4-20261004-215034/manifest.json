@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "title": "Модульные и интеграционные тесты",
+  "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+  "started_at": "2026-10-04T21:50:35.160741+03:00",
+  "finished_at": "2026-10-04T21:50:53.814616+03:00",
+  "status": "succeeded",
+  "log_file": "commands.log",
+  "commands": [
+    {
+      "sequence": 1,
+      "label": "pytest",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "-m",
+        "pytest",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:50:35.344194+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "bd298612e2bea8a68a8301e999c6f181408b8cf4",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:50:53.642899+03:00",
+      "duration_seconds": 18.297,
+      "provenance_after": {
+        "head_sha": "bd298612e2bea8a68a8301e999c6f181408b8cf4",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "bd298612e2bea8a68a8301e999c6f181408b8cf4",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 59,
+        "length": 7170,
+        "sha256": "684a9014ddee71c6ed46528a0662542feead4a2ecde0f0c4c4d16659edb6d803",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 7245,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    }
+  ]
+}
