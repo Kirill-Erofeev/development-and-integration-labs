@@ -1,0 +1,44 @@
+
+=== 1: CI: jobs и steps ===
+py -3.11 -B ../github_checks.py --run-id 37226871300 --sha 24c715506452ae353494bab7721cce198f549574 --summary --steps
+--- stdout ---
+Workflow: ci.yaml | Run: 37226871300
+https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37226871300
+SHA: 24c715506452ae353494bab7721cce198f549574
+Ветка: course/lab-07-ci | Событие: pull_request
+Запуск: completed / success
+Job check: completed / success
+  Step Check out repository: completed / success
+  Step Install pinned dependencies: completed / success
+  Step Check Python syntax: completed / success
+  Step Run all tests: completed / success
+Job build-image: completed / success
+  Step Check out repository: completed / success
+  Step Build API image: completed / success
+  Step Build client image: completed / success
+
+--- stderr ---
+run=37226871300 completed success
+
+
+=== 2: Журнал CI ===
+py -3.11 -B ../github_build_log.py --run-id 37226871300 --output "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\.verification\lab7-run-37226871300.log"
+--- stdout ---
+GitHub Actions run: 37226871300
+Полный журнал сохранён: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\.verification\lab7-run-37226871300.log
+
+Run all tests — выборка из 14 строк:
+2026-10-04T19:04:58.7976959Z 110 passed in 5.51s
+
+Build API image — выборка из 182 строк:
+2026-10-04T19:05:25.1403672Z #13 naming to docker.io/library/ml-api:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b done
+2026-10-04T19:05:25.1403672Z #13 naming to docker.io/library/ml-api:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b done
+2026-10-04T19:05:25.1404190Z #13 DONE 1.5s
+
+Build client image — выборка из 68 строк:
+2026-10-04T19:05:28.2527602Z #10 naming to docker.io/library/ml-client:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b 0.0s done
+2026-10-04T19:05:28.2527602Z #10 naming to docker.io/library/ml-client:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b 0.0s done
+2026-10-04T19:05:28.2528442Z #10 DONE 1.0s
+
+--- stderr ---
+
