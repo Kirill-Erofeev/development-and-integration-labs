@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "kind": "browser_capture",
+  "url": "http://127.0.0.1:8087/docs",
+  "final_url": "http://127.0.0.1:8087/docs",
+  "page_title": "API классификации ирисов - Swagger UI",
+  "started_at": "2026-10-04T21:48:48.467731+03:00",
+  "finished_at": "2026-10-04T21:48:49.575976+03:00",
+  "width": 1440,
+  "height": 1000,
+  "device_scale_factor": 1,
+  "wait_selector": null,
+  "png_file": "practice3-docs-browser.png",
+  "png_sha256": "20f7999813544dde95579d82b791f76aa39da2fdebf1bc4d1738957e2345bdfc",
+  "provenance_before": {
+    "head_sha": "d4b74130073e0a5e867cf2a77102bfb8375f1ba7",
+    "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+    "status_porcelain": "",
+    "tracked_clean": true
+  },
+  "provenance_after": {
+    "head_sha": "d4b74130073e0a5e867cf2a77102bfb8375f1ba7",
+    "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+    "status_porcelain": "",
+    "tracked_clean": true
+  },
+  "verified_worktree_sha": "d4b74130073e0a5e867cf2a77102bfb8375f1ba7",
+  "source_note": "SHA характеризует рабочее дерево; соответствие запущенного сервера этому дереву проверяется отдельно."
+}
