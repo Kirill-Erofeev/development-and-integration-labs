@@ -15,6 +15,7 @@ RUN python -m pip install --no-cache-dir --only-binary=:all: -r requirements.txt
 
 COPY app ./app
 COPY src ./src
+COPY static ./static
 COPY models/model.pkl ./models/model.pkl
 
 EXPOSE 8000

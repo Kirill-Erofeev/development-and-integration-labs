@@ -1,0 +1,38 @@
+{
+  "health": "Сервис и модель готовы.",
+  "passport": {
+    "Тип": "LogisticRegression",
+    "Классы": "setosa, versicolor, virginica",
+    "Число признаков": "4",
+    "Модель загружена": "Да"
+  },
+  "inputs": {
+    "sepal_length": "5.1",
+    "sepal_width": "3.5",
+    "petal_length": "1.4",
+    "petal_width": "0"
+  },
+  "submission": "form",
+  "last_request": {
+    "status": 422,
+    "json": {
+      "detail": [
+        {
+          "loc": [
+            "body",
+            "petal_width"
+          ],
+          "msg": "Input should be greater than 0",
+          "type": "greater_than"
+        }
+      ],
+      "request_id": "8d699638-f28e-4532-b500-a8ba5f5f99aa"
+    },
+    "x_request_id": "8d699638-f28e-4532-b500-a8ba5f5f99aa",
+    "sent_request_id": "8d699638-f28e-4532-b500-a8ba5f5f99aa"
+  },
+  "result": "Прогноз: setosa (класс 0)Идентификатор запроса: 56b70b23-3fb8-4b7e-a1fc-afcfa8069ef0",
+  "result_visible": false,
+  "error": "body.petal_width: Input should be greater than 0 (request ID: 8d699638-f28e-4532-b500-a8ba5f5f99aa)",
+  "displayed_request_id": "56b70b23-3fb8-4b7e-a1fc-afcfa8069ef0"
+}

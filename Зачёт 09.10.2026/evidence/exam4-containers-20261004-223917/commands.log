@@ -1,0 +1,201 @@
+
+=== 1: Сборка API и клиента ===
+"C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose -p codex-course-exam4-20261004 --progress plain build
+--- stdout ---
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [api internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 606B 0.1s done
+#1 DONE 0.4s
+
+#2 [api internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.0s
+
+#3 [api internal] load .dockerignore
+#3 transferring context: 366B 0.0s done
+#3 DONE 0.0s
+
+#4 [api internal] load build context
+#4 DONE 0.0s
+
+#5 [api 1/8] FROM docker.io/library/python:3.11-slim
+#5 DONE 0.0s
+
+#4 [api internal] load build context
+#4 transferring context: 21.26kB 0.0s done
+#4 DONE 0.1s
+
+#6 [api 3/8] COPY requirements.txt ./
+#6 CACHED
+
+#7 [api 4/8] RUN python -m pip install --no-cache-dir --only-binary=:all: -r requirements.txt
+#7 CACHED
+
+#8 [api 5/8] COPY app ./app
+#8 CACHED
+
+#9 [api 6/8] COPY src ./src
+#9 CACHED
+
+#10 [api 7/8] COPY static ./static
+#10 CACHED
+
+#11 [api 2/8] WORKDIR /app
+#11 CACHED
+
+#12 [api 8/8] COPY models/model.pkl ./models/model.pkl
+#12 CACHED
+
+#13 [api] exporting to image
+#13 exporting layers done
+#13 writing image sha256:0ab8eeaa2f993af01d15ba623e2c264ffb3ccba8e083f456d6d593eda1c2bd39 0.0s done
+#13 naming to docker.io/library/ml-api:practice6 0.0s done
+#13 DONE 0.1s
+
+#14 [api] resolving provenance for metadata file
+#14 DONE 0.1s
+
+#15 [client internal] load build definition from Dockerfile
+#15 transferring dockerfile: 285B 0.0s done
+#15 DONE 0.0s
+
+#2 [client internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.0s
+
+#16 [client internal] load .dockerignore
+#16 transferring context: 72B 0.0s done
+#16 DONE 0.0s
+
+#5 [client 1/5] FROM docker.io/library/python:3.11-slim
+#5 DONE 0.0s
+
+#17 [client internal] load build context
+#17 transferring context: 3.79kB 0.0s done
+#17 DONE 0.0s
+
+#11 [client 2/5] WORKDIR /app
+#11 CACHED
+
+#18 [client 3/5] COPY requirements.txt ./
+#18 CACHED
+
+#19 [client 4/5] RUN python -m pip install --no-cache-dir --only-binary=:all: -r requirements.txt
+#19 CACHED
+
+#20 [client 5/5] COPY client.py ./
+#20 CACHED
+
+#21 [client] exporting to image
+#21 exporting layers done
+#21 writing image sha256:57371757ab53cd296c71f7c5925ccbce5faedf5902bb239056880cf1d563c33a done
+#21 naming to docker.io/library/ml-client:practice6 0.1s done
+#21 DONE 0.1s
+
+#22 [client] resolving provenance for metadata file
+#22 DONE 0.0s
+
+--- stderr ---
+
+
+=== 2: Запуск Compose ===
+"C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose -p codex-course-exam4-20261004 up --no-build -d
+--- stdout ---
+
+--- stderr ---
+ Network codex-course-exam4-20261004_app_net  Creating
+ Network codex-course-exam4-20261004_app_net  Created
+ Container codex-course-exam4-20261004-api-1  Creating
+ Container codex-course-exam4-20261004-api-1  Created
+ Container codex-course-exam4-20261004-client-1  Creating
+ Container codex-course-exam4-20261004-client-1  Created
+ Container codex-course-exam4-20261004-api-1  Starting
+ Container codex-course-exam4-20261004-api-1  Started
+ Container codex-course-exam4-20261004-api-1  Waiting
+ Container codex-course-exam4-20261004-api-1  Healthy
+ Container codex-course-exam4-20261004-client-1  Starting
+ Container codex-course-exam4-20261004-client-1  Started
+
+
+=== 3: Готовность API ===
+py -3.11 -B ../container_checks.py wait
+--- stdout ---
+HTTP 200
+JSON: {"model_loaded": true, "status": "ok"}
+X-Request-ID: None
+
+--- stderr ---
+
+
+=== 4: Завершение клиента ===
+"C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose -p codex-course-exam4-20261004 wait client
+--- stdout ---
+container "7d237f3795d063d5e1dc25d80d06ab53dbfa64b27e5f37e0e6be3608ff556015" exited with status code 0
+
+--- stderr ---
+
+
+=== 5: Состояния сервисов ===
+"C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose -p codex-course-exam4-20261004 ps -a
+--- stdout ---
+NAME                                   IMAGE                 COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+codex-course-exam4-20261004-api-1      ml-api:practice6      "python -m uvicorn a…"   api       21 seconds ago   Up 16 seconds (healthy)   127.0.0.1:8080->8000/tcp
+codex-course-exam4-20261004-client-1   ml-client:practice6   "python client.py"       client    21 seconds ago   Exited (0) 1 second ago   
+
+--- stderr ---
+
+
+=== 6: Логи сервисов ===
+"C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose -p codex-course-exam4-20261004 logs --no-color --tail 8 api client
+--- stdout ---
+client-1  | API_URL: http://api:8000
+client-1  | RESULT_PATH: /results/prediction.json
+client-1  | Предсказание сохранено в /results/prediction.json: класс 0 (setosa), request ID f064a6fc-760c-433a-9e95-3dd6dc3f0c31
+api-1     | INFO:     Started server process [1]
+api-1     | INFO:     Waiting for application startup.
+api-1     | INFO:     Application startup complete.
+api-1     | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+api-1     | INFO:     127.0.0.1:35728 - "GET /health HTTP/1.1" 200 OK
+api-1     | INFO:     172.28.0.1:59336 - "GET /health HTTP/1.1" 200 OK
+api-1     | {"event": "prediction_completed", "request_id": "f064a6fc-760c-433a-9e95-3dd6dc3f0c31", "class_name": "setosa"}
+api-1     | INFO:     172.28.0.3:35626 - "POST /predict HTTP/1.1" 200 OK
+
+--- stderr ---
+
+
+=== 7: Результат клиента ===
+py -3.11 -B ../container_checks.py save-result
+--- stdout ---
+results/prediction.json: {"class_id": 0, "class_name": "setosa", "request_id": "f064a6fc-760c-433a-9e95-3dd6dc3f0c31"}
+SHA256: ae226e5542bcb9e0ebbf9a7bd13b6fa4a833f2f3e1ce885a727e8d7ab830cbd7
+Saved baseline
+
+--- stderr ---
+
+
+=== 8: Остановка Compose ===
+"C:\Program Files\Docker\Docker\resources\bin\docker.exe" compose -p codex-course-exam4-20261004 down
+--- stdout ---
+
+--- stderr ---
+ Container codex-course-exam4-20261004-client-1  Stopping
+ Container codex-course-exam4-20261004-client-1  Stopped
+ Container codex-course-exam4-20261004-client-1  Removing
+ Container codex-course-exam4-20261004-client-1  Removed
+ Container codex-course-exam4-20261004-api-1  Stopping
+ Container codex-course-exam4-20261004-api-1  Stopped
+ Container codex-course-exam4-20261004-api-1  Removing
+ Container codex-course-exam4-20261004-api-1  Removed
+ Network codex-course-exam4-20261004_app_net  Removing
+ Network codex-course-exam4-20261004_app_net  Removed
+
+
+=== 9: Сохранность результата ===
+py -3.11 -B ../container_checks.py check-result
+--- stdout ---
+results/prediction.json: {"class_id": 0, "class_name": "setosa", "request_id": "f064a6fc-760c-433a-9e95-3dd6dc3f0c31"}
+SHA256: ae226e5542bcb9e0ebbf9a7bd13b6fa4a833f2f3e1ce885a727e8d7ab830cbd7
+Result preserved after compose down
+
+--- stderr ---
+

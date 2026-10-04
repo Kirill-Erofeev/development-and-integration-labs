@@ -1,0 +1,21 @@
+INFO:     Started server process [1700]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8087 (Press CTRL+C to quit)
+INFO:     127.0.0.1:65416 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65417 - "GET /health HTTP/1.1" 200 OK
+{"event": "prediction_completed", "request_id": "e21f05a0-837f-4ea9-84a0-621ce8f8b0a8", "class_name": "setosa"}
+INFO:     127.0.0.1:65419 - "POST /predict HTTP/1.1" 200 OK
+{"event": "prediction_rejected", "request_id": "e21f05a0-837f-4ea9-84a0-621ce8f8b0a8", "status_code": 422}
+INFO:     127.0.0.1:65422 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:65427 - "GET /model-info HTTP/1.1" 200 OK
+{"event": "prediction_completed", "request_id": "37078b61-7133-4f65-82c4-6a9102ca3809", "class_name": "setosa"}
+INFO:     127.0.0.1:65428 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65446 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65446 - "GET /model-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65447 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65446 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+{"event": "prediction_completed", "request_id": "56b70b23-3fb8-4b7e-a1fc-afcfa8069ef0", "class_name": "setosa"}
+INFO:     127.0.0.1:65446 - "POST /predict HTTP/1.1" 200 OK
+{"event": "prediction_rejected", "request_id": "8d699638-f28e-4532-b500-a8ba5f5f99aa", "status_code": 422}
+INFO:     127.0.0.1:65477 - "POST /predict HTTP/1.1" 422 Unprocessable Entity

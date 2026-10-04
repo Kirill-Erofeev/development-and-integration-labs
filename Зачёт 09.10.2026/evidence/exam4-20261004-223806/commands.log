@@ -1,0 +1,109 @@
+
+=== 1: Готовность модели ===
+py -3.11 -B ../live_checks.py health --base-url http://127.0.0.1:8087 --variant4
+--- stdout ---
+HTTP 200
+JSON: {"model_loaded": true, "status": "ok"}
+X-Request-ID: None
+Проверка пройдена
+
+--- stderr ---
+
+
+=== 2: Контрольный прогноз ===
+py -3.11 -B ../live_checks.py predict --base-url http://127.0.0.1:8087 --variant4
+--- stdout ---
+HTTP 200
+JSON: {"class_id": 0, "class_name": "setosa", "request_id": "e21f05a0-837f-4ea9-84a0-621ce8f8b0a8"}
+X-Request-ID: e21f05a0-837f-4ea9-84a0-621ce8f8b0a8
+Проверка пройдена
+
+--- stderr ---
+
+
+=== 3: Ошибка валидации ===
+py -3.11 -B ../live_checks.py error --base-url http://127.0.0.1:8087 --variant4
+--- stdout ---
+HTTP 422
+JSON: {"detail": [{"loc": ["body", "petal_width"], "msg": "Input should be greater than 0", "type": "greater_than"}], "request_id": "e21f05a0-837f-4ea9-84a0-621ce8f8b0a8"}
+X-Request-ID: e21f05a0-837f-4ea9-84a0-621ce8f8b0a8
+Проверка пройдена
+
+--- stderr ---
+
+
+=== 4: Паспорт модели ===
+py -3.11 -B ../live_checks.py model-info --base-url http://127.0.0.1:8087 --variant4
+--- stdout ---
+HTTP 200
+JSON: {"classes": ["setosa", "versicolor", "virginica"], "feature_count": 4, "model_loaded": true, "model_type": "LogisticRegression"}
+X-Request-ID: None
+Проверка пройдена
+
+--- stderr ---
+
+
+=== 5: UUID и журнал ===
+py -3.11 -B ../live_checks.py identity --base-url http://127.0.0.1:8087 --variant4 --log-path "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Зачёт 09.10.2026\evidence\exam4-20261004-223806\server.log"
+--- stdout ---
+HTTP 200
+JSON: {"class_id": 0, "class_name": "setosa", "request_id": "37078b61-7133-4f65-82c4-6a9102ca3809"}
+X-Request-ID: 37078b61-7133-4f65-82c4-6a9102ca3809
+Совпадение с журналом: {"event": {"class_name": "setosa", "event": "prediction_completed", "request_id": "37078b61-7133-4f65-82c4-6a9102ca3809"}, "matching_events": 1}
+Проверка пройдена
+
+--- stderr ---
+
+
+=== 6: Журнал Uvicorn ===
+py -3.11 -B -c "from pathlib import Path; import sys; print(Path(sys.argv[1]).read_text(encoding=\"utf-8\"))" "Зачёт 09.10.2026\evidence\exam4-20261004-223806\server.log"
+--- stdout ---
+INFO:     Started server process [1700]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8087 (Press CTRL+C to quit)
+INFO:     127.0.0.1:65416 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65417 - "GET /health HTTP/1.1" 200 OK
+{"event": "prediction_completed", "request_id": "e21f05a0-837f-4ea9-84a0-621ce8f8b0a8", "class_name": "setosa"}
+INFO:     127.0.0.1:65419 - "POST /predict HTTP/1.1" 200 OK
+{"event": "prediction_rejected", "request_id": "e21f05a0-837f-4ea9-84a0-621ce8f8b0a8", "status_code": 422}
+INFO:     127.0.0.1:65422 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:65427 - "GET /model-info HTTP/1.1" 200 OK
+{"event": "prediction_completed", "request_id": "37078b61-7133-4f65-82c4-6a9102ca3809", "class_name": "setosa"}
+INFO:     127.0.0.1:65428 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65446 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65446 - "GET /model-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65447 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65446 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+{"event": "prediction_completed", "request_id": "56b70b23-3fb8-4b7e-a1fc-afcfa8069ef0", "class_name": "setosa"}
+INFO:     127.0.0.1:65446 - "POST /predict HTTP/1.1" 200 OK
+{"event": "prediction_rejected", "request_id": "8d699638-f28e-4532-b500-a8ba5f5f99aa", "status_code": 422}
+INFO:     127.0.0.1:65477 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+
+
+--- stderr ---
+
+
+=== 7: Notebook варианта 4 ===
+py -3.11 -B ../check_variant4_notebooks.py --projectpath "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft"
+--- stdout ---
+source_experiment_updated.ipynb: выполнены 2 проверенные кодовые ячейки
+new_functionality.ipynb: выполнены 2 проверенные кодовые ячейки
+Паспорт: {"classes": ["setosa", "versicolor", "virginica"], "feature_count": 4, "model_loaded": true, "model_type": "LogisticRegression"}
+Контрольный прогноз готовой модели: [{"predicted_class": 0, "predicted_name": "setosa"}]
+Событие notebook: {"class_name": "setosa", "event": "prediction_completed", "request_id": "221a0883-e275-4e06-9dff-ad35fd277a63"}
+Хеши четырёх ячеек совпали; load=1, fit=0, dump=0; models/model.pkl не изменён
+
+--- stderr ---
+
+
+=== 8: pytest ===
+py -3.11 -B -m pytest -q
+--- stdout ---
+........................................................................ [ 48%]
+........................................................................ [ 96%]
+.....                                                                    [100%]
+149 passed in 19.31s
+
+--- stderr ---
+
