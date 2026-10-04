@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 2 · история и регрессия</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 2 · история и регрессия</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-04T21:44:46.848862+03:00 — 2026-10-04T21:45:11.938165+03:00<br>Git: 58e9cf679cf9ef9baac3bcaaf77e69d1beb15bdf<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 2 из 4</div><section><h2>Граф Git</h2><pre>&gt; git log --graph --oneline -12
+Код завершения: 0; ожидаемый: 0; длительность: 0.063 с
+
+stdout:
+*   58e9cf6 fix(lab2): разрешить учебный конфликт README
+|\  
+| *   7ff740f docs(cli): интегрировать уточнение каналов вывода
+| |\  
+| | * 0930d61 docs(cli): уточнить каналы вывода команды
+| |/  
+* | 849d9c7 test(lab2): учесть замечание учебного саморазбора
+* | 26e2553 test(lab2): проверить форматы и описать интерфейс
+* | 056158d feat(lab2): добавить выбор формата предсказаний
+* | 58393d0 docs(course): добавить материалы следующего занятия
+|/  
+*   f96e73c feat(lab1): интегрировать практику 1
+|\  
+| * 6002666 docs(lab1): сохранить результаты и снимки
+| * d59cd65 test(lab1): добавить проверки и команды запуска
+| * fd7a543 feat(lab1): разделить обучение и предсказание
+|/  
+* dbb2099 test(evidence): добавить сбор фактических проверок
+</pre></section><section><h2>pytest</h2><pre>&gt; py -3.11 -B -m pytest -q
+Код завершения: 0; ожидаемый: 0; длительность: 16.11 с
+
+stdout:
+..........................................                               [100%]
+42 passed in 14.78s
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Семинар 11.09.2026\evidence\practice2-20261004-214446\manifest.json и commands.log.<br>Сформировано: 2026-10-04T21:45:15.053889+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>

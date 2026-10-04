@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 2 · настоящий конфликт README</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 2 · настоящий конфликт README</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-04T21:43:57.716951+03:00 — 2026-10-04T21:43:59.289721+03:00<br>Git: см. состояние команд<br>Статус всего прогона: Получен ожидаемый ненулевой код завершения</div><section><h2>Попытка merge</h2><pre>&gt; git merge --no-edit github/main
+Код завершения: 1; ожидаемый: 1; длительность: 0.156 с
+HEAD до команды: 849d9c7a12a26136282c23b5cf50eddd0d6cec06
+HEAD после команды: 849d9c7a12a26136282c23b5cf50eddd0d6cec06
+Проверенный SHA не присваивается: отслеживаемые файлы изменены или HEAD сменился.
+
+stdout:
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+</pre></section><section><h2>Состояние конфликта</h2><pre>&gt; git status --short --untracked-files=no
+Код завершения: 0; ожидаемый: 0; длительность: 0.063 с
+HEAD до команды: 849d9c7a12a26136282c23b5cf50eddd0d6cec06
+HEAD после команды: 849d9c7a12a26136282c23b5cf50eddd0d6cec06
+Проверенный SHA не присваивается: отслеживаемые файлы изменены или HEAD сменился.
+
+stdout:
+UU README.md
+</pre></section><section><h2>Конфликтная строка</h2><pre>&gt; git diff --cc --unified=1 -- README.md
+Код завершения: 0; ожидаемый: 0; длительность: 0.078 с
+HEAD до команды: 849d9c7a12a26136282c23b5cf50eddd0d6cec06
+HEAD после команды: 849d9c7a12a26136282c23b5cf50eddd0d6cec06
+Проверенный SHA не присваивается: отслеживаемые файлы изменены или HEAD сменился.
+
+stdout:
+diff --cc README.md
+index 11c96e8,5d542b0..0000000
+--- a/README.md
++++ b/README.md
+@@@ -8,3 -8,3 +8,7 @@@ GitHub используется по р
+  
+++&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+ +Вывод CLI: JSON используется по умолчанию, --output-format text включает текст; диагностика поступает в stderr.
+++=======
++ Вывод CLI: JSON поступает в stdout, диагностика — в stderr.
+++&gt;&gt;&gt;&gt;&gt;&gt;&gt; github/main
+  
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Семинар 11.09.2026\evidence\practice2-conflict-20261004-214357\manifest.json и commands.log.<br>Сформировано: 2026-10-04T21:44:01.264851+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>

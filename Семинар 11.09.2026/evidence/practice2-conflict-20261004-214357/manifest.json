@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "title": "Git и коллективная разработка",
+  "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+  "started_at": "2026-10-04T21:43:57.716951+03:00",
+  "finished_at": "2026-10-04T21:43:59.289721+03:00",
+  "status": "expected_failure",
+  "log_file": "commands.log",
+  "commands": [
+    {
+      "sequence": 1,
+      "label": "Попытка merge",
+      "argv": [
+        "git",
+        "merge",
+        "--no-edit",
+        "github/main"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:43:57.906989+03:00",
+      "expected_returncode": 1,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 1,
+      "provenance_before": {
+        "head_sha": "849d9c7a12a26136282c23b5cf50eddd0d6cec06",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:43:58.062838+03:00",
+      "duration_seconds": 0.156,
+      "provenance_after": {
+        "head_sha": "849d9c7a12a26136282c23b5cf50eddd0d6cec06",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "UU README.md\u0000",
+        "tracked_clean": false
+      },
+      "verified_sha": null,
+      "status": "expected_failure",
+      "stdout": {
+        "offset": 80,
+        "length": 137,
+        "sha256": "58e816c96a179a8cdbbe5bca1c806f98dfe565ababbde484cdc5d3b0a145b14a",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 233,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 2,
+      "label": "Состояние конфликта",
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--untracked-files=no"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:43:58.487042+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "849d9c7a12a26136282c23b5cf50eddd0d6cec06",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "UU README.md\u0000",
+        "tracked_clean": false
+      },
+      "finished_at": "2026-10-04T21:43:58.548080+03:00",
+      "duration_seconds": 0.063,
+      "provenance_after": {
+        "head_sha": "849d9c7a12a26136282c23b5cf50eddd0d6cec06",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "UU README.md\u0000",
+        "tracked_clean": false
+      },
+      "verified_sha": null,
+      "status": "succeeded",
+      "stdout": {
+        "offset": 339,
+        "length": 13,
+        "sha256": "f5a4defa02545b4cde16b50fe28db7c04dce76ba59689e7aefce3ccc9c68b502",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 368,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 3,
+      "label": "Конфликтная строка",
+      "argv": [
+        "git",
+        "diff",
+        "--cc",
+        "--unified=1",
+        "--",
+        "README.md"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:43:58.980220+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "849d9c7a12a26136282c23b5cf50eddd0d6cec06",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "UU README.md\u0000",
+        "tracked_clean": false
+      },
+      "finished_at": "2026-10-04T21:43:59.060711+03:00",
+      "duration_seconds": 0.078,
+      "provenance_after": {
+        "head_sha": "849d9c7a12a26136282c23b5cf50eddd0d6cec06",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "UU README.md\u0000",
+        "tracked_clean": false
+      },
+      "verified_sha": null,
+      "status": "succeeded",
+      "stdout": {
+        "offset": 471,
+        "length": 466,
+        "sha256": "c639f9e71c6db8d9786456fdb387e2448479a5587489be11becdbcc8a0108d19",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 953,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    }
+  ]
+}
