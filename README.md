@@ -1,8 +1,8 @@
-# Разработка и интеграция — Контейнер API
+# Разработка и интеграция — Docker Compose
 
 Один [репозиторий дисциплины](https://github.com/Kirill-Erofeev/development-and-integration-labs) содержит код проекта в корне,
 условия и материалы по папкам семинаров. Этот этап развивает существующий
-классификатор Iris; ветка этапа — `course/lab-05-docker`.
+классификатор Iris; ветка этапа — `course/lab-06-compose`.
 GitHub используется по решению владельца: pull request, Actions и Pages заменяют
 соответствующие механизмы GitVerse из учебных материалов.
 
@@ -15,6 +15,7 @@ GitHub используется по решению владельца: pull req
 - [HTTP API модели](<Семинар 11.09.2026/PRACTICE_3.md>).
 - [Модульные и интеграционные тесты](<Семинар 11.09.2026/PRACTICE_4.md>).
 - [Контейнер API](<Семинар 18.09.2026/PRACTICE_5.md>).
+- [Docker Compose](<Семинар 18.09.2026/PRACTICE_6.md>).
 
 Лекции и организационные материалы сохранены в своих исходных папках.
 Word-отчёты пользователь оформляет отдельно; они не подменяются этим README.
@@ -86,22 +87,35 @@ Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/predict -ContentType a
 значения приводят к `422`. Если модель не готова во время обработки, `/predict`
 возвращает `503`. Остановка локального сервера — `Ctrl+C`.
 
-## Контейнер API
+## Контейнеры
 
 ```powershell
-docker build --file Dockerfile --tag ml-api:practice5 .
-docker run -d --name ml-api-practice5 --cpus 1 --memory 512m -p 127.0.0.1:8080:8000 ml-api:practice5
-docker logs ml-api-practice5
+docker compose up --build -d
+docker compose ps -a
+docker compose logs api client
 py -3.11 scripts/check_api.py --base-url http://127.0.0.1:8080
 ```
 
-Образ содержит сохранённую модель и запускает один worker Uvicorn на порту `8000`.
-Команды остановки и повторного запуска приведены в практике 5.
+API доступен на `http://127.0.0.1:8080`; внутри сети клиент обращается к
+`http://api:8000`. Сервис `client` выполняет один запрос и успешно завершается с
+кодом `0`, а `api` продолжает работу. Результат сохраняется в обычный JSON
+`results/prediction.json` через bind mount. `localhost` внутри клиента указывает
+на сам контейнер клиента и не заменяет имя сервиса `api`.
+
+```powershell
+Get-Content -Encoding UTF8 results/prediction.json
+docker compose down
+Get-Content -Encoding UTF8 results/prediction.json
+```
+
+`down` удаляет контейнеры и сеть этого Compose-проекта; сохранённый файл результата
+остаётся в каталоге проекта. Для полного набора тестов клиента дополнительно
+установите `py -3.11 -m pip install -r client/requirements.txt`.
 
 ## Статус проверок
 
-Фактический прогон и снимки этого этапа зафиксированы в протоколе.
+Для этого этапа ещё требуется зафиксировать фактический прогон и снимки.
 Протокол: [Семинар 18.09.2026/CHECKS.md](<Семинар 18.09.2026/CHECKS.md>).
-Сценарий и перечень снимков: [PRACTICE_5.md](<Семинар 18.09.2026/PRACTICE_5.md>).
+Сценарий и перечень снимков: [PRACTICE_6.md](<Семинар 18.09.2026/PRACTICE_6.md>).
 До заполнения протокола команды и ожидаемые ответы не являются утверждением об успешном запуске.
 Новые ссылки на PR, Actions и Pages добавляются по результату реальных действий.
