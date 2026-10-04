@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 1 · исходный эксперимент</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 1 · исходный эксперимент</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-04T21:37:12.587218+03:00 — 2026-10-04T21:37:45.231660+03:00<br>Git: d59cd6596b88736e04eba254f3770ebc9496cfa3<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 1 из 6</div><section><h2>Notebook и модель</h2><pre>&gt; py -3.11 -B scripts/check_notebook.py --notebook &quot;Семинар 04.09.2026/notebooks/source_experiment.ipynb&quot; --input data_sample/sample.csv --work-dir .verification/notebook-proof-213712 --reference-model models/model.pkl
+Код завершения: 0; ожидаемый: 0; длительность: 4.625 с
+
+stdout:
+Ячейка 1/5
+Ячейка 2/5
+Ячейка 3/5
+accuracy=0.947
+Ячейка 4/5
+model_saved=model.pkl
+Ячейка 5/5
+predicted_class=0
+predicted_name=setosa
+Эталон: коэффициенты, intercept, классы и метаданные совпали точно
+Проверка пройдена: accuracy=0.9473684210526315; класс=0; имя=setosa
+Артефакт notebook: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\.verification\notebook-proof-213712\model.pkl
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Семинар 04.09.2026\evidence\practice1-20261004-213712\manifest.json и commands.log.<br>Сформировано: 2026-10-04T21:37:47.776330+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
