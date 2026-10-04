@@ -6,12 +6,12 @@ import pickle
 from pathlib import Path
 from typing import TextIO
 
-import joblib
-
 if __package__:
     from .common import DEFAULT_INPUT_PATH, DEFAULT_MODEL_PATH, FEATURE_COLUMNS
+    from .model_service import ModelService
 else:
     from common import DEFAULT_INPUT_PATH, DEFAULT_MODEL_PATH, FEATURE_COLUMNS
+    from model_service import ModelService
 
 
 def read_features(source: TextIO) -> list[list[float]]:
@@ -42,30 +42,10 @@ def predict(
     model_path: Path = DEFAULT_MODEL_PATH,
 ) -> list[dict[str, int | str]]:
     """Load a trusted training artifact and predict without fitting a model."""
-    model_path = Path(model_path)
-    if not model_path.is_file():
-        raise FileNotFoundError(f"Модель не найдена: {model_path}. Сначала запустите src/train.py")
-    artifact = joblib.load(model_path)
-    if not isinstance(artifact, dict) or set(artifact) != {"model", "feature_columns", "target_names"}:
-        raise ValueError("Неверный формат модели: создайте артефакт с помощью src/train.py")
-    if artifact["feature_columns"] != list(FEATURE_COLUMNS):
-        raise ValueError("Схема признаков модели не соответствует входному интерфейсу")
-    target_names = artifact["target_names"]
-    model = artifact["model"]
-    if not isinstance(target_names, list) or not target_names or not all(isinstance(name, str) for name in target_names):
-        raise ValueError("В модели отсутствуют корректные названия классов")
-    if not callable(getattr(model, "predict", None)):
-        raise ValueError("Артефакт не содержит классификатор")
+    service = ModelService.load(model_path)
     with Path(input_path).open(encoding="utf-8-sig", newline="") as source:
         features = read_features(source)
-    classes = model.predict(features)
-    predictions = []
-    for class_id in classes:
-        class_id = int(class_id)
-        if not 0 <= class_id < len(target_names):
-            raise ValueError("Предсказанный класс отсутствует в метаданных модели")
-        predictions.append({"predicted_class": class_id, "predicted_name": target_names[class_id]})
-    return predictions
+    return service.predict(features)
 
 
 def format_predictions(predictions: list[dict[str, int | str]], output_format: str = "json") -> str:
