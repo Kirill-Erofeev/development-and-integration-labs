@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 5 · сборка контейнера</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 5 · сборка контейнера</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-04T21:52:47.439160+03:00 — 2026-10-04T21:53:29.824026+03:00<br>Git: ebd7400fe2cafec5ce5d53a9a8d301b6ebd24694<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 1 из 12</div><section><h2>Сборка образа</h2><pre>&gt; &quot;C:\Program Files\Docker\Docker\resources\bin\docker.exe&quot; build --progress plain --tag ml-api:course-lab5 .
+Код завершения: 0; ожидаемый: 0; длительность: 5.531 с
+
+stderr:
+Показаны последние 28 из 47 строк; полный вывод — commands.log.
+
+#5 transferring context: 9.57kB 0.0s done
+#5 DONE 0.2s
+
+#6 [6/7] COPY src ./src
+#6 CACHED
+
+#7 [2/7] WORKDIR /app
+#7 CACHED
+
+#8 [3/7] COPY requirements.txt ./
+#8 CACHED
+
+#9 [4/7] RUN python -m pip install --no-cache-dir --only-binary=:all: -r requirements.txt
+#9 CACHED
+
+#10 [5/7] COPY app ./app
+#10 CACHED
+
+#11 [7/7] COPY models/model.pkl ./models/model.pkl
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 writing image sha256:7e107d061fdceab3069a4699bb76125d8b99ad171c6e600d1c34a088e9fc848b 0.0s done
+#12 naming to docker.io/library/ml-api:course-lab5 0.1s done
+#12 DONE 0.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/vvbdyrnlnsfsv1lzdsvdjowf6
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Семинар 18.09.2026\evidence\practice5-20261004-215247\manifest.json и commands.log.<br>Сформировано: 2026-10-04T21:53:32.061868+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
