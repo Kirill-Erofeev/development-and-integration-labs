@@ -1,0 +1,476 @@
+{
+  "schema_version": 1,
+  "title": "Docker Compose",
+  "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+  "started_at": "2026-10-04T21:55:21.810898+03:00",
+  "finished_at": "2026-10-04T21:55:59.305618+03:00",
+  "status": "expected_failure",
+  "log_file": "commands.log",
+  "commands": [
+    {
+      "sequence": 1,
+      "label": "Сборка API и клиента",
+      "argv": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+        "compose",
+        "-p",
+        "codex-course-lab6-20261004",
+        "--progress",
+        "plain",
+        "build"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:21.992286+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:27.129219+03:00",
+      "duration_seconds": 5.125,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 181,
+        "length": 2147,
+        "sha256": "1d328800ec9ca9012e401ef4065172fdc580d49d98afe834370ab0133790ecdb",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 2344,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 2,
+      "label": "Запуск Compose",
+      "argv": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+        "compose",
+        "-p",
+        "codex-course-lab6-20261004",
+        "up",
+        "--no-build",
+        "-d"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:27.649254+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:44.638975+03:00",
+      "duration_seconds": 16.985,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 2506,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 2522,
+        "length": 653,
+        "sha256": "0d6deca803c5bd46a3f9fe67d356afaa5e7018c437b3b686e234d3ec55eb92fa",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 3,
+      "label": "Готовность API",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "../container_checks.py",
+        "wait"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:45.120867+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:45.388899+03:00",
+      "duration_seconds": 0.266,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 3268,
+        "length": 75,
+        "sha256": "9f700ee87fc8ed3fc253e0f92582b80f41556ce0ffc92a83d0b9226eef3fb0e5",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 3359,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 4,
+      "label": "Завершение клиента",
+      "argv": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+        "compose",
+        "-p",
+        "codex-course-lab6-20261004",
+        "wait",
+        "client"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:45.805914+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:47.581226+03:00",
+      "duration_seconds": 1.766,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 3531,
+        "length": 103,
+        "sha256": "819b6c9b866dae24e687704b65fa36ce5c8a06293e5ef640e98ce54725de5c0d",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 3650,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 5,
+      "label": "Состояния сервисов",
+      "argv": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+        "compose",
+        "-p",
+        "codex-course-lab6-20261004",
+        "ps",
+        "-a"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:47.997504+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:48.366562+03:00",
+      "duration_seconds": 0.375,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 3816,
+        "length": 448,
+        "sha256": "0cda06ae6fafb493a2859a8ef1b1309d6330cb0941d4c8ed35ccfc6d34ea6291",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 4280,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 6,
+      "label": "Логи сервисов",
+      "argv": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+        "compose",
+        "-p",
+        "codex-course-lab6-20261004",
+        "logs",
+        "--no-color",
+        "--tail",
+        "8",
+        "api",
+        "client"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:48.877711+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:49.292648+03:00",
+      "duration_seconds": 0.422,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 4466,
+        "length": 648,
+        "sha256": "cbee2fd1a5cb6114bd25e5f2f03c515668da2ccd2d228e4331d589f1d03614ae",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 5130,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 7,
+      "label": "Результат клиента",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "../container_checks.py",
+        "save-result"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:49.782624+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:50.016629+03:00",
+      "duration_seconds": 0.235,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 5239,
+        "length": 158,
+        "sha256": "ef49cc2215bc75e1609c332e87724f5452bde343b9134ff008cf2a235e2b043f",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 5413,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 8,
+      "label": "Неверный адрес API",
+      "argv": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+        "compose",
+        "-p",
+        "codex-course-lab6-20261004",
+        "run",
+        "--rm",
+        "-e",
+        "API_URL=http://localhost:8000",
+        "client"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:50.374690+03:00",
+      "expected_returncode": 1,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 1,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:54.766723+03:00",
+      "duration_seconds": 4.391,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "expected_failure",
+      "stdout": {
+        "offset": 5618,
+        "length": 69,
+        "sha256": "56214e6d0fc60a884fc547005f15810951dfa95d5b23ab894c4c65ed938d4f9e",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 5703,
+        "length": 396,
+        "sha256": "073483d1fb0e21e64949221e368d068c79a3a46dfe0d4c323ba033d80238eb0c",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 9,
+      "label": "Остановка Compose",
+      "argv": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+        "compose",
+        "-p",
+        "codex-course-lab6-20261004",
+        "down"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:55.290015+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:58.206389+03:00",
+      "duration_seconds": 2.906,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 6255,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 6271,
+        "length": 547,
+        "sha256": "cca671a8242746c61e1ca4f8d79ba5d1c794395d5b0f424bd9a76bbbd971ab74",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 10,
+      "label": "Сохранность результата",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "../container_checks.py",
+        "check-result"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+      "started_at": "2026-10-04T21:55:58.815042+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-04T21:55:59.049137+03:00",
+      "duration_seconds": 0.235,
+      "provenance_after": {
+        "head_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "ec37180f7e3832321ec917a273e7ad43646af580",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 6939,
+        "length": 179,
+        "sha256": "b99356b08976deeab62d8333f9a1bc916dc6abd14dabd7c826d76e08a765d73e",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 7134,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    }
+  ]
+}

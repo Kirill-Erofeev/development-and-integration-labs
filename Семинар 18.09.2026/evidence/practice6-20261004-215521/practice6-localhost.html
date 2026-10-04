@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 6 · localhost внутри клиента</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 6 · localhost внутри клиента</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-04T21:55:21.810898+03:00 — 2026-10-04T21:55:59.305618+03:00<br>Git: ec37180f7e3832321ec917a273e7ad43646af580<br>Статус всего прогона: Получен ожидаемый ненулевой код завершения. Выбрано команд: 1 из 10</div><section><h2>Неверный адрес API</h2><pre>&gt; &quot;C:\Program Files\Docker\Docker\resources\bin\docker.exe&quot; compose -p codex-course-lab6-20261004 run --rm -e API_URL=http://localhost:8000 client
+Код завершения: 1; ожидаемый: 1; длительность: 4.391 с
+
+stdout:
+API_URL: http://localhost:8000
+RESULT_PATH: /results/prediction.json
+
+
+stderr:
+ Container codex-course-lab6-20261004-api-1  Running
+Не удалось получить или сохранить предсказание: HTTPConnectionPool(host=&#x27;localhost&#x27;, port=8000): Max retries exceeded with url: /predict (Caused by NewConnectionError(&#x27;&lt;urllib3.connection.HTTPConnection object at 0x70850de6b690&gt;: Failed to establish a new connection: [Errno 111] Connection refused&#x27;))
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Семинар 18.09.2026\evidence\practice6-20261004-215521\manifest.json и commands.log.<br>Сформировано: 2026-10-04T21:56:03.155138+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
