@@ -3,29 +3,6 @@
 Ниже сохранены протоколы фактических проверок. Незавершённые этапы обозначены отдельно. Записи ранних практик при
 добавлении следующей сохраняются; старые SHA и runs из прежней истории не переносятся.
 
-## Практика 3: HTTP API модели
-
-Статус: **ожидает фактической проверки этапа**.
-
-- Проверенный новый commit: не заполнен.
-- Дата, ОС, Python и версии инструментов: не заполнены.
-- Команды, коды завершения и итог тестов: не заполнены.
-- Новый PR и workflow runs, если применимо: не заполнены.
-- Саморазбор и внешнее ревью: фактические результаты не внесены.
-
-- [ ] запуск.
-- [ ] health.
-- [ ] predict.
-- [ ] ошибка 422.
-- [ ] Swagger UI.
-
-Планируемые снимки:
-
-- [practice3-startup.png](screenshots/practice3-startup.png).
-- [practice3-health.png](screenshots/practice3-health.png).
-- [practice3-predict.png](screenshots/practice3-predict.png).
-- [practice3-docs.png](screenshots/practice3-docs.png).
-
 ## Практика 4: Модульные и интеграционные тесты
 
 Статус: **ожидает фактической проверки этапа**.
@@ -68,3 +45,24 @@
 ![practice2-cli](screenshots/practice2-cli.png)
 
 ![practice2-git](screenshots/practice2-git.png)
+
+## HTTP API модели — фактическая проверка
+
+Проверенный коммит: `d4b74130073e0a5e867cf2a77102bfb8375f1ba7`. Дата: 2026-10-04T21:48:36.659155+03:00.
+
+| Проверка | Фактический код | Результат |
+| --- | --- | --- |
+| Готовность модели | 0 | succeeded |
+| Контрольный прогноз | 0 | succeeded |
+| Ошибка валидации | 0 | succeeded |
+| Журнал Uvicorn | 0 | succeeded |
+
+[Полный журнал](evidence/practice3-20261004-214836/commands.log), [манифест](evidence/practice3-20261004-214836/manifest.json).
+
+![practice3-docs](screenshots/practice3-docs.png)
+
+![practice3-startup](screenshots/practice3-startup.png)
+
+![practice3-health](screenshots/practice3-health.png)
+
+![practice3-predict](screenshots/practice3-predict.png)
