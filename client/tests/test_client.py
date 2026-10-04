@@ -7,7 +7,8 @@ import requests
 from client import client
 
 
-VALID_RESPONSE = {"prediction": 0, "class_name": "setosa"}
+REQUEST_ID = "e21f05a0-837f-4ea9-84a0-621ce8f8b0a8"
+VALID_RESPONSE = {"class_id": 0, "class_name": "setosa", "request_id": REQUEST_ID}
 
 
 class FakeResponse:
@@ -55,9 +56,9 @@ def stub_post(monkeypatch):
 @pytest.mark.parametrize(
     "payload",
     [
-        {"prediction": 0, "class_name": "setosa"},
-        {"prediction": 1, "class_name": "versicolor"},
-        {"prediction": 2, "class_name": "virginica"},
+        {"class_id": 0, "class_name": "setosa", "request_id": REQUEST_ID},
+        {"class_id": 1, "class_name": "versicolor", "request_id": REQUEST_ID},
+        {"class_id": 2, "class_name": "virginica", "request_id": REQUEST_ID},
     ],
 )
 def test_run_prediction_saves_validated_response(tmp_path, stub_post, payload):
@@ -91,20 +92,26 @@ def test_run_prediction_saves_validated_response(tmp_path, stub_post, payload):
         None,
         [],
         {},
-        {"prediction": 0},
-        {"prediction": True, "class_name": "versicolor"},
-        {"prediction": 0.0, "class_name": "setosa"},
-        {"prediction": "0", "class_name": "setosa"},
-        {"prediction": -1, "class_name": "virginica"},
-        {"prediction": 3, "class_name": "setosa"},
-        {"prediction": 0, "class_name": "versicolor"},
-        {"prediction": 0, "class_name": None},
-        {"prediction": 0, "class_name": "setosa", "extra": 1},
+        {"class_id": 0},
+        {"class_id": True, "class_name": "versicolor", "request_id": REQUEST_ID},
+        {"class_id": 0.0, "class_name": "setosa", "request_id": REQUEST_ID},
+        {"class_id": "0", "class_name": "setosa", "request_id": REQUEST_ID},
+        {"class_id": -1, "class_name": "virginica", "request_id": REQUEST_ID},
+        {"class_id": 3, "class_name": "setosa", "request_id": REQUEST_ID},
+        {"class_id": 0, "class_name": "versicolor", "request_id": REQUEST_ID},
+        {"class_id": 0, "class_name": None, "request_id": REQUEST_ID},
+        {"class_id": 0, "class_name": "setosa", "request_id": REQUEST_ID, "extra": 1},
     ],
 )
 def test_validate_prediction_rejects_invalid_schema(payload):
     with pytest.raises(ValueError):
         client.validate_prediction(payload)
+
+
+@pytest.mark.parametrize("request_id", [None, 123, "invalid", REQUEST_ID.upper()])
+def test_validate_prediction_rejects_invalid_request_id(request_id):
+    with pytest.raises(ValueError):
+        client.validate_prediction({**VALID_RESPONSE, "request_id": request_id})
 
 
 @pytest.mark.parametrize(
@@ -115,7 +122,7 @@ def test_validate_prediction_rejects_invalid_schema(payload):
         {"error": requests.Timeout("timeout")},
         {"error": requests.ConnectionError("connection failed")},
         {"json_error": requests.exceptions.JSONDecodeError("invalid JSON", "x", 0)},
-        {"payload": {"prediction": 0, "class_name": "virginica"}},
+        {"payload": {"class_id": 0, "class_name": "virginica", "request_id": REQUEST_ID}},
     ],
 )
 @pytest.mark.parametrize("existing_result", [False, True])
@@ -123,7 +130,7 @@ def test_main_failure_preserves_result(
     monkeypatch, tmp_path, stub_post, capsys, response_options, existing_result
 ):
     result_path = tmp_path / "prediction.json"
-    previous_content = '{"prediction": 1, "class_name": "versicolor"}\n'
+    previous_content = '{"class_id": 1, "class_name": "versicolor"}\n'
     if existing_result:
         result_path.write_text(previous_content, encoding="utf-8")
     monkeypatch.setenv("API_URL", "http://custom-api:9000")
@@ -195,7 +202,7 @@ def test_failed_replacement_preserves_result_and_cleans_temp(
     monkeypatch, tmp_path, stub_post
 ):
     result_path = tmp_path / "prediction.json"
-    previous_content = '{"prediction": 1, "class_name": "versicolor"}\n'
+    previous_content = '{"class_id": 1, "class_name": "versicolor"}\n'
     result_path.write_text(previous_content, encoding="utf-8")
     stub_post()
 

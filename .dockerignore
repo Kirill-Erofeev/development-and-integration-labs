@@ -12,6 +12,10 @@ src/**
 !src/__init__.py
 !src/common.py
 !src/model_service.py
+!src/request_id.py
+!static/
+static/**
+!static/index.html
 !models/
 models/**
 !models/model.pkl

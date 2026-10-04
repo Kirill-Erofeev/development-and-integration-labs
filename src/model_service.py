@@ -1,5 +1,6 @@
 from collections.abc import Sequence
 from pathlib import Path
+from numbers import Integral
 from typing import Any
 
 import joblib
@@ -54,6 +55,22 @@ class ModelService:
         if not callable(getattr(model, "predict", None)):
             raise ValueError("Артефакт не содержит классификатор")
         return cls(model, target_names)
+
+    def model_info(self) -> dict[str, str | list[str] | int | bool]:
+        """Describe the loaded estimator without exposing its artifact or location."""
+        feature_count = getattr(self._model, "n_features_in_", None)
+        if (
+            isinstance(feature_count, bool)
+            or not isinstance(feature_count, Integral)
+            or feature_count != len(FEATURE_COLUMNS)
+        ):
+            raise ValueError("Число признаков модели не соответствует контракту Iris")
+        return {
+            "model_type": type(self._model).__name__,
+            "classes": list(self._target_names),
+            "feature_count": int(feature_count),
+            "model_loaded": True,
+        }
 
     def predict(
         self, features: Sequence[Sequence[float]]
