@@ -1,0 +1,747 @@
+check	Set up job	﻿2026-10-04T19:04:34.3777863Z Current runner version: '2.337.0'
+check	Set up job	2026-10-04T19:04:34.3805590Z ##[group]Runner Image Provisioner
+check	Set up job	2026-10-04T19:04:34.3806554Z Hosted Compute Agent
+check	Set up job	2026-10-04T19:04:34.3807322Z Version: 20260901.588
+check	Set up job	2026-10-04T19:04:34.3808101Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+check	Set up job	2026-10-04T19:04:34.3808929Z Build Date: 2026-09-01T19:56:44Z
+check	Set up job	2026-10-04T19:04:34.3809685Z Worker ID: {ffd69674-403c-45c5-a672-a0df20eff311}
+check	Set up job	2026-10-04T19:04:34.3810457Z Azure Region: centralus
+check	Set up job	2026-10-04T19:04:34.3811148Z ##[endgroup]
+check	Set up job	2026-10-04T19:04:34.3812567Z ##[group]Operating System
+check	Set up job	2026-10-04T19:04:34.3813232Z Ubuntu
+check	Set up job	2026-10-04T19:04:34.3813899Z 24.04.5
+check	Set up job	2026-10-04T19:04:34.3814634Z LTS
+check	Set up job	2026-10-04T19:04:34.3815247Z ##[endgroup]
+check	Set up job	2026-10-04T19:04:34.3815956Z ##[group]Runner Image
+check	Set up job	2026-10-04T19:04:34.3816590Z Image: ubuntu-24.04
+check	Set up job	2026-10-04T19:04:34.3817286Z Version: 20260927.320.1
+check	Set up job	2026-10-04T19:04:34.3818447Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+check	Set up job	2026-10-04T19:04:34.3820390Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+check	Set up job	2026-10-04T19:04:34.3821411Z ##[endgroup]
+check	Set up job	2026-10-04T19:04:34.3822643Z ##[group]GITHUB_TOKEN Permissions
+check	Set up job	2026-10-04T19:04:34.3824801Z Contents: read
+check	Set up job	2026-10-04T19:04:34.3825619Z Metadata: read
+check	Set up job	2026-10-04T19:04:34.3826242Z ##[endgroup]
+check	Set up job	2026-10-04T19:04:34.3828474Z Secret source: Actions
+check	Set up job	2026-10-04T19:04:34.3829552Z Cache mode: write
+check	Set up job	2026-10-04T19:04:34.3830343Z Prepare workflow directory
+check	Set up job	2026-10-04T19:04:34.4251944Z Prepare all required actions
+check	Set up job	2026-10-04T19:04:34.4302744Z Getting action download info
+check	Set up job	2026-10-04T19:04:34.6932535Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+check	Set up job	2026-10-04T19:04:34.7824741Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+check	Set up job	2026-10-04T19:04:34.9668479Z Complete job name: check
+check	Check out repository	﻿2026-10-04T19:04:35.0439250Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+check	Check out repository	2026-10-04T19:04:35.0440288Z with:
+check	Check out repository	2026-10-04T19:04:35.0440743Z   persist-credentials: false
+check	Check out repository	2026-10-04T19:04:35.0441415Z   repository: Kirill-Erofeev/development-and-integration-labs
+check	Check out repository	2026-10-04T19:04:35.0445914Z   token: ***
+check	Check out repository	2026-10-04T19:04:35.0446362Z   ssh-strict: true
+check	Check out repository	2026-10-04T19:04:35.0446808Z   ssh-user: git
+check	Check out repository	2026-10-04T19:04:35.0447238Z   clean: true
+check	Check out repository	2026-10-04T19:04:35.0447691Z   sparse-checkout-cone-mode: true
+check	Check out repository	2026-10-04T19:04:35.0448219Z   fetch-depth: 1
+check	Check out repository	2026-10-04T19:04:35.0448659Z   fetch-tags: false
+check	Check out repository	2026-10-04T19:04:35.0449104Z   show-progress: true
+check	Check out repository	2026-10-04T19:04:35.0449546Z   lfs: false
+check	Check out repository	2026-10-04T19:04:35.0449958Z   submodules: false
+check	Check out repository	2026-10-04T19:04:35.0450413Z   set-safe-directory: true
+check	Check out repository	2026-10-04T19:04:35.0450914Z   allow-unsafe-pr-checkout: false
+check	Check out repository	2026-10-04T19:04:35.0451613Z ##[endgroup]
+check	Check out repository	2026-10-04T19:04:35.1480567Z Syncing repository: Kirill-Erofeev/development-and-integration-labs
+check	Check out repository	2026-10-04T19:04:35.1483177Z ##[group]Getting Git version info
+check	Check out repository	2026-10-04T19:04:35.1485221Z Working directory is '/home/runner/work/development-and-integration-labs/development-and-integration-labs'
+check	Check out repository	2026-10-04T19:04:35.1487377Z [command]/usr/bin/git version
+check	Check out repository	2026-10-04T19:04:35.1579431Z git version 2.55.0
+check	Check out repository	2026-10-04T19:04:35.1606899Z ##[endgroup]
+check	Check out repository	2026-10-04T19:04:35.1620185Z Temporarily overriding HOME='/home/runner/work/_temp/0d5e5aa7-8465-4022-8bd8-67e798d59631' before making global git config changes
+check	Check out repository	2026-10-04T19:04:35.1622534Z Adding repository directory to the temporary git global config as a safe directory
+check	Check out repository	2026-10-04T19:04:35.1627411Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/development-and-integration-labs/development-and-integration-labs
+check	Check out repository	2026-10-04T19:04:35.1686877Z Deleting the contents of '/home/runner/work/development-and-integration-labs/development-and-integration-labs'
+check	Check out repository	2026-10-04T19:04:35.1690962Z ##[group]Determining repository object format
+check	Check out repository	2026-10-04T19:04:35.1692956Z ##[endgroup]
+check	Check out repository	2026-10-04T19:04:35.1695056Z ##[group]Initializing the repository
+check	Check out repository	2026-10-04T19:04:35.1699937Z [command]/usr/bin/git init /home/runner/work/development-and-integration-labs/development-and-integration-labs
+check	Check out repository	2026-10-04T19:04:35.1807890Z hint: Using 'master' as the name for the initial branch. This default branch name
+check	Check out repository	2026-10-04T19:04:35.1809944Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+check	Check out repository	2026-10-04T19:04:35.1811627Z hint: to use in all of your new repositories, which will suppress this warning,
+check	Check out repository	2026-10-04T19:04:35.1812734Z hint: call:
+check	Check out repository	2026-10-04T19:04:35.1813147Z hint:
+check	Check out repository	2026-10-04T19:04:35.1813699Z hint: 	git config --global init.defaultBranch <name>
+check	Check out repository	2026-10-04T19:04:35.1814321Z hint:
+check	Check out repository	2026-10-04T19:04:35.1815378Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+check	Check out repository	2026-10-04T19:04:35.1816561Z hint: 'development'. The just-created branch can be renamed via this command:
+check	Check out repository	2026-10-04T19:04:35.1817295Z hint:
+check	Check out repository	2026-10-04T19:04:35.1817710Z hint: 	git branch -m <name>
+check	Check out repository	2026-10-04T19:04:35.1818268Z hint:
+check	Check out repository	2026-10-04T19:04:35.1818886Z hint: Disable this message with "git config set advice.defaultBranchName false"
+check	Check out repository	2026-10-04T19:04:35.1820331Z Initialized empty Git repository in /home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/
+check	Check out repository	2026-10-04T19:04:35.1825396Z [command]/usr/bin/git remote add origin https://github.com/Kirill-Erofeev/development-and-integration-labs
+check	Check out repository	2026-10-04T19:04:35.1880810Z ##[endgroup]
+check	Check out repository	2026-10-04T19:04:35.1882086Z ##[group]Disabling automatic garbage collection
+check	Check out repository	2026-10-04T19:04:35.1885407Z [command]/usr/bin/git config --local gc.auto 0
+check	Check out repository	2026-10-04T19:04:35.1923539Z ##[endgroup]
+check	Check out repository	2026-10-04T19:04:35.1925126Z ##[group]Setting up auth
+check	Check out repository	2026-10-04T19:04:35.1925971Z Removing SSH command configuration
+check	Check out repository	2026-10-04T19:04:35.1930836Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	Check out repository	2026-10-04T19:04:35.1972590Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	Check out repository	2026-10-04T19:04:35.2376010Z Removing HTTP extra header
+check	Check out repository	2026-10-04T19:04:35.2385267Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	Check out repository	2026-10-04T19:04:35.2426226Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	Check out repository	2026-10-04T19:04:35.2705452Z Removing includeIf entries pointing to credentials config files
+check	Check out repository	2026-10-04T19:04:35.2710822Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	Check out repository	2026-10-04T19:04:35.2749712Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	Check out repository	2026-10-04T19:04:35.3004420Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+check	Check out repository	2026-10-04T19:04:35.3051084Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path /home/runner/work/_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config
+check	Check out repository	2026-10-04T19:04:35.3091172Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config
+check	Check out repository	2026-10-04T19:04:35.3133303Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config
+check	Check out repository	2026-10-04T19:04:35.3173803Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config
+check	Check out repository	2026-10-04T19:04:35.3208362Z ##[endgroup]
+check	Check out repository	2026-10-04T19:04:35.3209208Z ##[group]Fetching the repository
+check	Check out repository	2026-10-04T19:04:35.3216179Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +dcb89eb18c1d22e5f975cba4e862e2d16f73454b:refs/remotes/pull/15/merge
+check	Check out repository	2026-10-04T19:04:36.1603231Z From https://github.com/Kirill-Erofeev/development-and-integration-labs
+check	Check out repository	2026-10-04T19:04:36.1605606Z  * [new ref]         dcb89eb18c1d22e5f975cba4e862e2d16f73454b -> pull/15/merge
+check	Check out repository	2026-10-04T19:04:36.1609751Z ##[endgroup]
+check	Check out repository	2026-10-04T19:04:36.1611274Z ##[group]Determining the checkout info
+check	Check out repository	2026-10-04T19:04:36.1612903Z ##[endgroup]
+check	Check out repository	2026-10-04T19:04:36.1615636Z [command]/usr/bin/git sparse-checkout disable
+check	Check out repository	2026-10-04T19:04:36.1680894Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+check	Check out repository	2026-10-04T19:04:36.1723560Z ##[group]Checking out the ref
+check	Check out repository	2026-10-04T19:04:36.1729160Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/15/merge
+check	Check out repository	2026-10-04T19:04:36.2021844Z Note: switching to 'refs/remotes/pull/15/merge'.
+check	Check out repository	2026-10-04T19:04:36.2023526Z 
+check	Check out repository	2026-10-04T19:04:36.2025184Z You are in 'detached HEAD' state. You can look around, make experimental
+check	Check out repository	2026-10-04T19:04:36.2026960Z changes and commit them, and you can discard any commits you make in this
+check	Check out repository	2026-10-04T19:04:36.2028270Z state without impacting any branches by switching back to a branch.
+check	Check out repository	2026-10-04T19:04:36.2029027Z 
+check	Check out repository	2026-10-04T19:04:36.2029651Z If you want to create a new branch to retain commits you create, you may
+check	Check out repository	2026-10-04T19:04:36.2030873Z do so (now or later) by using -c with the switch command. Example:
+check	Check out repository	2026-10-04T19:04:36.2031623Z 
+check	Check out repository	2026-10-04T19:04:36.2031987Z   git switch -c <new-branch-name>
+check	Check out repository	2026-10-04T19:04:36.2032565Z 
+check	Check out repository	2026-10-04T19:04:36.2032926Z Or undo this operation with:
+check	Check out repository	2026-10-04T19:04:36.2033450Z 
+check	Check out repository	2026-10-04T19:04:36.2033764Z   git switch -
+check	Check out repository	2026-10-04T19:04:36.2034184Z 
+check	Check out repository	2026-10-04T19:04:36.2035136Z Turn off this advice by setting config variable advice.detachedHead to false
+check	Check out repository	2026-10-04T19:04:36.2036447Z 
+check	Check out repository	2026-10-04T19:04:36.2037591Z HEAD is now at dcb89eb Merge 24c715506452ae353494bab7721cce198f549574 into 61385bf2f12157cd098d243998c6a1bf266e1feb
+check	Check out repository	2026-10-04T19:04:36.2041831Z ##[endgroup]
+check	Check out repository	2026-10-04T19:04:36.2095260Z [command]/usr/bin/git log -1 --format=%H
+check	Check out repository	2026-10-04T19:04:36.2129009Z dcb89eb18c1d22e5f975cba4e862e2d16f73454b
+check	Check out repository	2026-10-04T19:04:36.2139398Z ##[group]Removing auth
+check	Check out repository	2026-10-04T19:04:36.2140384Z Removing SSH command configuration
+check	Check out repository	2026-10-04T19:04:36.2143203Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	Check out repository	2026-10-04T19:04:36.2184120Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	Check out repository	2026-10-04T19:04:36.2437153Z Removing HTTP extra header
+check	Check out repository	2026-10-04T19:04:36.2439981Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	Check out repository	2026-10-04T19:04:36.2482831Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	Check out repository	2026-10-04T19:04:36.2742275Z Removing includeIf entries pointing to credentials config files
+check	Check out repository	2026-10-04T19:04:36.2745701Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	Check out repository	2026-10-04T19:04:36.2780913Z includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path
+check	Check out repository	2026-10-04T19:04:36.2785665Z includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path
+check	Check out repository	2026-10-04T19:04:36.2789445Z includeif.gitdir:/github/workspace/.git.path
+check	Check out repository	2026-10-04T19:04:36.2791995Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+check	Check out repository	2026-10-04T19:04:36.2801575Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path
+check	Check out repository	2026-10-04T19:04:36.2825179Z /home/runner/work/_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config
+check	Check out repository	2026-10-04T19:04:36.2839050Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-814e6343\-49ef\-442f\-a9bd\-ebc53898f4eb\.config
+check	Check out repository	2026-10-04T19:04:36.2881754Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path
+check	Check out repository	2026-10-04T19:04:36.2912231Z /home/runner/work/_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config
+check	Check out repository	2026-10-04T19:04:36.2922349Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-814e6343\-49ef\-442f\-a9bd\-ebc53898f4eb\.config
+check	Check out repository	2026-10-04T19:04:36.2961440Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+check	Check out repository	2026-10-04T19:04:36.2990768Z /github/runner_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config
+check	Check out repository	2026-10-04T19:04:36.3001330Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-814e6343\-49ef\-442f\-a9bd\-ebc53898f4eb\.config
+check	Check out repository	2026-10-04T19:04:36.3049206Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+check	Check out repository	2026-10-04T19:04:36.3080341Z /github/runner_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config
+check	Check out repository	2026-10-04T19:04:36.3159139Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-814e6343\-49ef\-442f\-a9bd\-ebc53898f4eb\.config
+check	Check out repository	2026-10-04T19:04:36.3195804Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	Check out repository	2026-10-04T19:04:36.3443773Z Removing credentials config '/home/runner/work/_temp/git-credentials-814e6343-49ef-442f-a9bd-ebc53898f4eb.config'
+check	Check out repository	2026-10-04T19:04:36.3453671Z ##[endgroup]
+check	Set up Python	﻿2026-10-04T19:04:36.3908166Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+check	Set up Python	2026-10-04T19:04:36.3909869Z with:
+check	Set up Python	2026-10-04T19:04:36.3910759Z   python-version: 3.11
+check	Set up Python	2026-10-04T19:04:36.3911735Z   cache: pip
+check	Set up Python	2026-10-04T19:04:36.3913037Z   cache-dependency-path: requirements.txt
+check	Set up Python	client/requirements.txt
+check	Set up Python	
+check	Set up Python	2026-10-04T19:04:36.3914876Z   check-latest: false
+check	Set up Python	2026-10-04T19:04:36.3924755Z   token: ***
+check	Set up Python	2026-10-04T19:04:36.3925727Z   update-environment: true
+check	Set up Python	2026-10-04T19:04:36.3926815Z   allow-prereleases: false
+check	Set up Python	2026-10-04T19:04:36.3927871Z   freethreaded: false
+check	Set up Python	2026-10-04T19:04:36.3928858Z ##[endgroup]
+check	Set up Python	2026-10-04T19:04:36.5153378Z ##[group]Installed versions
+check	Set up Python	2026-10-04T19:04:36.5235015Z Successfully set up CPython (3.11.16)
+check	Set up Python	2026-10-04T19:04:36.5237657Z ##[endgroup]
+check	Set up Python	2026-10-04T19:04:36.5588423Z [command]/opt/hostedtoolcache/Python/3.11.16/x64/bin/pip cache dir
+check	Set up Python	2026-10-04T19:04:36.8500854Z /home/runner/.cache/pip
+check	Set up Python	2026-10-04T19:04:37.0304682Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.11.16-pip-4c8203efc9721e0c10c473ea4dcf898f16e7e6a661ab509dbb3a96e5e3a0a7be
+check	Set up Python	2026-10-04T19:04:38.1275245Z Received 70425579 of 70425579 (100.0%), 71.1 MBs/sec
+check	Set up Python	2026-10-04T19:04:38.1276243Z Cache Size: ~67 MB (70425579 B)
+check	Set up Python	2026-10-04T19:04:38.1336748Z [command]/usr/bin/tar -xf /home/runner/work/_temp/028a2b37-8689-4056-88ec-9dcda44600db/cache.tzst -P -C /home/runner/work/development-and-integration-labs/development-and-integration-labs --use-compress-program unzstd
+check	Set up Python	2026-10-04T19:04:38.2586734Z Cache restored successfully
+check	Set up Python	2026-10-04T19:04:38.2627301Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.11.16-pip-4c8203efc9721e0c10c473ea4dcf898f16e7e6a661ab509dbb3a96e5e3a0a7be
+check	Install pinned dependencies	﻿2026-10-04T19:04:38.2811312Z ##[group]Run python -m pip install --only-binary=:all: -r requirements.txt -r client/requirements.txt
+check	Install pinned dependencies	2026-10-04T19:04:38.2812465Z ^[[36;1mpython -m pip install --only-binary=:all: -r requirements.txt -r client/requirements.txt^[[0m
+check	Install pinned dependencies	2026-10-04T19:04:38.3086558Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+check	Install pinned dependencies	2026-10-04T19:04:38.3087038Z env:
+check	Install pinned dependencies	2026-10-04T19:04:38.3087352Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Install pinned dependencies	2026-10-04T19:04:38.3087811Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+check	Install pinned dependencies	2026-10-04T19:04:38.3088275Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Install pinned dependencies	2026-10-04T19:04:38.3088676Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Install pinned dependencies	2026-10-04T19:04:38.3089100Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Install pinned dependencies	2026-10-04T19:04:38.3089547Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+check	Install pinned dependencies	2026-10-04T19:04:38.3089909Z ##[endgroup]
+check	Install pinned dependencies	2026-10-04T19:04:38.8571529Z Ignoring colorama: markers 'sys_platform == "win32"' don't match your environment
+check	Install pinned dependencies	2026-10-04T19:04:38.9622887Z Collecting joblib==1.5.2 (from -r requirements.txt (line 1))
+check	Install pinned dependencies	2026-10-04T19:04:38.9641306Z   Using cached joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.0948033Z Collecting scikit-learn==1.7.2 (from -r requirements.txt (line 2))
+check	Install pinned dependencies	2026-10-04T19:04:39.0966763Z   Using cached scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.2736152Z Collecting numpy==2.1.1 (from -r requirements.txt (line 3))
+check	Install pinned dependencies	2026-10-04T19:04:39.2754231Z   Using cached numpy-2.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.3987034Z Collecting scipy==1.16.3 (from -r requirements.txt (line 4))
+check	Install pinned dependencies	2026-10-04T19:04:39.4005141Z   Using cached scipy-1.16.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (62 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.4338424Z Collecting threadpoolctl==3.6.0 (from -r requirements.txt (line 5))
+check	Install pinned dependencies	2026-10-04T19:04:39.4353710Z   Using cached threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.4670490Z Collecting pytest==8.4.2 (from -r requirements.txt (line 6))
+check	Install pinned dependencies	2026-10-04T19:04:39.4687552Z   Using cached pytest-8.4.2-py3-none-any.whl.metadata (7.7 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.4906705Z Collecting iniconfig==2.3.0 (from -r requirements.txt (line 8))
+check	Install pinned dependencies	2026-10-04T19:04:39.4921804Z   Using cached iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.5163484Z Collecting packaging==24.2 (from -r requirements.txt (line 9))
+check	Install pinned dependencies	2026-10-04T19:04:39.5181142Z   Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.5437415Z Collecting pluggy==1.5.0 (from -r requirements.txt (line 10))
+check	Install pinned dependencies	2026-10-04T19:04:39.5452690Z   Using cached pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.5712139Z Collecting Pygments==2.18.0 (from -r requirements.txt (line 11))
+check	Install pinned dependencies	2026-10-04T19:04:39.5728141Z   Using cached pygments-2.18.0-py3-none-any.whl.metadata (2.5 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.6272088Z Collecting fastapi==0.115.12 (from -r requirements.txt (line 12))
+check	Install pinned dependencies	2026-10-04T19:04:39.6287488Z   Using cached fastapi-0.115.12-py3-none-any.whl.metadata (27 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.6615444Z Collecting uvicorn==0.34.0 (from -r requirements.txt (line 13))
+check	Install pinned dependencies	2026-10-04T19:04:39.6632925Z   Using cached uvicorn-0.34.0-py3-none-any.whl.metadata (6.5 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.7736362Z Collecting pydantic==2.10.4 (from -r requirements.txt (line 14))
+check	Install pinned dependencies	2026-10-04T19:04:39.7753379Z   Using cached pydantic-2.10.4-py3-none-any.whl.metadata (29 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.8014333Z Collecting httpx==0.28.1 (from -r requirements.txt (line 15))
+check	Install pinned dependencies	2026-10-04T19:04:39.8029543Z   Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.8341661Z Collecting starlette==0.46.1 (from -r requirements.txt (line 16))
+check	Install pinned dependencies	2026-10-04T19:04:39.8358316Z   Using cached starlette-0.46.1-py3-none-any.whl.metadata (6.2 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.8623224Z Collecting anyio==4.9.0 (from -r requirements.txt (line 17))
+check	Install pinned dependencies	2026-10-04T19:04:39.8638829Z   Using cached anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.8869296Z Collecting sniffio==1.3.1 (from -r requirements.txt (line 18))
+check	Install pinned dependencies	2026-10-04T19:04:39.8884984Z   Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.9096834Z Collecting h11==0.16.0 (from -r requirements.txt (line 19))
+check	Install pinned dependencies	2026-10-04T19:04:39.9115700Z   Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.9356126Z Collecting httpcore==1.0.9 (from -r requirements.txt (line 20))
+check	Install pinned dependencies	2026-10-04T19:04:39.9371852Z   Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.9628154Z Collecting typing-extensions==4.15.0 (from -r requirements.txt (line 21))
+check	Install pinned dependencies	2026-10-04T19:04:39.9643746Z   Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+check	Install pinned dependencies	2026-10-04T19:04:39.9857274Z Collecting annotated-types==0.7.0 (from -r requirements.txt (line 22))
+check	Install pinned dependencies	2026-10-04T19:04:39.9872366Z   Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.5644876Z Collecting pydantic-core==2.27.2 (from -r requirements.txt (line 23))
+check	Install pinned dependencies	2026-10-04T19:04:40.5661441Z   Using cached pydantic_core-2.27.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.5907973Z Collecting click==8.3.1 (from -r requirements.txt (line 24))
+check	Install pinned dependencies	2026-10-04T19:04:40.5922702Z   Using cached click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.6149250Z Collecting idna==3.10 (from -r requirements.txt (line 25))
+check	Install pinned dependencies	2026-10-04T19:04:40.6164222Z   Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.6501534Z Collecting certifi==2025.11.12 (from -r requirements.txt (line 26))
+check	Install pinned dependencies	2026-10-04T19:04:40.6516823Z   Using cached certifi-2025.11.12-py3-none-any.whl.metadata (2.5 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.6798178Z Collecting requests==2.32.3 (from -r client/requirements.txt (line 1))
+check	Install pinned dependencies	2026-10-04T19:04:40.6813647Z   Using cached requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.8607064Z Collecting charset-normalizer==3.4.0 (from -r client/requirements.txt (line 3))
+check	Install pinned dependencies	2026-10-04T19:04:40.8624359Z   Using cached charset_normalizer-3.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (34 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.8907654Z Collecting urllib3==2.5.0 (from -r client/requirements.txt (line 5))
+check	Install pinned dependencies	2026-10-04T19:04:40.8923754Z   Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9190089Z Using cached joblib-1.5.2-py3-none-any.whl (308 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9206603Z Using cached scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9258428Z Using cached numpy-2.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.3 MB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9332844Z Using cached scipy-1.16.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (35.9 MB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9470848Z Using cached threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9483419Z Using cached pytest-8.4.2-py3-none-any.whl (365 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9498392Z Using cached pluggy-1.5.0-py3-none-any.whl (20 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9511502Z Using cached iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9524691Z Using cached packaging-24.2-py3-none-any.whl (65 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9538093Z Using cached pygments-2.18.0-py3-none-any.whl (1.2 MB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9555239Z Using cached fastapi-0.115.12-py3-none-any.whl (95 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9568597Z Using cached pydantic-2.10.4-py3-none-any.whl (431 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9583183Z Using cached starlette-0.46.1-py3-none-any.whl (71 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9596954Z Using cached anyio-4.9.0-py3-none-any.whl (100 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9610388Z Using cached uvicorn-0.34.0-py3-none-any.whl (62 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9623875Z Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9637885Z Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9651619Z Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9664956Z Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9678885Z Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9692534Z Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9706332Z Using cached pydantic_core-2.27.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9726303Z Using cached click-8.3.1-py3-none-any.whl (108 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9739963Z Using cached idna-3.10-py3-none-any.whl (70 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9753458Z Using cached certifi-2025.11.12-py3-none-any.whl (159 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9767481Z Using cached requests-2.32.3-py3-none-any.whl (64 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9781442Z Using cached charset_normalizer-3.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (142 kB)
+check	Install pinned dependencies	2026-10-04T19:04:40.9795136Z Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
+check	Install pinned dependencies	2026-10-04T19:04:41.2166742Z Installing collected packages: urllib3, typing-extensions, threadpoolctl, sniffio, Pygments, pluggy, packaging, numpy, joblib, iniconfig, idna, h11, click, charset-normalizer, certifi, annotated-types, uvicorn, scipy, requests, pytest, pydantic-core, httpcore, anyio, starlette, scikit-learn, pydantic, httpx, fastapi
+check	Install pinned dependencies	2026-10-04T19:04:51.0900598Z 
+check	Install pinned dependencies	2026-10-04T19:04:51.0918705Z Successfully installed Pygments-2.18.0 annotated-types-0.7.0 anyio-4.9.0 certifi-2025.11.12 charset-normalizer-3.4.0 click-8.3.1 fastapi-0.115.12 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.10 iniconfig-2.3.0 joblib-1.5.2 numpy-2.1.1 packaging-24.2 pluggy-1.5.0 pydantic-2.10.4 pydantic-core-2.27.2 pytest-8.4.2 requests-2.32.3 scikit-learn-1.7.2 scipy-1.16.3 sniffio-1.3.1 starlette-0.46.1 threadpoolctl-3.6.0 typing-extensions-4.15.0 urllib3-2.5.0 uvicorn-0.34.0
+check	Check Python syntax	﻿2026-10-04T19:04:51.2194305Z ##[group]Run python -m compileall -q app src scripts tests client
+check	Check Python syntax	2026-10-04T19:04:51.2195207Z ^[[36;1mpython -m compileall -q app src scripts tests client^[[0m
+check	Check Python syntax	2026-10-04T19:04:51.2269258Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+check	Check Python syntax	2026-10-04T19:04:51.2269640Z env:
+check	Check Python syntax	2026-10-04T19:04:51.2269929Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Check Python syntax	2026-10-04T19:04:51.2270387Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+check	Check Python syntax	2026-10-04T19:04:51.2270835Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Check Python syntax	2026-10-04T19:04:51.2271228Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Check Python syntax	2026-10-04T19:04:51.2271620Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Check Python syntax	2026-10-04T19:04:51.2272000Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+check	Check Python syntax	2026-10-04T19:04:51.2272352Z ##[endgroup]
+check	Run all tests	﻿2026-10-04T19:04:51.3053865Z ##[group]Run python -m pytest -q
+check	Run all tests	2026-10-04T19:04:51.3054210Z ^[[36;1mpython -m pytest -q^[[0m
+check	Run all tests	2026-10-04T19:04:51.3128503Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+check	Run all tests	2026-10-04T19:04:51.3128875Z env:
+check	Run all tests	2026-10-04T19:04:51.3129163Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Run all tests	2026-10-04T19:04:51.3129613Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+check	Run all tests	2026-10-04T19:04:51.3130042Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Run all tests	2026-10-04T19:04:51.3130444Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Run all tests	2026-10-04T19:04:51.3130838Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+check	Run all tests	2026-10-04T19:04:51.3131224Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+check	Run all tests	2026-10-04T19:04:51.3131556Z ##[endgroup]
+check	Run all tests	2026-10-04T19:04:58.4651602Z ........................................................................ [ 65%]
+check	Run all tests	2026-10-04T19:04:58.7976146Z ......................................                                   [100%]
+check	Run all tests	2026-10-04T19:04:58.7976959Z 110 passed in 5.51s
+check	Post Set up Python	﻿2026-10-04T19:04:59.0523009Z Post job cleanup.
+check	Post Set up Python	2026-10-04T19:04:59.1703351Z Cache hit occurred on the primary key setup-python-Linux-x64-24.04-Ubuntu-python-3.11.16-pip-4c8203efc9721e0c10c473ea4dcf898f16e7e6a661ab509dbb3a96e5e3a0a7be, not saving cache.
+check	Post Check out repository	﻿2026-10-04T19:04:59.1866605Z Post job cleanup.
+check	Post Check out repository	2026-10-04T19:04:59.2820266Z [command]/usr/bin/git version
+check	Post Check out repository	2026-10-04T19:04:59.2869775Z git version 2.55.0
+check	Post Check out repository	2026-10-04T19:04:59.2910128Z Temporarily overriding HOME='/home/runner/work/_temp/72d035c9-151b-41e0-a8a4-adccc9d398ef' before making global git config changes
+check	Post Check out repository	2026-10-04T19:04:59.2911465Z Adding repository directory to the temporary git global config as a safe directory
+check	Post Check out repository	2026-10-04T19:04:59.2918870Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/development-and-integration-labs/development-and-integration-labs
+check	Post Check out repository	2026-10-04T19:04:59.2958164Z Removing SSH command configuration
+check	Post Check out repository	2026-10-04T19:04:59.2965945Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	Post Check out repository	2026-10-04T19:04:59.3053918Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	Post Check out repository	2026-10-04T19:04:59.3517871Z Removing HTTP extra header
+check	Post Check out repository	2026-10-04T19:04:59.3524221Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	Post Check out repository	2026-10-04T19:04:59.3567710Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	Post Check out repository	2026-10-04T19:04:59.3847233Z Removing includeIf entries pointing to credentials config files
+check	Post Check out repository	2026-10-04T19:04:59.3854644Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	Post Check out repository	2026-10-04T19:04:59.3918012Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	Complete job	﻿2026-10-04T19:04:59.4357650Z Cleaning up orphan processes
+build-image	Set up job	﻿2026-10-04T19:05:04.0987475Z Current runner version: '2.337.0'
+build-image	Set up job	2026-10-04T19:05:04.1009454Z ##[group]Runner Image Provisioner
+build-image	Set up job	2026-10-04T19:05:04.1010185Z Hosted Compute Agent
+build-image	Set up job	2026-10-04T19:05:04.1010697Z Version: 20260901.588
+build-image	Set up job	2026-10-04T19:05:04.1011257Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+build-image	Set up job	2026-10-04T19:05:04.1012038Z Build Date: 2026-09-01T19:56:44Z
+build-image	Set up job	2026-10-04T19:05:04.1012574Z Worker ID: {a7a1cc7d-775e-4f18-9b96-3049cd6c57ba}
+build-image	Set up job	2026-10-04T19:05:04.1013289Z Azure Region: westus3
+build-image	Set up job	2026-10-04T19:05:04.1013766Z ##[endgroup]
+build-image	Set up job	2026-10-04T19:05:04.1014927Z ##[group]Operating System
+build-image	Set up job	2026-10-04T19:05:04.1015444Z Ubuntu
+build-image	Set up job	2026-10-04T19:05:04.1015856Z 24.04.5
+build-image	Set up job	2026-10-04T19:05:04.1016330Z LTS
+build-image	Set up job	2026-10-04T19:05:04.1016784Z ##[endgroup]
+build-image	Set up job	2026-10-04T19:05:04.1017252Z ##[group]Runner Image
+build-image	Set up job	2026-10-04T19:05:04.1017756Z Image: ubuntu-24.04
+build-image	Set up job	2026-10-04T19:05:04.1018223Z Version: 20260927.320.1
+build-image	Set up job	2026-10-04T19:05:04.1019176Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+build-image	Set up job	2026-10-04T19:05:04.1020600Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+build-image	Set up job	2026-10-04T19:05:04.1021434Z ##[endgroup]
+build-image	Set up job	2026-10-04T19:05:04.1022590Z ##[group]GITHUB_TOKEN Permissions
+build-image	Set up job	2026-10-04T19:05:04.1024198Z Contents: read
+build-image	Set up job	2026-10-04T19:05:04.1024676Z Metadata: read
+build-image	Set up job	2026-10-04T19:05:04.1025218Z ##[endgroup]
+build-image	Set up job	2026-10-04T19:05:04.1026947Z Secret source: Actions
+build-image	Set up job	2026-10-04T19:05:04.1027792Z Cache mode: write
+build-image	Set up job	2026-10-04T19:05:04.1028397Z Prepare workflow directory
+build-image	Set up job	2026-10-04T19:05:04.1344771Z Prepare all required actions
+build-image	Set up job	2026-10-04T19:05:04.1384075Z Getting action download info
+build-image	Set up job	2026-10-04T19:05:04.4136972Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+build-image	Set up job	2026-10-04T19:05:04.5745741Z Complete job name: build-image
+build-image	Check out repository	﻿2026-10-04T19:05:04.6427595Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+build-image	Check out repository	2026-10-04T19:05:04.6428403Z with:
+build-image	Check out repository	2026-10-04T19:05:04.6428765Z   persist-credentials: false
+build-image	Check out repository	2026-10-04T19:05:04.6429301Z   repository: Kirill-Erofeev/development-and-integration-labs
+build-image	Check out repository	2026-10-04T19:05:04.6432662Z   token: ***
+build-image	Check out repository	2026-10-04T19:05:04.6433010Z   ssh-strict: true
+build-image	Check out repository	2026-10-04T19:05:04.6433367Z   ssh-user: git
+build-image	Check out repository	2026-10-04T19:05:04.6433706Z   clean: true
+build-image	Check out repository	2026-10-04T19:05:04.6434060Z   sparse-checkout-cone-mode: true
+build-image	Check out repository	2026-10-04T19:05:04.6434475Z   fetch-depth: 1
+build-image	Check out repository	2026-10-04T19:05:04.6434820Z   fetch-tags: false
+build-image	Check out repository	2026-10-04T19:05:04.6435174Z   show-progress: true
+build-image	Check out repository	2026-10-04T19:05:04.6435530Z   lfs: false
+build-image	Check out repository	2026-10-04T19:05:04.6435859Z   submodules: false
+build-image	Check out repository	2026-10-04T19:05:04.6436211Z   set-safe-directory: true
+build-image	Check out repository	2026-10-04T19:05:04.6436620Z   allow-unsafe-pr-checkout: false
+build-image	Check out repository	2026-10-04T19:05:04.6437195Z ##[endgroup]
+build-image	Check out repository	2026-10-04T19:05:04.7274612Z Syncing repository: Kirill-Erofeev/development-and-integration-labs
+build-image	Check out repository	2026-10-04T19:05:04.7276773Z ##[group]Getting Git version info
+build-image	Check out repository	2026-10-04T19:05:04.7278062Z Working directory is '/home/runner/work/development-and-integration-labs/development-and-integration-labs'
+build-image	Check out repository	2026-10-04T19:05:04.7279766Z [command]/usr/bin/git version
+build-image	Check out repository	2026-10-04T19:05:04.7362085Z git version 2.55.0
+build-image	Check out repository	2026-10-04T19:05:04.7377736Z ##[endgroup]
+build-image	Check out repository	2026-10-04T19:05:04.7387228Z Temporarily overriding HOME='/home/runner/work/_temp/6b513dcf-b968-4eea-b398-98944d92d4a3' before making global git config changes
+build-image	Check out repository	2026-10-04T19:05:04.7389167Z Adding repository directory to the temporary git global config as a safe directory
+build-image	Check out repository	2026-10-04T19:05:04.7392742Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/development-and-integration-labs/development-and-integration-labs
+build-image	Check out repository	2026-10-04T19:05:04.7431968Z Deleting the contents of '/home/runner/work/development-and-integration-labs/development-and-integration-labs'
+build-image	Check out repository	2026-10-04T19:05:04.7434485Z ##[group]Determining repository object format
+build-image	Check out repository	2026-10-04T19:05:04.7435946Z ##[endgroup]
+build-image	Check out repository	2026-10-04T19:05:04.7436600Z ##[group]Initializing the repository
+build-image	Check out repository	2026-10-04T19:05:04.7439874Z [command]/usr/bin/git init /home/runner/work/development-and-integration-labs/development-and-integration-labs
+build-image	Check out repository	2026-10-04T19:05:04.7515783Z hint: Using 'master' as the name for the initial branch. This default branch name
+build-image	Check out repository	2026-10-04T19:05:04.7516752Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+build-image	Check out repository	2026-10-04T19:05:04.7517990Z hint: to use in all of your new repositories, which will suppress this warning,
+build-image	Check out repository	2026-10-04T19:05:04.7519209Z hint: call:
+build-image	Check out repository	2026-10-04T19:05:04.7519718Z hint:
+build-image	Check out repository	2026-10-04T19:05:04.7520370Z hint: 	git config --global init.defaultBranch <name>
+build-image	Check out repository	2026-10-04T19:05:04.7521150Z hint:
+build-image	Check out repository	2026-10-04T19:05:04.7522024Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build-image	Check out repository	2026-10-04T19:05:04.7523192Z hint: 'development'. The just-created branch can be renamed via this command:
+build-image	Check out repository	2026-10-04T19:05:04.7524138Z hint:
+build-image	Check out repository	2026-10-04T19:05:04.7524652Z hint: 	git branch -m <name>
+build-image	Check out repository	2026-10-04T19:05:04.7525266Z hint:
+build-image	Check out repository	2026-10-04T19:05:04.7526013Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build-image	Check out repository	2026-10-04T19:05:04.7527687Z Initialized empty Git repository in /home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/
+build-image	Check out repository	2026-10-04T19:05:04.7534725Z [command]/usr/bin/git remote add origin https://github.com/Kirill-Erofeev/development-and-integration-labs
+build-image	Check out repository	2026-10-04T19:05:04.7573558Z ##[endgroup]
+build-image	Check out repository	2026-10-04T19:05:04.7574535Z ##[group]Disabling automatic garbage collection
+build-image	Check out repository	2026-10-04T19:05:04.7575765Z [command]/usr/bin/git config --local gc.auto 0
+build-image	Check out repository	2026-10-04T19:05:04.7612282Z ##[endgroup]
+build-image	Check out repository	2026-10-04T19:05:04.7613397Z ##[group]Setting up auth
+build-image	Check out repository	2026-10-04T19:05:04.7614184Z Removing SSH command configuration
+build-image	Check out repository	2026-10-04T19:05:04.7615257Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build-image	Check out repository	2026-10-04T19:05:04.7642043Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build-image	Check out repository	2026-10-04T19:05:04.7929716Z Removing HTTP extra header
+build-image	Check out repository	2026-10-04T19:05:04.7935875Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build-image	Check out repository	2026-10-04T19:05:04.7968445Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build-image	Check out repository	2026-10-04T19:05:04.8156252Z Removing includeIf entries pointing to credentials config files
+build-image	Check out repository	2026-10-04T19:05:04.8161613Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build-image	Check out repository	2026-10-04T19:05:04.8192740Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build-image	Check out repository	2026-10-04T19:05:04.8382342Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build-image	Check out repository	2026-10-04T19:05:04.8414301Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path /home/runner/work/_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config
+build-image	Check out repository	2026-10-04T19:05:04.8443739Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config
+build-image	Check out repository	2026-10-04T19:05:04.8476141Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config
+build-image	Check out repository	2026-10-04T19:05:04.8507768Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config
+build-image	Check out repository	2026-10-04T19:05:04.8535205Z ##[endgroup]
+build-image	Check out repository	2026-10-04T19:05:04.8535852Z ##[group]Fetching the repository
+build-image	Check out repository	2026-10-04T19:05:04.8540197Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +dcb89eb18c1d22e5f975cba4e862e2d16f73454b:refs/remotes/pull/15/merge
+build-image	Check out repository	2026-10-04T19:05:05.9908332Z From https://github.com/Kirill-Erofeev/development-and-integration-labs
+build-image	Check out repository	2026-10-04T19:05:05.9909405Z  * [new ref]         dcb89eb18c1d22e5f975cba4e862e2d16f73454b -> pull/15/merge
+build-image	Check out repository	2026-10-04T19:05:05.9911884Z ##[endgroup]
+build-image	Check out repository	2026-10-04T19:05:05.9912688Z ##[group]Determining the checkout info
+build-image	Check out repository	2026-10-04T19:05:05.9913481Z ##[endgroup]
+build-image	Check out repository	2026-10-04T19:05:05.9916641Z [command]/usr/bin/git sparse-checkout disable
+build-image	Check out repository	2026-10-04T19:05:05.9961337Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build-image	Check out repository	2026-10-04T19:05:05.9995884Z ##[group]Checking out the ref
+build-image	Check out repository	2026-10-04T19:05:05.9996394Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/15/merge
+build-image	Check out repository	2026-10-04T19:05:06.0210893Z Note: switching to 'refs/remotes/pull/15/merge'.
+build-image	Check out repository	2026-10-04T19:05:06.0211579Z 
+build-image	Check out repository	2026-10-04T19:05:06.0212026Z You are in 'detached HEAD' state. You can look around, make experimental
+build-image	Check out repository	2026-10-04T19:05:06.0212739Z changes and commit them, and you can discard any commits you make in this
+build-image	Check out repository	2026-10-04T19:05:06.0213186Z state without impacting any branches by switching back to a branch.
+build-image	Check out repository	2026-10-04T19:05:06.0213450Z 
+build-image	Check out repository	2026-10-04T19:05:06.0213653Z If you want to create a new branch to retain commits you create, you may
+build-image	Check out repository	2026-10-04T19:05:06.0214060Z do so (now or later) by using -c with the switch command. Example:
+build-image	Check out repository	2026-10-04T19:05:06.0214279Z 
+build-image	Check out repository	2026-10-04T19:05:06.0214396Z   git switch -c <new-branch-name>
+build-image	Check out repository	2026-10-04T19:05:06.0214562Z 
+build-image	Check out repository	2026-10-04T19:05:06.0214681Z Or undo this operation with:
+build-image	Check out repository	2026-10-04T19:05:06.0214845Z 
+build-image	Check out repository	2026-10-04T19:05:06.0214945Z   git switch -
+build-image	Check out repository	2026-10-04T19:05:06.0215102Z 
+build-image	Check out repository	2026-10-04T19:05:06.0215292Z Turn off this advice by setting config variable advice.detachedHead to false
+build-image	Check out repository	2026-10-04T19:05:06.0215770Z 
+build-image	Check out repository	2026-10-04T19:05:06.0216053Z HEAD is now at dcb89eb Merge 24c715506452ae353494bab7721cce198f549574 into 61385bf2f12157cd098d243998c6a1bf266e1feb
+build-image	Check out repository	2026-10-04T19:05:06.0225167Z ##[endgroup]
+build-image	Check out repository	2026-10-04T19:05:06.0262829Z [command]/usr/bin/git log -1 --format=%H
+build-image	Check out repository	2026-10-04T19:05:06.0287193Z dcb89eb18c1d22e5f975cba4e862e2d16f73454b
+build-image	Check out repository	2026-10-04T19:05:06.0297426Z ##[group]Removing auth
+build-image	Check out repository	2026-10-04T19:05:06.0297772Z Removing SSH command configuration
+build-image	Check out repository	2026-10-04T19:05:06.0299346Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build-image	Check out repository	2026-10-04T19:05:06.0328350Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build-image	Check out repository	2026-10-04T19:05:06.0517321Z Removing HTTP extra header
+build-image	Check out repository	2026-10-04T19:05:06.0518066Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build-image	Check out repository	2026-10-04T19:05:06.0548100Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build-image	Check out repository	2026-10-04T19:05:06.0736176Z Removing includeIf entries pointing to credentials config files
+build-image	Check out repository	2026-10-04T19:05:06.0739030Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build-image	Check out repository	2026-10-04T19:05:06.0764948Z includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path
+build-image	Check out repository	2026-10-04T19:05:06.0765759Z includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path
+build-image	Check out repository	2026-10-04T19:05:06.0766295Z includeif.gitdir:/github/workspace/.git.path
+build-image	Check out repository	2026-10-04T19:05:06.0766642Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+build-image	Check out repository	2026-10-04T19:05:06.0771418Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path
+build-image	Check out repository	2026-10-04T19:05:06.0794090Z /home/runner/work/_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config
+build-image	Check out repository	2026-10-04T19:05:06.0801214Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-e494017b\-bea4\-436c\-91af\-ba8c33e72bf2\.config
+build-image	Check out repository	2026-10-04T19:05:06.0833138Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path
+build-image	Check out repository	2026-10-04T19:05:06.0855899Z /home/runner/work/_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config
+build-image	Check out repository	2026-10-04T19:05:06.0862468Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/development-and-integration-labs/development-and-integration-labs/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-e494017b\-bea4\-436c\-91af\-ba8c33e72bf2\.config
+build-image	Check out repository	2026-10-04T19:05:06.0892791Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+build-image	Check out repository	2026-10-04T19:05:06.0914831Z /github/runner_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config
+build-image	Check out repository	2026-10-04T19:05:06.0920980Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-e494017b\-bea4\-436c\-91af\-ba8c33e72bf2\.config
+build-image	Check out repository	2026-10-04T19:05:06.0953910Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+build-image	Check out repository	2026-10-04T19:05:06.0977000Z /github/runner_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config
+build-image	Check out repository	2026-10-04T19:05:06.1023910Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-e494017b\-bea4\-436c\-91af\-ba8c33e72bf2\.config
+build-image	Check out repository	2026-10-04T19:05:06.1053786Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build-image	Check out repository	2026-10-04T19:05:06.1251921Z Removing credentials config '/home/runner/work/_temp/git-credentials-e494017b-bea4-436c-91af-ba8c33e72bf2.config'
+build-image	Check out repository	2026-10-04T19:05:06.1253412Z ##[endgroup]
+build-image	Build API image	﻿2026-10-04T19:05:06.1417810Z ##[group]Run docker build --file Dockerfile --tag "ml-api:test-${GITHUB_SHA}" .
+build-image	Build API image	2026-10-04T19:05:06.1418415Z ^[[36;1mdocker build --file Dockerfile --tag "ml-api:test-${GITHUB_SHA}" .^[[0m
+build-image	Build API image	2026-10-04T19:05:06.1626639Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build-image	Build API image	2026-10-04T19:05:06.1627033Z ##[endgroup]
+build-image	Build API image	2026-10-04T19:05:06.5850035Z #0 building with "default" instance using docker driver
+build-image	Build API image	2026-10-04T19:05:06.5850577Z 
+build-image	Build API image	2026-10-04T19:05:06.5850781Z #1 [internal] load build definition from Dockerfile
+build-image	Build API image	2026-10-04T19:05:06.5851241Z #1 transferring dockerfile: 585B done
+build-image	Build API image	2026-10-04T19:05:06.5851617Z #1 DONE 0.0s
+build-image	Build API image	2026-10-04T19:05:06.5851936Z 
+build-image	Build API image	2026-10-04T19:05:06.5852196Z #2 [internal] load metadata for docker.io/library/python:3.11-slim
+build-image	Build API image	2026-10-04T19:05:06.7769499Z #2 ...
+build-image	Build API image	2026-10-04T19:05:06.7769776Z 
+build-image	Build API image	2026-10-04T19:05:06.7769965Z #3 [auth] library/python:pull token for registry-1.docker.io
+build-image	Build API image	2026-10-04T19:05:06.7770307Z #3 DONE 0.0s
+build-image	Build API image	2026-10-04T19:05:06.9272058Z 
+build-image	Build API image	2026-10-04T19:05:06.9272424Z #2 [internal] load metadata for docker.io/library/python:3.11-slim
+build-image	Build API image	2026-10-04T19:05:07.1738002Z #2 DONE 0.7s
+build-image	Build API image	2026-10-04T19:05:07.2902110Z 
+build-image	Build API image	2026-10-04T19:05:07.2903014Z #4 [internal] load .dockerignore
+build-image	Build API image	2026-10-04T19:05:07.2903538Z #4 transferring context: 309B done
+build-image	Build API image	2026-10-04T19:05:07.2904618Z #4 DONE 0.0s
+build-image	Build API image	2026-10-04T19:05:07.2904809Z 
+build-image	Build API image	2026-10-04T19:05:07.2904932Z #5 [internal] load build context
+build-image	Build API image	2026-10-04T19:05:07.2905314Z #5 transferring context: 9.57kB done
+build-image	Build API image	2026-10-04T19:05:07.2905636Z #5 DONE 0.0s
+build-image	Build API image	2026-10-04T19:05:07.2905778Z 
+build-image	Build API image	2026-10-04T19:05:07.2906330Z #6 [1/7] FROM docker.io/library/python:3.11-slim@sha256:6f31d6e9ba2b0a787a3f81c37b004155b87b9efa1b771182bd550c1615745be5
+build-image	Build API image	2026-10-04T19:05:07.2907428Z #6 resolve docker.io/library/python:3.11-slim@sha256:6f31d6e9ba2b0a787a3f81c37b004155b87b9efa1b771182bd550c1615745be5 done
+build-image	Build API image	2026-10-04T19:05:07.2908362Z #6 sha256:f64163c1b799b4915c58c0439006ebe6e393a8c346d2393f08fa0ca74e306f6e 0B / 4.27MB 0.1s
+build-image	Build API image	2026-10-04T19:05:07.2909555Z #6 sha256:295f1967d0454b54c78432d56f412a274da4b46e92cdf5679aea04fbd47b9c36 0B / 14.46MB 0.1s
+build-image	Build API image	2026-10-04T19:05:07.2910081Z #6 sha256:6f31d6e9ba2b0a787a3f81c37b004155b87b9efa1b771182bd550c1615745be5 10.37kB / 10.37kB done
+build-image	Build API image	2026-10-04T19:05:07.2910607Z #6 sha256:922f47525757de33aff59f24cdfc85f412ac4a06aa8af7c7e9028d584b7bcdeb 1.75kB / 1.75kB done
+build-image	Build API image	2026-10-04T19:05:07.2911185Z #6 sha256:d3846bce6e97d0ef5c32fc023300d5e39251ad791e6fdfaee41d2ba75246766e 5.49kB / 5.49kB done
+build-image	Build API image	2026-10-04T19:05:07.2911699Z #6 sha256:6b37362b3da78869050b894b799ad4df04f1f3b52774087db0d81151570244c8 9.44MB / 29.83MB 0.1s
+build-image	Build API image	2026-10-04T19:05:07.3904534Z #6 sha256:f64163c1b799b4915c58c0439006ebe6e393a8c346d2393f08fa0ca74e306f6e 4.27MB / 4.27MB 0.2s
+build-image	Build API image	2026-10-04T19:05:07.3905148Z #6 sha256:295f1967d0454b54c78432d56f412a274da4b46e92cdf5679aea04fbd47b9c36 7.34MB / 14.46MB 0.2s
+build-image	Build API image	2026-10-04T19:05:07.3905672Z #6 sha256:6b37362b3da78869050b894b799ad4df04f1f3b52774087db0d81151570244c8 29.83MB / 29.83MB 0.2s
+build-image	Build API image	2026-10-04T19:05:07.5855987Z #6 sha256:295f1967d0454b54c78432d56f412a274da4b46e92cdf5679aea04fbd47b9c36 14.46MB / 14.46MB 0.3s
+build-image	Build API image	2026-10-04T19:05:07.5857400Z #6 extracting sha256:6b37362b3da78869050b894b799ad4df04f1f3b52774087db0d81151570244c8
+build-image	Build API image	2026-10-04T19:05:07.6888201Z #6 sha256:f64163c1b799b4915c58c0439006ebe6e393a8c346d2393f08fa0ca74e306f6e 4.27MB / 4.27MB 0.4s done
+build-image	Build API image	2026-10-04T19:05:07.6889283Z #6 sha256:295f1967d0454b54c78432d56f412a274da4b46e92cdf5679aea04fbd47b9c36 14.46MB / 14.46MB 0.4s done
+build-image	Build API image	2026-10-04T19:05:07.6890816Z #6 sha256:6b37362b3da78869050b894b799ad4df04f1f3b52774087db0d81151570244c8 29.83MB / 29.83MB 0.4s done
+build-image	Build API image	2026-10-04T19:05:07.6891515Z #6 sha256:48355dfcbf9e05ad2daf9d9506583bdb41b02ff7d67a5f2b239217e09320604c 0B / 250B 0.4s
+build-image	Build API image	2026-10-04T19:05:07.7907599Z #6 sha256:48355dfcbf9e05ad2daf9d9506583bdb41b02ff7d67a5f2b239217e09320604c 250B / 250B 0.4s done
+build-image	Build API image	2026-10-04T19:05:08.4203043Z #6 extracting sha256:6b37362b3da78869050b894b799ad4df04f1f3b52774087db0d81151570244c8 0.7s done
+build-image	Build API image	2026-10-04T19:05:08.4204723Z #6 extracting sha256:f64163c1b799b4915c58c0439006ebe6e393a8c346d2393f08fa0ca74e306f6e 0.1s
+build-image	Build API image	2026-10-04T19:05:08.5800726Z #6 extracting sha256:f64163c1b799b4915c58c0439006ebe6e393a8c346d2393f08fa0ca74e306f6e 0.1s done
+build-image	Build API image	2026-10-04T19:05:09.1099185Z #6 extracting sha256:295f1967d0454b54c78432d56f412a274da4b46e92cdf5679aea04fbd47b9c36
+build-image	Build API image	2026-10-04T19:05:09.7750468Z #6 extracting sha256:295f1967d0454b54c78432d56f412a274da4b46e92cdf5679aea04fbd47b9c36 0.5s done
+build-image	Build API image	2026-10-04T19:05:09.9377520Z #6 extracting sha256:48355dfcbf9e05ad2daf9d9506583bdb41b02ff7d67a5f2b239217e09320604c
+build-image	Build API image	2026-10-04T19:05:10.1233461Z #6 extracting sha256:48355dfcbf9e05ad2daf9d9506583bdb41b02ff7d67a5f2b239217e09320604c done
+build-image	Build API image	2026-10-04T19:05:10.1234004Z #6 DONE 2.8s
+build-image	Build API image	2026-10-04T19:05:10.1234121Z 
+build-image	Build API image	2026-10-04T19:05:10.1234200Z #7 [2/7] WORKDIR /app
+build-image	Build API image	2026-10-04T19:05:10.1234371Z #7 DONE 0.0s
+build-image	Build API image	2026-10-04T19:05:10.1234469Z 
+build-image	Build API image	2026-10-04T19:05:10.1234559Z #8 [3/7] COPY requirements.txt ./
+build-image	Build API image	2026-10-04T19:05:10.1234770Z #8 DONE 0.0s
+build-image	Build API image	2026-10-04T19:05:10.1234858Z 
+build-image	Build API image	2026-10-04T19:05:10.1235164Z #9 [4/7] RUN python -m pip install --no-cache-dir --only-binary=:all: -r requirements.txt
+build-image	Build API image	2026-10-04T19:05:11.0120184Z #9 1.039 Ignoring colorama: markers 'sys_platform == "win32"' don't match your environment
+build-image	Build API image	2026-10-04T19:05:11.1953203Z #9 1.096 Collecting joblib==1.5.2 (from -r requirements.txt (line 1))
+build-image	Build API image	2026-10-04T19:05:11.1960057Z #9 1.137   Downloading joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+build-image	Build API image	2026-10-04T19:05:11.1960491Z #9 1.222 Collecting scikit-learn==1.7.2 (from -r requirements.txt (line 2))
+build-image	Build API image	2026-10-04T19:05:11.3562011Z #9 1.233   Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+build-image	Build API image	2026-10-04T19:05:11.3787435Z #9 1.406 Collecting numpy==2.1.1 (from -r requirements.txt (line 3))
+build-image	Build API image	2026-10-04T19:05:11.5292511Z #9 1.416   Downloading numpy-2.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+build-image	Build API image	2026-10-04T19:05:11.5293682Z #9 1.427      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.9/60.9 kB 6.0 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:11.5295011Z #9 1.556 Collecting scipy==1.16.3 (from -r requirements.txt (line 4))
+build-image	Build API image	2026-10-04T19:05:11.6347250Z #9 1.567   Downloading scipy-1.16.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (62 kB)
+build-image	Build API image	2026-10-04T19:05:11.6348788Z #9 1.569      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 79.5 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:11.6349403Z #9 1.592 Collecting threadpoolctl==3.6.0 (from -r requirements.txt (line 5))
+build-image	Build API image	2026-10-04T19:05:11.6350331Z #9 1.602   Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+build-image	Build API image	2026-10-04T19:05:11.6351015Z #9 1.637 Collecting pytest==8.4.2 (from -r requirements.txt (line 6))
+build-image	Build API image	2026-10-04T19:05:11.6351583Z #9 1.646   Downloading pytest-8.4.2-py3-none-any.whl.metadata (7.7 kB)
+build-image	Build API image	2026-10-04T19:05:11.6352264Z #9 1.662 Collecting iniconfig==2.3.0 (from -r requirements.txt (line 8))
+build-image	Build API image	2026-10-04T19:05:11.7363433Z #9 1.672   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+build-image	Build API image	2026-10-04T19:05:11.7364431Z #9 1.693 Collecting packaging==24.2 (from -r requirements.txt (line 9))
+build-image	Build API image	2026-10-04T19:05:11.7365583Z #9 1.703   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+build-image	Build API image	2026-10-04T19:05:11.7366428Z #9 1.721 Collecting pluggy==1.5.0 (from -r requirements.txt (line 10))
+build-image	Build API image	2026-10-04T19:05:11.7367045Z #9 1.731   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+build-image	Build API image	2026-10-04T19:05:11.7367609Z #9 1.753 Collecting Pygments==2.18.0 (from -r requirements.txt (line 11))
+build-image	Build API image	2026-10-04T19:05:11.7368216Z #9 1.763   Downloading pygments-2.18.0-py3-none-any.whl.metadata (2.5 kB)
+build-image	Build API image	2026-10-04T19:05:11.9237999Z #9 1.811 Collecting fastapi==0.115.12 (from -r requirements.txt (line 12))
+build-image	Build API image	2026-10-04T19:05:11.9238982Z #9 1.822   Downloading fastapi-0.115.12-py3-none-any.whl.metadata (27 kB)
+build-image	Build API image	2026-10-04T19:05:11.9240391Z #9 1.850 Collecting uvicorn==0.34.0 (from -r requirements.txt (line 13))
+build-image	Build API image	2026-10-04T19:05:11.9241036Z #9 1.859   Downloading uvicorn-0.34.0-py3-none-any.whl.metadata (6.5 kB)
+build-image	Build API image	2026-10-04T19:05:11.9241593Z #9 1.951 Collecting pydantic==2.10.4 (from -r requirements.txt (line 14))
+build-image	Build API image	2026-10-04T19:05:12.0287247Z #9 1.961   Downloading pydantic-2.10.4-py3-none-any.whl.metadata (29 kB)
+build-image	Build API image	2026-10-04T19:05:12.0287968Z #9 1.984 Collecting httpx==0.28.1 (from -r requirements.txt (line 15))
+build-image	Build API image	2026-10-04T19:05:12.0288568Z #9 1.994   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+build-image	Build API image	2026-10-04T19:05:12.0289140Z #9 2.022 Collecting starlette==0.46.1 (from -r requirements.txt (line 16))
+build-image	Build API image	2026-10-04T19:05:12.0289712Z #9 2.034   Downloading starlette-0.46.1-py3-none-any.whl.metadata (6.2 kB)
+build-image	Build API image	2026-10-04T19:05:12.0290257Z #9 2.056 Collecting anyio==4.9.0 (from -r requirements.txt (line 17))
+build-image	Build API image	2026-10-04T19:05:12.1424071Z #9 2.066   Downloading anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB)
+build-image	Build API image	2026-10-04T19:05:12.1424739Z #9 2.082 Collecting sniffio==1.3.1 (from -r requirements.txt (line 18))
+build-image	Build API image	2026-10-04T19:05:12.1425314Z #9 2.091   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+build-image	Build API image	2026-10-04T19:05:12.1425687Z #9 2.107 Collecting h11==0.16.0 (from -r requirements.txt (line 19))
+build-image	Build API image	2026-10-04T19:05:12.1426043Z #9 2.117   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+build-image	Build API image	2026-10-04T19:05:12.1426396Z #9 2.139 Collecting httpcore==1.0.9 (from -r requirements.txt (line 20))
+build-image	Build API image	2026-10-04T19:05:12.1426752Z #9 2.148   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+build-image	Build API image	2026-10-04T19:05:12.1427145Z #9 2.170 Collecting typing-extensions==4.15.0 (from -r requirements.txt (line 21))
+build-image	Build API image	2026-10-04T19:05:12.3282009Z #9 2.179   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+build-image	Build API image	2026-10-04T19:05:12.3282826Z #9 2.195 Collecting annotated-types==0.7.0 (from -r requirements.txt (line 22))
+build-image	Build API image	2026-10-04T19:05:12.3283385Z #9 2.205   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+build-image	Build API image	2026-10-04T19:05:12.7719668Z #9 2.799 Collecting pydantic-core==2.27.2 (from -r requirements.txt (line 23))
+build-image	Build API image	2026-10-04T19:05:12.8778401Z #9 2.815   Downloading pydantic_core-2.27.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+build-image	Build API image	2026-10-04T19:05:12.8779188Z #9 2.837 Collecting click==8.3.1 (from -r requirements.txt (line 24))
+build-image	Build API image	2026-10-04T19:05:12.8779940Z #9 2.846   Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+build-image	Build API image	2026-10-04T19:05:12.8780721Z #9 2.864 Collecting idna==3.10 (from -r requirements.txt (line 25))
+build-image	Build API image	2026-10-04T19:05:12.8781334Z #9 2.874   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+build-image	Build API image	2026-10-04T19:05:12.8782068Z #9 2.895 Collecting certifi==2025.11.12 (from -r requirements.txt (line 26))
+build-image	Build API image	2026-10-04T19:05:12.8782708Z #9 2.905   Downloading certifi-2025.11.12-py3-none-any.whl.metadata (2.5 kB)
+build-image	Build API image	2026-10-04T19:05:13.0963068Z #9 3.123 Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
+build-image	Build API image	2026-10-04T19:05:13.1976340Z #9 3.143    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 308.4/308.4 kB 16.5 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.1977141Z #9 3.153 Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+build-image	Build API image	2026-10-04T19:05:13.3715552Z #9 3.225    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 138.7 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.3716379Z #9 3.235 Downloading numpy-2.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.3 MB)
+build-image	Build API image	2026-10-04T19:05:13.3717181Z #9 3.296    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.3/16.3 MB 260.1 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.3717715Z #9 3.307 Downloading scipy-1.16.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (35.9 MB)
+build-image	Build API image	2026-10-04T19:05:13.4726186Z #9 3.398    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.9/35.9 MB 531.0 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.4726934Z #9 3.408 Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+build-image	Build API image	2026-10-04T19:05:13.4727750Z #9 3.418 Downloading pytest-8.4.2-py3-none-any.whl (365 kB)
+build-image	Build API image	2026-10-04T19:05:13.4728582Z #9 3.420    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 365.8/365.8 kB 499.1 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.4729149Z #9 3.430 Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+build-image	Build API image	2026-10-04T19:05:13.4729665Z #9 3.441 Downloading packaging-24.2-py3-none-any.whl (65 kB)
+build-image	Build API image	2026-10-04T19:05:13.4730396Z #9 3.442    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.5/65.5 kB 440.4 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.4731187Z #9 3.452 Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+build-image	Build API image	2026-10-04T19:05:13.4731696Z #9 3.462 Downloading pygments-2.18.0-py3-none-any.whl (1.2 MB)
+build-image	Build API image	2026-10-04T19:05:13.4732524Z #9 3.467    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 384.9 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.4733048Z #9 3.477 Downloading fastapi-0.115.12-py3-none-any.whl (95 kB)
+build-image	Build API image	2026-10-04T19:05:13.4733676Z #9 3.478    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.2/95.2 kB 483.5 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.4734360Z #9 3.488 Downloading uvicorn-0.34.0-py3-none-any.whl (62 kB)
+build-image	Build API image	2026-10-04T19:05:13.4734972Z #9 3.489    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.3/62.3 kB 454.5 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.4735500Z #9 3.500 Downloading pydantic-2.10.4-py3-none-any.whl (431 kB)
+build-image	Build API image	2026-10-04T19:05:13.5775654Z #9 3.502    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.8/431.8 kB 383.9 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.5776304Z #9 3.512 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+build-image	Build API image	2026-10-04T19:05:13.5776940Z #9 3.513    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 430.3 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.5777472Z #9 3.524 Downloading starlette-0.46.1-py3-none-any.whl (71 kB)
+build-image	Build API image	2026-10-04T19:05:13.5778175Z #9 3.525    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.0/72.0 kB 426.7 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.5778491Z #9 3.535 Downloading anyio-4.9.0-py3-none-any.whl (100 kB)
+build-image	Build API image	2026-10-04T19:05:13.5778875Z #9 3.536    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.9/100.9 kB 483.9 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.5779220Z #9 3.546 Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+build-image	Build API image	2026-10-04T19:05:13.5779714Z #9 3.555 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+build-image	Build API image	2026-10-04T19:05:13.5780197Z #9 3.565 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+build-image	Build API image	2026-10-04T19:05:13.5780861Z #9 3.567    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 435.3 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.5781584Z #9 3.576 Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+build-image	Build API image	2026-10-04T19:05:13.5782214Z #9 3.578    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 400.1 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.5782540Z #9 3.587 Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+build-image	Build API image	2026-10-04T19:05:13.5782983Z #9 3.598 Downloading pydantic_core-2.27.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+build-image	Build API image	2026-10-04T19:05:13.7621610Z #9 3.605    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 372.6 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.7622428Z #9 3.614 Downloading click-8.3.1-py3-none-any.whl (108 kB)
+build-image	Build API image	2026-10-04T19:05:13.7623040Z #9 3.616    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 471.7 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.7623550Z #9 3.626 Downloading idna-3.10-py3-none-any.whl (70 kB)
+build-image	Build API image	2026-10-04T19:05:13.7624146Z #9 3.627    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 452.7 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.7624540Z #9 3.637 Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+build-image	Build API image	2026-10-04T19:05:13.7625287Z #9 3.638    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.4/159.4 kB 481.4 MB/s eta 0:00:00
+build-image	Build API image	2026-10-04T19:05:13.8219772Z #9 3.849 Installing collected packages: typing-extensions, threadpoolctl, sniffio, Pygments, pluggy, packaging, numpy, joblib, iniconfig, idna, h11, click, certifi, annotated-types, uvicorn, scipy, pytest, pydantic-core, httpcore, anyio, starlette, scikit-learn, pydantic, httpx, fastapi
+build-image	Build API image	2026-10-04T19:05:14.2924873Z #9 4.320   Attempting uninstall: packaging
+build-image	Build API image	2026-10-04T19:05:14.4486489Z #9 4.322     Found existing installation: packaging 26.3
+build-image	Build API image	2026-10-04T19:05:14.4486989Z #9 4.324     Uninstalling packaging-26.3:
+build-image	Build API image	2026-10-04T19:05:14.4487382Z #9 4.325       Successfully uninstalled packaging-26.3
+build-image	Build API image	2026-10-04T19:05:20.2784621Z #9 10.31 Successfully installed Pygments-2.18.0 annotated-types-0.7.0 anyio-4.9.0 certifi-2025.11.12 click-8.3.1 fastapi-0.115.12 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.10 iniconfig-2.3.0 joblib-1.5.2 numpy-2.1.1 packaging-24.2 pluggy-1.5.0 pydantic-2.10.4 pydantic-core-2.27.2 pytest-8.4.2 scikit-learn-1.7.2 scipy-1.16.3 sniffio-1.3.1 starlette-0.46.1 threadpoolctl-3.6.0 typing-extensions-4.15.0 uvicorn-0.34.0
+build-image	Build API image	2026-10-04T19:05:20.4287244Z #9 10.31 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+build-image	Build API image	2026-10-04T19:05:23.5320032Z #9 DONE 13.6s
+build-image	Build API image	2026-10-04T19:05:23.6384763Z 
+build-image	Build API image	2026-10-04T19:05:23.6385422Z #10 [5/7] COPY app ./app
+build-image	Build API image	2026-10-04T19:05:23.6385972Z #10 DONE 0.1s
+build-image	Build API image	2026-10-04T19:05:23.6386179Z 
+build-image	Build API image	2026-10-04T19:05:23.6386391Z #11 [6/7] COPY src ./src
+build-image	Build API image	2026-10-04T19:05:23.6386721Z #11 DONE 0.0s
+build-image	Build API image	2026-10-04T19:05:23.7992215Z 
+build-image	Build API image	2026-10-04T19:05:23.7992968Z #12 [7/7] COPY models/model.pkl ./models/model.pkl
+build-image	Build API image	2026-10-04T19:05:23.7993390Z #12 DONE 0.0s
+build-image	Build API image	2026-10-04T19:05:23.7993534Z 
+build-image	Build API image	2026-10-04T19:05:23.7993646Z #13 exporting to image
+build-image	Build API image	2026-10-04T19:05:23.7994332Z #13 exporting layers
+build-image	Build API image	2026-10-04T19:05:25.1258754Z #13 exporting layers 1.5s done
+build-image	Build API image	2026-10-04T19:05:25.1402648Z #13 writing image sha256:294e1140d0d796fce0847cb0204a728ec5a1801f3ba4060614713d69487fd2cf done
+build-image	Build API image	2026-10-04T19:05:25.1403672Z #13 naming to docker.io/library/ml-api:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b done
+build-image	Build API image	2026-10-04T19:05:25.1404190Z #13 DONE 1.5s
+build-image	Build client image	﻿2026-10-04T19:05:25.1482372Z ##[group]Run docker build --file client/Dockerfile --tag "ml-client:test-${GITHUB_SHA}" client
+build-image	Build client image	2026-10-04T19:05:25.1482935Z ^[[36;1mdocker build --file client/Dockerfile --tag "ml-client:test-${GITHUB_SHA}" client^[[0m
+build-image	Build client image	2026-10-04T19:05:25.1541681Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build-image	Build client image	2026-10-04T19:05:25.1542147Z ##[endgroup]
+build-image	Build client image	2026-10-04T19:05:25.2318117Z #0 building with "default" instance using docker driver
+build-image	Build client image	2026-10-04T19:05:25.2318408Z 
+build-image	Build client image	2026-10-04T19:05:25.2318523Z #1 [internal] load build definition from Dockerfile
+build-image	Build client image	2026-10-04T19:05:25.3558768Z #1 transferring dockerfile: 285B done
+build-image	Build client image	2026-10-04T19:05:25.3559235Z #1 DONE 0.0s
+build-image	Build client image	2026-10-04T19:05:25.3559367Z 
+build-image	Build client image	2026-10-04T19:05:25.3559596Z #2 [internal] load metadata for docker.io/library/python:3.11-slim
+build-image	Build client image	2026-10-04T19:05:25.3560022Z #2 DONE 0.1s
+build-image	Build client image	2026-10-04T19:05:25.5523529Z 
+build-image	Build client image	2026-10-04T19:05:25.5523921Z #3 [internal] load .dockerignore
+build-image	Build client image	2026-10-04T19:05:25.5524312Z #3 transferring context: 72B done
+build-image	Build client image	2026-10-04T19:05:25.5524630Z #3 DONE 0.0s
+build-image	Build client image	2026-10-04T19:05:25.5524865Z 
+build-image	Build client image	2026-10-04T19:05:25.5525350Z #4 [1/5] FROM docker.io/library/python:3.11-slim@sha256:6f31d6e9ba2b0a787a3f81c37b004155b87b9efa1b771182bd550c1615745be5
+build-image	Build client image	2026-10-04T19:05:25.5526019Z #4 DONE 0.0s
+build-image	Build client image	2026-10-04T19:05:25.5526156Z 
+build-image	Build client image	2026-10-04T19:05:25.5526285Z #5 [internal] load build context
+build-image	Build client image	2026-10-04T19:05:25.5526615Z #5 transferring context: 3.45kB done
+build-image	Build client image	2026-10-04T19:05:25.5526928Z #5 DONE 0.0s
+build-image	Build client image	2026-10-04T19:05:25.5527262Z 
+build-image	Build client image	2026-10-04T19:05:25.5527551Z #6 [2/5] WORKDIR /app
+build-image	Build client image	2026-10-04T19:05:25.5527827Z #6 CACHED
+build-image	Build client image	2026-10-04T19:05:25.5527968Z 
+build-image	Build client image	2026-10-04T19:05:25.5528113Z #7 [3/5] COPY requirements.txt ./
+build-image	Build client image	2026-10-04T19:05:25.5528445Z #7 DONE 0.0s
+build-image	Build client image	2026-10-04T19:05:25.5528597Z 
+build-image	Build client image	2026-10-04T19:05:25.5528921Z #8 [4/5] RUN python -m pip install --no-cache-dir --only-binary=:all: -r requirements.txt
+build-image	Build client image	2026-10-04T19:05:26.5193102Z #8 1.117 Collecting requests==2.32.3 (from -r requirements.txt (line 1))
+build-image	Build client image	2026-10-04T19:05:26.6847330Z #8 1.133   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+build-image	Build client image	2026-10-04T19:05:26.6848050Z #8 1.155 Collecting certifi==2025.11.12 (from -r requirements.txt (line 2))
+build-image	Build client image	2026-10-04T19:05:26.6848699Z #8 1.158   Downloading certifi-2025.11.12-py3-none-any.whl.metadata (2.5 kB)
+build-image	Build client image	2026-10-04T19:05:26.6849387Z #8 1.283 Collecting charset-normalizer==3.4.0 (from -r requirements.txt (line 3))
+build-image	Build client image	2026-10-04T19:05:26.7856367Z #8 1.287   Downloading charset_normalizer-3.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (34 kB)
+build-image	Build client image	2026-10-04T19:05:26.7857292Z #8 1.308 Collecting idna==3.10 (from -r requirements.txt (line 4))
+build-image	Build client image	2026-10-04T19:05:26.7858212Z #8 1.313   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+build-image	Build client image	2026-10-04T19:05:26.7858923Z #8 1.340 Collecting urllib3==2.5.0 (from -r requirements.txt (line 5))
+build-image	Build client image	2026-10-04T19:05:26.7859469Z #8 1.342   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+build-image	Build client image	2026-10-04T19:05:26.7859832Z #8 1.362 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+build-image	Build client image	2026-10-04T19:05:26.7860461Z #8 1.363    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 369.0 MB/s eta 0:00:00
+build-image	Build client image	2026-10-04T19:05:26.7860829Z #8 1.366 Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+build-image	Build client image	2026-10-04T19:05:26.7861221Z #8 1.369    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.4/159.4 kB 88.9 MB/s eta 0:00:00
+build-image	Build client image	2026-10-04T19:05:26.7861672Z #8 1.373 Downloading charset_normalizer-3.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (142 kB)
+build-image	Build client image	2026-10-04T19:05:26.7862308Z #8 1.375    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.6/142.6 kB 448.2 MB/s eta 0:00:00
+build-image	Build client image	2026-10-04T19:05:26.7862621Z #8 1.378 Downloading idna-3.10-py3-none-any.whl (70 kB)
+build-image	Build client image	2026-10-04T19:05:26.7863223Z #8 1.379    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 454.3 MB/s eta 0:00:00
+build-image	Build client image	2026-10-04T19:05:26.7863541Z #8 1.382 Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+build-image	Build client image	2026-10-04T19:05:26.9745276Z #8 1.384    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 450.0 MB/s eta 0:00:00
+build-image	Build client image	2026-10-04T19:05:26.9745846Z #8 1.422 Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+build-image	Build client image	2026-10-04T19:05:27.0806625Z #8 1.679 Successfully installed certifi-2025.11.12 charset-normalizer-3.4.0 idna-3.10 requests-2.32.3 urllib3-2.5.0
+build-image	Build client image	2026-10-04T19:05:27.2564922Z #8 1.679 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+build-image	Build client image	2026-10-04T19:05:27.2566104Z #8 1.751 
+build-image	Build client image	2026-10-04T19:05:27.2566439Z #8 1.751 [notice] A new release of pip is available: 24.0 -> 26.2.1
+build-image	Build client image	2026-10-04T19:05:27.2566962Z #8 1.751 [notice] To update, run: pip install --upgrade pip
+build-image	Build client image	2026-10-04T19:05:27.2567337Z #8 DONE 1.9s
+build-image	Build client image	2026-10-04T19:05:27.4224686Z 
+build-image	Build client image	2026-10-04T19:05:27.4225504Z #9 [5/5] COPY client.py ./
+build-image	Build client image	2026-10-04T19:05:27.4225856Z #9 DONE 0.0s
+build-image	Build client image	2026-10-04T19:05:27.4226007Z 
+build-image	Build client image	2026-10-04T19:05:27.4226119Z #10 exporting to image
+build-image	Build client image	2026-10-04T19:05:27.4226392Z #10 exporting layers
+build-image	Build client image	2026-10-04T19:05:28.1025699Z #10 exporting layers 0.8s done
+build-image	Build client image	2026-10-04T19:05:28.2526522Z #10 writing image sha256:957c69ece7086f443f7ab421a1f661342ddb7a0973ef575333911b5cdce37c6d 0.1s done
+build-image	Build client image	2026-10-04T19:05:28.2527602Z #10 naming to docker.io/library/ml-client:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b 0.0s done
+build-image	Build client image	2026-10-04T19:05:28.2528442Z #10 DONE 1.0s
+build-image	Post Check out repository	﻿2026-10-04T19:05:28.5653780Z Post job cleanup.
+build-image	Post Check out repository	2026-10-04T19:05:28.6365933Z [command]/usr/bin/git version
+build-image	Post Check out repository	2026-10-04T19:05:28.6401490Z git version 2.55.0
+build-image	Post Check out repository	2026-10-04T19:05:28.6432194Z Temporarily overriding HOME='/home/runner/work/_temp/4eea65de-5ea3-47b1-b785-8fd6a9325ed6' before making global git config changes
+build-image	Post Check out repository	2026-10-04T19:05:28.6433224Z Adding repository directory to the temporary git global config as a safe directory
+build-image	Post Check out repository	2026-10-04T19:05:28.6437195Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/development-and-integration-labs/development-and-integration-labs
+build-image	Post Check out repository	2026-10-04T19:05:28.6463830Z Removing SSH command configuration
+build-image	Post Check out repository	2026-10-04T19:05:28.6469075Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build-image	Post Check out repository	2026-10-04T19:05:28.6497506Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build-image	Post Check out repository	2026-10-04T19:05:28.6698505Z Removing HTTP extra header
+build-image	Post Check out repository	2026-10-04T19:05:28.6703766Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build-image	Post Check out repository	2026-10-04T19:05:28.6733303Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build-image	Post Check out repository	2026-10-04T19:05:28.6944187Z Removing includeIf entries pointing to credentials config files
+build-image	Post Check out repository	2026-10-04T19:05:28.6952555Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build-image	Post Check out repository	2026-10-04T19:05:28.6983009Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build-image	Complete job	﻿2026-10-04T19:05:28.7307487Z Cleaning up orphan processes

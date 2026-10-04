@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 7 · тесты и две сборки Docker</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 7 · тесты и две сборки Docker</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-04T22:00:20.978997+03:00 — 2026-10-04T22:00:28.125875+03:00<br>Git: 24c715506452ae353494bab7721cce198f549574<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 1 из 2</div><section><h2>Журнал CI</h2><pre>&gt; py -3.11 -B ../github_build_log.py --run-id 37226871300 --output &quot;C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\.verification\lab7-run-37226871300.log&quot;
+Код завершения: 0; ожидаемый: 0; длительность: 3.343 с
+
+stdout:
+GitHub Actions run: 37226871300
+Полный журнал сохранён: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\.verification\lab7-run-37226871300.log
+
+Run all tests — выборка из 14 строк:
+2026-10-04T19:04:58.7976959Z 110 passed in 5.51s
+
+Build API image — выборка из 182 строк:
+2026-10-04T19:05:25.1403672Z #13 naming to docker.io/library/ml-api:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b done
+2026-10-04T19:05:25.1403672Z #13 naming to docker.io/library/ml-api:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b done
+2026-10-04T19:05:25.1404190Z #13 DONE 1.5s
+
+Build client image — выборка из 68 строк:
+2026-10-04T19:05:28.2527602Z #10 naming to docker.io/library/ml-client:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b 0.0s done
+2026-10-04T19:05:28.2527602Z #10 naming to docker.io/library/ml-client:test-dcb89eb18c1d22e5f975cba4e862e2d16f73454b 0.0s done
+2026-10-04T19:05:28.2528442Z #10 DONE 1.0s
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Семинар 25.09.2026\evidence\practice7-20261004-220020\manifest.json и commands.log.<br>Сформировано: 2026-10-04T22:00:32.620553+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
