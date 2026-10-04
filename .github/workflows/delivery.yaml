@@ -1,0 +1,90 @@
+name: Delivery Dry Run
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  IMAGE_NAME: registry.example.invalid/ml-api
+  PREVIOUS_TAG: previous-stable
+  PREDICT_PAYLOAD: '{"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}'
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      image-tag: ${{ steps.set_tag.outputs.image-tag }}
+    steps:
+      - name: Set image tag
+        id: set_tag
+        run: |
+          [[ "${GITHUB_SHA}" =~ ^([0-9a-f]{40}|[0-9a-f]{64})$ ]]
+          printf 'image-tag=test-%s\n' "${GITHUB_SHA}" >> "${GITHUB_OUTPUT}"
+          printf 'Dry run: version test-%s; no image is built or published here.\n' "${GITHUB_SHA}"
+
+  smoke_api_tests_stub:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      IMAGE_TAG: ${{ needs.build.outputs.image-tag }}
+    steps:
+      - name: Print proposed API checks
+        run: |
+          printf 'Dry run: proposed checks for %s:%s; requests are not executed.\n' "${IMAGE_NAME}" "${IMAGE_TAG}"
+          printf '%s\n' \
+            'curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health' \
+            "curl --fail-with-body --max-time 10 -X POST http://127.0.0.1:8080/predict -H 'Content-Type: application/json' --data '${PREDICT_PAYLOAD}'"
+
+  docs_checks:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check README exists
+        run: |
+          test -f README.md
+          printf '%s\n' 'README.md exists; review it for delivery and rollback instructions.'
+
+  deploy_dry_run:
+    needs: [build, smoke_api_tests_stub, docs_checks]
+    if: ${{ success() && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      IMAGE_TAG: ${{ needs.build.outputs.image-tag }}
+    steps:
+      - name: Print deploy commands
+        run: |
+          [[ "${IMAGE_TAG}" =~ ^test-([0-9a-f]{40}|[0-9a-f]{64})$ ]]
+          printf '%s\n' 'Dry run: the following commands are printed only.'
+          printf '%s\n' \
+            "docker pull ${IMAGE_NAME}:${IMAGE_TAG}" \
+            'docker stop ml-api-test || true' \
+            'docker rm ml-api-test || true' \
+            "docker run -d --name ml-api-test -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl ${IMAGE_NAME}:${IMAGE_TAG}"
+      - name: Print smoke test commands
+        run: |
+          printf '%s\n' \
+            'curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health' \
+            "curl --fail-with-body --max-time 10 -X POST http://127.0.0.1:8080/predict -H 'Content-Type: application/json' --data '${PREDICT_PAYLOAD}'"
+      - name: Print rollback commands
+        run: |
+          printf '%s\n' 'Dry run: if smoke checks failed, restore the previous verified version.'
+          printf '%s\n' \
+            "docker pull ${IMAGE_NAME}:${PREVIOUS_TAG}" \
+            'docker stop ml-api-test || true' \
+            'docker rm ml-api-test || true' \
+            "docker run -d --name ml-api-test -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl ${IMAGE_NAME}:${PREVIOUS_TAG}" \
+            'curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health'
