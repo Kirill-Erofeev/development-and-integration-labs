@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+/.verification/
