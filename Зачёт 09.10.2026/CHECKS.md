@@ -55,3 +55,13 @@
 ![exam4-log](screenshots/exam4-log.png)
 
 ![exam4-tests](screenshots/exam4-tests.png)
+
+## GitHub после интеграции зачёта
+
+Проверен `main` на коммите `0c2d4a040628fe73a4600d347360e5e7ba09762d`.
+
+- [CI: pytest и сборка двух образов](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37229796566) — success.
+- [Pages: сборка и публикация](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37229796567) — success.
+- Опубликованная схема сопоставлена с локальным экспортом; HTML, JSON, CSS и JS доступны по HTTP 200.
+
+Метаданные сохранены в [docs/evidence/final](../docs/evidence/final/).

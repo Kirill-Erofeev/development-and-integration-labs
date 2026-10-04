@@ -1,0 +1,57 @@
+{
+  "head_sha": "0c2d4a040628fe73a4600d347360e5e7ba09762d",
+  "schema_equal": true,
+  "canonical_schema_sha256": "2cb42b747bfaf17e35292cdbb09c3f432ed4d56a342204e98f16122f50905978",
+  "paths": [
+    "/health",
+    "/model-info",
+    "/predict"
+  ],
+  "text_comparison": "LF/CRLF normalized",
+  "responses": [
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/",
+      "status": 200,
+      "bytes": 1658,
+      "sha256": "654bcf74546746f4d52df1cf06060056b2525222db951300150ecd7c3ddb0b48",
+      "content_type": "text/html; charset=utf-8",
+      "date": "Sun, 04 Oct 2026 19:52:40 GMT",
+      "etag": "\"6ac2ae22-67a\"",
+      "last_modified": "Sun, 04 Oct 2026 19:50:58 GMT",
+      "checked_at": "2026-10-04T22:47:24.538104+03:00"
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/openapi.json",
+      "status": 200,
+      "bytes": 11812,
+      "sha256": "68e2c2ea862a58d8f82a7e13a26d9377e50effa5b99e32be81b1341fbd4e5964",
+      "content_type": "application/json; charset=utf-8",
+      "date": "Sun, 04 Oct 2026 19:52:41 GMT",
+      "etag": "\"6ac2ae22-2e24\"",
+      "last_modified": "Sun, 04 Oct 2026 19:50:58 GMT",
+      "checked_at": "2026-10-04T22:47:25.117448+03:00"
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui.css",
+      "status": 200,
+      "bytes": 186154,
+      "sha256": "1ac324f7dcd27e4b9386b4bd6421271ec147e922a22c05ba24b11515e9aa6321",
+      "content_type": "text/css; charset=utf-8",
+      "date": "Sun, 04 Oct 2026 19:52:42 GMT",
+      "etag": "\"6ac2ae22-2d72a\"",
+      "last_modified": "Sun, 04 Oct 2026 19:50:58 GMT",
+      "checked_at": "2026-10-04T22:47:26.438943+03:00"
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui-bundle.js",
+      "status": 200,
+      "bytes": 1586002,
+      "sha256": "050bc415ee7048dcd881682678f720264e7da5e373f7461d7c58c755305255f7",
+      "content_type": "application/javascript; charset=utf-8",
+      "date": "Sun, 04 Oct 2026 19:52:43 GMT",
+      "etag": "\"6ac2ae22-183352\"",
+      "last_modified": "Sun, 04 Oct 2026 19:50:58 GMT",
+      "checked_at": "2026-10-04T22:47:27.303832+03:00"
+    }
+  ]
+}

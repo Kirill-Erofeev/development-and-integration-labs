@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "audited_at_local": "2026-10-04T22:47:29.221931+03:00",
+  "target_ref": "0c2d4a040628fe73a4600d347360e5e7ba09762d",
+  "target_sha": "0c2d4a040628fe73a4600d347360e5e7ba09762d",
+  "checkout_head": "0c2d4a040628fe73a4600d347360e5e7ba09762d",
+  "tracked_clean": true,
+  "counts": {
+    "expected_png": 30,
+    "existing_final_png": 30,
+    "tracked_final_png": 30,
+    "manifests": 12,
+    "commands": 68,
+    "sidecars": 36,
+    "matching_png_hashes": 36,
+    "verified_sha_references": 100,
+    "provenance_sha_references": 208,
+    "expected_conflict_nulls": 4,
+    "html_sources": 30,
+    "local_links": 4,
+    "raw_image_links": 4,
+    "remote_sources": 4
+  },
+  "unique_commit_shas": 11,
+  "issues": [],
+  "limits": [
+    "No repeated visual review or HTTP requests",
+    "Remote clock timestamps are not normalized",
+    "External run/tag SHA strings inside logs are not treated as local provenance SHAs"
+  ]
+}
