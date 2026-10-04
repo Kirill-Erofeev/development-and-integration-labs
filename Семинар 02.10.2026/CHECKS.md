@@ -1,25 +1,27 @@
 # Протоколы проверок
 
-Это заготовка для фактических результатов. Неотмеченные пункты не выполнены
-в рамках подтверждённого прогона данного этапа. Записи ранних практик при
+Ниже сохранены протоколы фактических проверок. Незавершённые этапы обозначены отдельно. Записи ранних практик при
 добавлении следующей сохраняются; старые SHA и runs из прежней истории не переносятся.
 
-## Практика 9: Swagger UI и Pages
+## Swagger UI и Pages — фактическая проверка
 
-Статус: **ожидает фактической проверки этапа**.
+Проверенный коммит: `812aad58066f73d5e89a0d29f72697fd25e0af9e`. Дата: 2026-10-04T22:23:22.499543+03:00.
 
-- Проверенный новый commit: не заполнен.
-- Дата, ОС, Python и версии инструментов: не заполнены.
-- Команды, коды завершения и итог тестов: не заполнены.
-- Новый PR и workflow runs, если применимо: не заполнены.
-- Саморазбор и внешнее ревью: фактические результаты не внесены.
+| Проверка | Фактический код | Результат |
+| --- | --- | --- |
+| Тесты экспорта и статики | 0 | succeeded |
+| Сборка с отсутствующей моделью | 0 | succeeded |
+| Проверка JSON и контракта | 0 | succeeded |
+| Pages workflow main | 0 | succeeded |
+| HTTP и соответствие опубликованной схемы | 0 | succeeded |
+| Повторная проверка Pages run | 0 | succeeded |
 
-- [ ] экспорт без сервера и модели.
-- [ ] Pages build/deploy.
-- [ ] опубликованный Swagger и JSON.
+[Полный журнал](evidence/practice9-capture-20261004-222322/commands.log), [манифест](evidence/practice9-capture-20261004-222322/manifest.json).
 
-Планируемые снимки:
+[Новый pull request](https://github.com/Kirill-Erofeev/development-and-integration-labs/pull/18).
 
-- [practice9-export.png](screenshots/practice9-export.png).
-- [practice9-workflow.png](screenshots/practice9-workflow.png).
-- [practice9-swagger.png](screenshots/practice9-swagger.png).
+![practice9-export](screenshots/practice9-export.png)
+
+![practice9-workflow](screenshots/practice9-workflow.png)
+
+![practice9-swagger](screenshots/practice9-swagger.png)

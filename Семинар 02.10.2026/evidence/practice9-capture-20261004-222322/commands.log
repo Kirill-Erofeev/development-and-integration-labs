@@ -1,0 +1,87 @@
+
+=== 1: Тесты экспорта и статики ===
+py -3.11 -B -m pytest -q scripts/tests/test_export_openapi.py
+--- stdout ---
+.....                                                                    [100%]
+5 passed in 2.85s
+
+--- stderr ---
+
+
+=== 2: Сборка с отсутствующей моделью ===
+py -3.11 -B -c "import os,sys; os.environ['ML_MODEL_PATH']=sys.argv[1]; print('ML_MODEL_PATH намеренно указывает на отсутствующий файл'); from scripts.build_api_docs import main; raise SystemExit(main(['--output','site']))" "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\.verification\missing-model-for-pages-proof.pkl"
+--- stdout ---
+ML_MODEL_PATH намеренно указывает на отсутствующий файл
+Документация: site; OpenAPI 3.1.0; маршрутов: 2
+
+--- stderr ---
+
+
+=== 3: Проверка JSON и контракта ===
+py -3.11 -B -c "import json; from pathlib import Path; s=json.loads(Path('site/api/openapi.json').read_text(encoding='utf-8')); assert 'get' in s['paths']['/health'] and 'post' in s['paths']['/predict']; print('JSON валиден; OpenAPI',s['openapi']); print('Маршруты:',', '.join(sorted(s['paths'])))"
+--- stdout ---
+JSON валиден; OpenAPI 3.1.0
+Маршруты: /health, /predict
+
+--- stderr ---
+
+
+=== 4: Pages workflow main ===
+py -3.11 -B "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\github_checks.py" --workflow publish-api-docs.yaml --sha 812aad58066f73d5e89a0d29f72697fd25e0af9e --event push --branch main --summary --steps --save "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\pages-check-20261004-222322-295243\workflow.json"
+--- stdout ---
+Workflow: publish-api-docs.yaml | Run: 37228409252
+https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37228409252
+SHA: 812aad58066f73d5e89a0d29f72697fd25e0af9e
+Ветка: main | Событие: push
+Запуск: completed / success
+Job build: completed / success
+  Step Check out repository: completed / success
+  Step Install pinned dependencies: completed / success
+  Step Test export and static documentation: completed / success
+  Step Build and validate static documentation: completed / success
+  Step Upload Pages artifact: completed / success
+Job deploy: completed / success
+  Step Deploy GitHub Pages: completed / success
+
+--- stderr ---
+run=37228409252 in_progress
+run=37228409252 in_progress
+run=37228409252 completed success
+JSON сохранён: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\pages-check-20261004-222322-295243\workflow.json
+
+
+=== 5: HTTP и соответствие опубликованной схемы ===
+py -3.11 -B "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\capture_pages_stage.py" check-public --sha 812aad58066f73d5e89a0d29f72697fd25e0af9e --save "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\pages-check-20261004-222322-295243\http.json"
+--- stdout ---
+HTTP 200: https://kirill-erofeev.github.io/development-and-integration-labs/api/
+HTTP 200: https://kirill-erofeev.github.io/development-and-integration-labs/api/openapi.json
+HTTP 200: https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui.css
+HTTP 200: https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui-bundle.js
+OpenAPI: каноническое равенство локальной и опубликованной схем подтверждено
+HTML, CSS и JS совпадают с локальной сборкой с учётом LF/CRLF; CDN отсутствует
+
+--- stderr ---
+
+
+=== 6: Повторная проверка Pages run ===
+py -3.11 -B "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\capture_pages_stage.py" recheck-workflow --record "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\pages-check-20261004-222322-295243\workflow.json" --sha 812aad58066f73d5e89a0d29f72697fd25e0af9e --save "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\pages-check-20261004-222322-295243\workflow-recheck.json"
+--- stdout ---
+Workflow: publish-api-docs.yaml | Run: 37228409252
+https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37228409252
+SHA: 812aad58066f73d5e89a0d29f72697fd25e0af9e
+Ветка: main | Событие: push
+Запуск: completed / success
+Job build: completed / success
+  Step Check out repository: completed / success
+  Step Install pinned dependencies: completed / success
+  Step Test export and static documentation: completed / success
+  Step Build and validate static documentation: completed / success
+  Step Upload Pages artifact: completed / success
+Job deploy: completed / success
+  Step Deploy GitHub Pages: completed / success
+Pages: build=success, deploy=success; run ID проверен повторно
+
+--- stderr ---
+run=37228409252 completed success
+JSON сохранён: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\pages-check-20261004-222322-295243\workflow-recheck.json
+

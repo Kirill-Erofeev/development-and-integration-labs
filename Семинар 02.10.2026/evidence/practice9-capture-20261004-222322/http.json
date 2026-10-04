@@ -1,0 +1,56 @@
+{
+  "head_sha": "812aad58066f73d5e89a0d29f72697fd25e0af9e",
+  "schema_equal": true,
+  "canonical_schema_sha256": "d6df0a98e98e69455c2230acb5263efe18c5a981d290515ec63080040e1bbae9",
+  "paths": [
+    "/health",
+    "/predict"
+  ],
+  "text_comparison": "LF/CRLF normalized",
+  "responses": [
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/",
+      "status": 200,
+      "bytes": 1658,
+      "sha256": "654bcf74546746f4d52df1cf06060056b2525222db951300150ecd7c3ddb0b48",
+      "content_type": "text/html; charset=utf-8",
+      "date": "Sun, 04 Oct 2026 19:29:36 GMT",
+      "etag": "\"6ac2a90a-67a\"",
+      "last_modified": "Sun, 04 Oct 2026 19:29:14 GMT",
+      "checked_at": "2026-10-04T22:24:20.620034+03:00"
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/openapi.json",
+      "status": 200,
+      "bytes": 5341,
+      "sha256": "32832e52cda22969aac8054a6bcc456255a8d61a850abb5bde47247bad9d3ce7",
+      "content_type": "application/json; charset=utf-8",
+      "date": "Sun, 04 Oct 2026 19:29:37 GMT",
+      "etag": "\"6ac2a90a-14dd\"",
+      "last_modified": "Sun, 04 Oct 2026 19:29:14 GMT",
+      "checked_at": "2026-10-04T22:24:21.297320+03:00"
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui.css",
+      "status": 200,
+      "bytes": 186154,
+      "sha256": "1ac324f7dcd27e4b9386b4bd6421271ec147e922a22c05ba24b11515e9aa6321",
+      "content_type": "text/css; charset=utf-8",
+      "date": "Sun, 04 Oct 2026 19:29:38 GMT",
+      "etag": "\"6ac2a90a-2d72a\"",
+      "last_modified": "Sun, 04 Oct 2026 19:29:14 GMT",
+      "checked_at": "2026-10-04T22:24:22.006921+03:00"
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui-bundle.js",
+      "status": 200,
+      "bytes": 1586002,
+      "sha256": "050bc415ee7048dcd881682678f720264e7da5e373f7461d7c58c755305255f7",
+      "content_type": "application/javascript; charset=utf-8",
+      "date": "Sun, 04 Oct 2026 19:29:38 GMT",
+      "etag": "\"6ac2a90a-183352\"",
+      "last_modified": "Sun, 04 Oct 2026 19:29:14 GMT",
+      "checked_at": "2026-10-04T22:24:22.795264+03:00"
+    }
+  ]
+}
