@@ -1,3 +1,4 @@
+from copy import deepcopy
 import json
 import subprocess
 import sys
@@ -45,6 +46,18 @@ def test_unknown_output_format_is_rejected(
 ) -> None:
     with pytest.raises(ValueError):
         format_predictions(predictions, output_format="unsupported")
+
+
+@pytest.mark.parametrize("output_format", ["json", "text"])
+def test_format_does_not_mutate_predictions(
+    predictions: list[dict[str, int | str]], output_format: str
+) -> None:
+    predictions = list(reversed(predictions))
+    original = deepcopy(predictions)
+
+    format_predictions(predictions, output_format=output_format)
+
+    assert predictions == original
 
 
 def run_predict(*arguments: str) -> subprocess.CompletedProcess[str]:
