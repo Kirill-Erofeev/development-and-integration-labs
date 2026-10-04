@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "kind": "browser_capture",
+  "url": "http://127.0.0.1:8087/",
+  "final_url": "http://127.0.0.1:8087/",
+  "page_title": "Iris: паспорт модели",
+  "started_at": "2026-10-04T22:38:29.456544+03:00",
+  "finished_at": "2026-10-04T22:38:29.826444+03:00",
+  "width": 1440,
+  "height": 1000,
+  "device_scale_factor": 1,
+  "wait_selector": null,
+  "png_file": "exam4-error-browser.png",
+  "png_sha256": "6cb14c42e7fde1a056fa236cb31d4943e7e665296e30ef9ae0d86e8eedc8fadf",
+  "provenance_before": {
+    "head_sha": "66fb85ac2b20e20b367717e4e0ce2770cd1bbb9c",
+    "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+    "status_porcelain": "",
+    "tracked_clean": true
+  },
+  "provenance_after": {
+    "head_sha": "66fb85ac2b20e20b367717e4e0ce2770cd1bbb9c",
+    "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\Семинар 04.09.2026\\.verification\\sequential-course-20261004\\history-draft",
+    "status_porcelain": "",
+    "tracked_clean": true
+  },
+  "verified_worktree_sha": "66fb85ac2b20e20b367717e4e0ce2770cd1bbb9c",
+  "source_note": "SHA характеризует рабочее дерево; соответствие запущенного сервера этому дереву проверяется отдельно."
+}

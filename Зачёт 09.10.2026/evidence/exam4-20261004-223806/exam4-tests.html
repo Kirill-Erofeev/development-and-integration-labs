@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Зачёт · автоматические проверки</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Зачёт · автоматические проверки</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-04T22:38:06.879312+03:00 — 2026-10-04T22:39:00.653904+03:00<br>Git: 66fb85ac2b20e20b367717e4e0ce2770cd1bbb9c<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 2 из 8</div><section><h2>Notebook варианта 4</h2><pre>&gt; py -3.11 -B ../check_variant4_notebooks.py --projectpath &quot;C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft&quot;
+Код завершения: 0; ожидаемый: 0; длительность: 3.156 с
+
+stdout:
+source_experiment_updated.ipynb: выполнены 2 проверенные кодовые ячейки
+new_functionality.ipynb: выполнены 2 проверенные кодовые ячейки
+Паспорт: {&quot;classes&quot;: [&quot;setosa&quot;, &quot;versicolor&quot;, &quot;virginica&quot;], &quot;feature_count&quot;: 4, &quot;model_loaded&quot;: true, &quot;model_type&quot;: &quot;LogisticRegression&quot;}
+Контрольный прогноз готовой модели: [{&quot;predicted_class&quot;: 0, &quot;predicted_name&quot;: &quot;setosa&quot;}]
+Событие notebook: {&quot;class_name&quot;: &quot;setosa&quot;, &quot;event&quot;: &quot;prediction_completed&quot;, &quot;request_id&quot;: &quot;221a0883-e275-4e06-9dff-ad35fd277a63&quot;}
+Хеши четырёх ячеек совпали; load=1, fit=0, dump=0; models/model.pkl не изменён
+</pre></section><section><h2>pytest</h2><pre>&gt; py -3.11 -B -m pytest -q
+Код завершения: 0; ожидаемый: 0; длительность: 24.11 с
+
+stdout:
+........................................................................ [ 48%]
+........................................................................ [ 96%]
+.....                                                                    [100%]
+149 passed in 19.31s
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Зачёт 09.10.2026\evidence\exam4-20261004-223806\manifest.json и commands.log.<br>Сформировано: 2026-10-04T22:39:04.311549+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>

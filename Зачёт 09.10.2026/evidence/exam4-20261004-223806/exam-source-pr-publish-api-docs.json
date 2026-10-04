@@ -1,0 +1,74 @@
+{
+  "id": 37229358522,
+  "url": "https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37229358522",
+  "head_sha": "66fb85ac2b20e20b367717e4e0ce2770cd1bbb9c",
+  "head_branch": "course/exam-4",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install pinned dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test export and static documentation",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and validate static documentation",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload Pages artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "skipped",
+      "steps": []
+    }
+  ]
+}
