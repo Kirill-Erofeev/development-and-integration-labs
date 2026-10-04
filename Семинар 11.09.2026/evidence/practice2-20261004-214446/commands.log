@@ -1,0 +1,50 @@
+
+=== 1: Формат JSON ===
+py -3.11 -B -m src.predict --output-format json
+--- stdout ---
+[{"predicted_class": 0, "predicted_name": "setosa"}]
+
+--- stderr ---
+
+
+=== 2: Формат text ===
+py -3.11 -B -m src.predict --output-format text
+--- stdout ---
+predicted_class=0 predicted_name=setosa
+
+--- stderr ---
+
+
+=== 3: Граф Git ===
+git log --graph --oneline -12
+--- stdout ---
+*   58e9cf6 fix(lab2): разрешить учебный конфликт README
+|\  
+| *   7ff740f docs(cli): интегрировать уточнение каналов вывода
+| |\  
+| | * 0930d61 docs(cli): уточнить каналы вывода команды
+| |/  
+* | 849d9c7 test(lab2): учесть замечание учебного саморазбора
+* | 26e2553 test(lab2): проверить форматы и описать интерфейс
+* | 056158d feat(lab2): добавить выбор формата предсказаний
+* | 58393d0 docs(course): добавить материалы следующего занятия
+|/  
+*   f96e73c feat(lab1): интегрировать практику 1
+|\  
+| * 6002666 docs(lab1): сохранить результаты и снимки
+| * d59cd65 test(lab1): добавить проверки и команды запуска
+| * fd7a543 feat(lab1): разделить обучение и предсказание
+|/  
+* dbb2099 test(evidence): добавить сбор фактических проверок
+
+--- stderr ---
+
+
+=== 4: pytest ===
+py -3.11 -B -m pytest -q
+--- stdout ---
+..........................................                               [100%]
+42 passed in 14.78s
+
+--- stderr ---
+
