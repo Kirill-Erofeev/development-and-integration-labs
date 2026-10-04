@@ -1,0 +1,62 @@
+
+=== 1: Notebook и модель ===
+py -3.11 -B scripts/check_notebook.py --notebook "Семинар 04.09.2026/notebooks/source_experiment.ipynb" --input data_sample/sample.csv --work-dir .verification/notebook-proof-213712 --reference-model models/model.pkl
+--- stdout ---
+Ячейка 1/5
+Ячейка 2/5
+Ячейка 3/5
+accuracy=0.947
+Ячейка 4/5
+model_saved=model.pkl
+Ячейка 5/5
+predicted_class=0
+predicted_name=setosa
+Эталон: коэффициенты, intercept, классы и метаданные совпали точно
+Проверка пройдена: accuracy=0.9473684210526315; класс=0; имя=setosa
+Артефакт notebook: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\.verification\notebook-proof-213712\model.pkl
+
+--- stderr ---
+
+
+=== 2: Обучение ===
+py -3.11 -B -m src.train --model-path .verification/train-proof/model.pkl
+--- stdout ---
+accuracy=0.947
+model_saved=C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\.verification\train-proof\model.pkl
+
+--- stderr ---
+
+
+=== 3: Предсказание ===
+py -3.11 -B -m src.predict --input data_sample/sample.csv
+--- stdout ---
+[{"predicted_class": 0, "predicted_name": "setosa"}]
+
+--- stderr ---
+
+
+=== 4: pytest ===
+py -3.11 -B -m pytest -q
+--- stdout ---
+.................................                                        [100%]
+33 passed in 13.55s
+
+--- stderr ---
+
+
+=== 5: Чистый клон ===
+git clone --local --no-hardlinks --single-branch --branch course/lab-01-project "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft" "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\lab1-verification"
+--- stdout ---
+
+--- stderr ---
+Cloning into 'C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\lab1-verification'...
+done.
+
+
+=== 6: CLI из клона ===
+py -3.11 -B "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\lab1-verification\src\predict.py"
+--- stdout ---
+[{"predicted_class": 0, "predicted_name": "setosa"}]
+
+--- stderr ---
+
