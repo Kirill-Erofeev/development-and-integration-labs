@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 9 · экспорт OpenAPI без сервера и модели</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 9 · экспорт OpenAPI без сервера и модели</h1><div class="description">Фактические результаты выполненных команд. Время карточки — часы ноутбука; время GitHub — часы runner. При проверке GitHub опережал ноутбук примерно на 5 минут. Исходные отметки сохранены.</div><div class="metadata">Проверка: 2026-10-04T22:23:22.499543+03:00 — 2026-10-04T22:24:26.402631+03:00<br>Git: 812aad58066f73d5e89a0d29f72697fd25e0af9e<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 3 из 6</div><section><h2>Тесты экспорта и статики</h2><pre>&gt; py -3.11 -B -m pytest -q scripts/tests/test_export_openapi.py
+Код завершения: 0; ожидаемый: 0; длительность: 4.062 с
+
+stdout:
+.....                                                                    [100%]
+5 passed in 2.85s
+</pre></section><section><h2>Сборка с отсутствующей моделью</h2><pre>&gt; py -3.11 -B -c &quot;import os,sys; os.environ[&#x27;ML_MODEL_PATH&#x27;]=sys.argv[1]; print(&#x27;ML_MODEL_PATH намеренно указывает на отсутствующий файл&#x27;); from scripts.build_api_docs import main; raise SystemExit(main([&#x27;--output&#x27;,&#x27;site&#x27;]))&quot; &quot;C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\.verification\missing-model-for-pages-proof.pkl&quot;
+Код завершения: 0; ожидаемый: 0; длительность: 1.11 с
+
+stdout:
+ML_MODEL_PATH намеренно указывает на отсутствующий файл
+Документация: site; OpenAPI 3.1.0; маршрутов: 2
+</pre></section><section><h2>Проверка JSON и контракта</h2><pre>&gt; py -3.11 -B -c &quot;import json; from pathlib import Path; s=json.loads(Path(&#x27;site/api/openapi.json&#x27;).read_text(encoding=&#x27;utf-8&#x27;)); assert &#x27;get&#x27; in s[&#x27;paths&#x27;][&#x27;/health&#x27;] and &#x27;post&#x27; in s[&#x27;paths&#x27;][&#x27;/predict&#x27;]; print(&#x27;JSON валиден; OpenAPI&#x27;,s[&#x27;openapi&#x27;]); print(&#x27;Маршруты:&#x27;,&#x27;, &#x27;.join(sorted(s[&#x27;paths&#x27;])))&quot;
+Код завершения: 0; ожидаемый: 0; длительность: 0.125 с
+
+stdout:
+JSON валиден; OpenAPI 3.1.0
+Маршруты: /health, /predict
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Семинар 02.10.2026\evidence\practice9-capture-20261004-222322\manifest.json и commands.log.<br>Сформировано: 2026-10-04T22:24:28.347603+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
