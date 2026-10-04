@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 8 · deploy пропущен в рабочей ветке</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 8 · deploy пропущен в рабочей ветке</h1><div class="description">Фактические результаты выполненных команд. Время карточки — часы ноутбука; время GitHub — часы runner. При проверке GitHub опережал ноутбук примерно на 5 минут. Исходные отметки сохранены.</div><div class="metadata">Проверка: 2026-10-04T22:13:39.175043+03:00 — 2026-10-04T22:13:48.790363+03:00<br>Git: aa2034da76c590e8305b08b1b8f32616db11c0a9<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 1 из 3</div><section><h2>Workflow feature</h2><pre>&gt; py -3.11 -B ../github_checks.py --run-id 37227661636 --sha 5af97bcfa7c99260617b601b6073472425b5a078 --summary --steps
+Код завершения: 0; ожидаемый: 0; длительность: 2.078 с
+
+stdout:
+Workflow: delivery.yaml | Run: 37227661636
+https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37227661636
+SHA: 5af97bcfa7c99260617b601b6073472425b5a078
+Ветка: course/lab-08-delivery | Событие: workflow_dispatch
+Запуск: completed / success
+Job build: completed / success
+  Step Set image tag: completed / success
+Job docs_checks: completed / success
+  Step Check out repository: completed / success
+  Step Check README exists: completed / success
+Job smoke_api_tests_stub: completed / success
+  Step Print proposed API checks: completed / success
+Job deploy_dry_run: completed / skipped
+
+
+stderr:
+run=37227661636 completed success
+Проверено: deploy_dry_run=skipped
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\Семинар 04.09.2026\.verification\sequential-course-20261004\history-draft\Семинар 25.09.2026\evidence\practice8-20261004-221338\manifest.json и commands.log.<br>Сформировано: 2026-10-04T22:13:55.695480+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
