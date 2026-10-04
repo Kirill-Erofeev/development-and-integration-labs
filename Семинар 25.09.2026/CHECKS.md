@@ -39,3 +39,5 @@
 ![practice7-ci](screenshots/practice7-ci.png)
 
 ![practice7-build](screenshots/practice7-build.png)
+
+Дополнительно проверен [CI после merge в main](https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37227333312) для `85d60d16c1a9926f3eac4ed0927cc2e1005bd809`: все jobs завершены успешно. Метаданные — [github-run.json](evidence/practice7-main/github-run.json).
