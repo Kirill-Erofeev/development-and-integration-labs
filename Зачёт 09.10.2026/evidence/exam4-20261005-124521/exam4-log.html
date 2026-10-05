@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Зачёт · UUID ответа и журнала</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Зачёт · UUID ответа и журнала</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-05T12:45:21.438896+03:00 — 2026-10-05T12:46:03.055419+03:00<br>Git: d0e4c43c6a7eb3cded52ffbf6dcdef861185f835<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 2 из 8</div><section><h2>UUID и журнал</h2><pre>&gt; py -3.11 -B ../live_checks.py identity --base-url http://127.0.0.1:8087 --variant4 --log-path &quot;C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft\Зачёт 09.10.2026\evidence\exam4-20261005-124521\server.log&quot;
+Код завершения: 0; ожидаемый: 0; длительность: 0.219 с
+
+stdout:
+HTTP 200
+JSON: {&quot;class_id&quot;: 0, &quot;class_name&quot;: &quot;setosa&quot;, &quot;request_id&quot;: &quot;fe69ff2f-c24c-48bf-829a-79afdad2709b&quot;}
+X-Request-ID: fe69ff2f-c24c-48bf-829a-79afdad2709b
+Совпадение с журналом: {&quot;event&quot;: {&quot;class_name&quot;: &quot;setosa&quot;, &quot;event&quot;: &quot;prediction_completed&quot;, &quot;request_id&quot;: &quot;fe69ff2f-c24c-48bf-829a-79afdad2709b&quot;}, &quot;matching_events&quot;: 1}
+Проверка пройдена
+</pre></section><section><h2>Журнал Uvicorn</h2><pre>&gt; py -3.11 -B -c &quot;from pathlib import Path; import sys; print(Path(sys.argv[1]).read_text(encoding=\&quot;utf-8\&quot;))&quot; &quot;Зачёт 09.10.2026\evidence\exam4-20261005-124521\server.log&quot;
+Код завершения: 0; ожидаемый: 0; длительность: 0.141 с
+
+stdout:
+INFO:     Started server process [24900]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8087 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49507 - &quot;GET /health HTTP/1.1&quot; 200 OK
+INFO:     127.0.0.1:49509 - &quot;GET /health HTTP/1.1&quot; 200 OK
+{&quot;event&quot;: &quot;prediction_completed&quot;, &quot;request_id&quot;: &quot;e21f05a0-837f-4ea9-84a0-621ce8f8b0a8&quot;, &quot;class_name&quot;: &quot;setosa&quot;}
+INFO:     127.0.0.1:49511 - &quot;POST /predict HTTP/1.1&quot; 200 OK
+{&quot;event&quot;: &quot;prediction_rejected&quot;, &quot;request_id&quot;: &quot;e21f05a0-837f-4ea9-84a0-621ce8f8b0a8&quot;, &quot;status_code&quot;: 422}
+INFO:     127.0.0.1:49512 - &quot;POST /predict HTTP/1.1&quot; 422 Unprocessable Entity
+INFO:     127.0.0.1:49513 - &quot;GET /model-info HTTP/1.1&quot; 200 OK
+{&quot;event&quot;: &quot;prediction_completed&quot;, &quot;request_id&quot;: &quot;fe69ff2f-c24c-48bf-829a-79afdad2709b&quot;, &quot;class_name&quot;: &quot;setosa&quot;}
+INFO:     127.0.0.1:49515 - &quot;POST /predict HTTP/1.1&quot; 200 OK
+INFO:     127.0.0.1:49540 - &quot;GET / HTTP/1.1&quot; 200 OK
+INFO:     127.0.0.1:49540 - &quot;GET /model-info HTTP/1.1&quot; 200 OK
+INFO:     127.0.0.1:49541 - &quot;GET /health HTTP/1.1&quot; 200 OK
+INFO:     127.0.0.1:49540 - &quot;GET /favicon.ico HTTP/1.1&quot; 404 Not Found
+{&quot;event&quot;: &quot;prediction_completed&quot;, &quot;request_id&quot;: &quot;4644d938-ec99-47c0-a405-aa85b4b6b18e&quot;, &quot;class_name&quot;: &quot;setosa&quot;}
+INFO:     127.0.0.1:49540 - &quot;POST /predict HTTP/1.1&quot; 200 OK
+{&quot;event&quot;: &quot;prediction_rejected&quot;, &quot;request_id&quot;: &quot;848d8cac-4396-4634-937e-71a8a87933fb&quot;, &quot;status_code&quot;: 422}
+INFO:     127.0.0.1:49540 - &quot;POST /predict HTTP/1.1&quot; 422 Unprocessable Entity
+
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft\Зачёт 09.10.2026\evidence\exam4-20261005-124521\manifest.json и commands.log.<br>Сформировано: 2026-10-05T12:46:05.055034+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
