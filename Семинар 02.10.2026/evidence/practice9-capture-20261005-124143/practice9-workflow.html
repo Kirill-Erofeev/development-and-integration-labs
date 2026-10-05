@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 9 · GitHub Pages и опубликованная схема</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 9 · GitHub Pages и опубликованная схема</h1><div class="description">Фактические результаты выполненных команд. Время карточки — часы ноутбука; время GitHub — часы runner. Отметки разных часов сохраняются без подгонки.</div><div class="metadata">Проверка: 2026-10-05T12:41:44.068563+03:00 — 2026-10-05T12:42:29.987757+03:00<br>Git: 0450a17c15f163d614b8ca31d40a5dd8868cf8f4<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 2 из 6</div><section><h2>Pages workflow main</h2><pre>&gt; py -3.11 -B &quot;C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\github_checks.py&quot; --workflow publish-api-docs.yaml --sha 0450a17c15f163d614b8ca31d40a5dd8868cf8f4 --event push --branch main --summary --steps --save &quot;C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\pages-check-20261005-124143-862723\workflow.json&quot;
+Код завершения: 0; ожидаемый: 0; длительность: 34.047 с
+
+stdout:
+Workflow: publish-api-docs.yaml | Run: 37292305039
+https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37292305039
+SHA: 0450a17c15f163d614b8ca31d40a5dd8868cf8f4
+Ветка: main | Событие: push
+Запуск: completed / success
+Job build: completed / success
+  Step Check out repository: completed / success
+  Step Install pinned dependencies: completed / success
+  Step Test export and static documentation: completed / success
+  Step Build and validate static documentation: completed / success
+  Step Upload Pages artifact: completed / success
+Job deploy: completed / success
+  Step Deploy GitHub Pages: completed / success
+
+
+stderr:
+run=37292305039 in_progress
+run=37292305039 completed success
+JSON сохранён: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\pages-check-20261005-124143-862723\workflow.json
+</pre></section><section><h2>HTTP и соответствие опубликованной схемы</h2><pre>&gt; py -3.11 -B &quot;C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\capture_pages_stage.py&quot; check-public --sha 0450a17c15f163d614b8ca31d40a5dd8868cf8f4 --save &quot;C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\pages-check-20261005-124143-862723\http.json&quot;
+Код завершения: 0; ожидаемый: 0; длительность: 2.984 с
+
+stdout:
+HTTP 200: https://kirill-erofeev.github.io/development-and-integration-labs/api/
+HTTP 200: https://kirill-erofeev.github.io/development-and-integration-labs/api/openapi.json
+HTTP 200: https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui.css
+HTTP 200: https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui-bundle.js
+OpenAPI: каноническое равенство локальной и опубликованной схем подтверждено
+HTML, CSS и JS совпадают с локальной сборкой с учётом LF/CRLF; CDN отсутствует
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft\Семинар 02.10.2026\evidence\practice9-capture-20261005-124143\manifest.json и commands.log.<br>Сформировано: 2026-10-05T12:42:34.074593+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>

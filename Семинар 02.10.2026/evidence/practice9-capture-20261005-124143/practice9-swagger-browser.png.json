@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "kind": "browser_capture",
+  "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/#/default/predict_predict_post",
+  "final_url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/#/default/predict_predict_post",
+  "page_title": "Swagger UI — API классификации ирисов",
+  "started_at": "2026-10-05T12:42:40.076826+03:00",
+  "finished_at": "2026-10-05T12:42:40.566706+03:00",
+  "width": 1440,
+  "height": 2457,
+  "device_scale_factor": 1,
+  "wait_selector": null,
+  "png_file": "practice9-swagger-browser.png",
+  "png_sha256": "f80e1b9a5fb8bcabac863bfc75d38d7d5731f16cd21929163d6afdd0fa6e62b5",
+  "provenance_before": {
+    "head_sha": "0450a17c15f163d614b8ca31d40a5dd8868cf8f4",
+    "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+    "status_porcelain": "",
+    "tracked_clean": true
+  },
+  "provenance_after": {
+    "head_sha": "0450a17c15f163d614b8ca31d40a5dd8868cf8f4",
+    "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+    "status_porcelain": "",
+    "tracked_clean": true
+  },
+  "verified_worktree_sha": "0450a17c15f163d614b8ca31d40a5dd8868cf8f4",
+  "source_note": "SHA характеризует рабочее дерево; соответствие запущенного сервера этому дереву проверяется отдельно."
+}
