@@ -1,0 +1,70 @@
+
+=== 1: Workflow main ===
+py -3.11 -B ../github_checks.py --run-id 37291579370 --workflow delivery.yaml --sha dd9884de606fb2f8804a198b4f1f6d8f818a6fa6 --event workflow_dispatch --branch main --summary
+--- stdout ---
+Workflow: delivery.yaml | Run: 37291579370
+https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37291579370
+SHA: dd9884de606fb2f8804a198b4f1f6d8f818a6fa6
+Ветка: main | Событие: workflow_dispatch
+Запуск: completed / success
+Job build: completed / success
+Job docs_checks: completed / success
+Job smoke_api_tests_stub: completed / success
+Job deploy_dry_run: completed / success
+
+--- stderr ---
+run=37291579370 completed success
+Проверено: deploy_dry_run=success
+
+
+=== 2: Доставка, smoke и rollback ===
+py -3.11 -B ../github_delivery_log.py --run-id 37291579370 --output "C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft\.verification\delivery-main-37291579370-efadfdb9fd174f2b901da7d8223c7755.log"
+--- stdout ---
+Учебная доставка: команды ниже действительно напечатаны workflow, но не исполнялись на сервере.
+Run: 37291579370
+
+Print deploy commands:
+Dry run: the following commands are printed only.
+docker pull registry.example.invalid/ml-api:test-dd9884de606fb2f8804a198b4f1f6d8f818a6fa6
+docker stop ml-api-test || true
+docker rm ml-api-test || true
+docker run -d --name ml-api-test -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl registry.example.invalid/ml-api:test-dd9884de606fb2f8804a198b4f1f6d8f818a6fa6
+
+Print smoke test commands:
+curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health
+curl --fail-with-body --max-time 10 -X POST http://127.0.0.1:8080/predict -H 'Content-Type: application/json' --data '{"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}'
+
+Print rollback commands:
+Dry run: if smoke checks failed, restore the previous verified version.
+docker pull registry.example.invalid/ml-api:previous-stable
+docker stop ml-api-test || true
+docker rm ml-api-test || true
+docker run -d --name ml-api-test -p 127.0.0.1:8080:8000 -e ML_MODEL_PATH=/app/models/model.pkl registry.example.invalid/ml-api:previous-stable
+curl --fail-with-body --max-time 10 http://127.0.0.1:8080/health
+
+Полный журнал: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft\.verification\delivery-main-37291579370-efadfdb9fd174f2b901da7d8223c7755.log
+
+--- stderr ---
+
+
+=== 3: Workflow feature ===
+py -3.11 -B ../github_checks.py --run-id 37291583966 --workflow delivery.yaml --sha 5a15d2bd5a6d29cd30e7dcbc1bfd0bddfe7cf93f --event workflow_dispatch --branch replay-20261005/lab-08-delivery --summary --steps
+--- stdout ---
+Workflow: delivery.yaml | Run: 37291583966
+https://github.com/Kirill-Erofeev/development-and-integration-labs/actions/runs/37291583966
+SHA: 5a15d2bd5a6d29cd30e7dcbc1bfd0bddfe7cf93f
+Ветка: replay-20261005/lab-08-delivery | Событие: workflow_dispatch
+Запуск: completed / success
+Job build: completed / success
+  Step Set image tag: completed / success
+Job smoke_api_tests_stub: completed / success
+  Step Print proposed API checks: completed / success
+Job docs_checks: completed / success
+  Step Check out repository: completed / success
+  Step Check README exists: completed / success
+Job deploy_dry_run: completed / skipped
+
+--- stderr ---
+run=37291583966 completed success
+Проверено: deploy_dry_run=skipped
+
