@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "title": "GitHub Actions CI",
+  "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+  "started_at": "2026-10-05T12:29:36.554352+03:00",
+  "finished_at": "2026-10-05T12:29:43.613644+03:00",
+  "status": "succeeded",
+  "log_file": "commands.log",
+  "commands": [
+    {
+      "sequence": 1,
+      "label": "CI: jobs и steps",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "../github_checks.py",
+        "--run-id",
+        "37290855761",
+        "--workflow",
+        "ci.yaml",
+        "--sha",
+        "1da3537d80f9e0758b60ecf3b6583e4102ef807c",
+        "--event",
+        "pull_request",
+        "--branch",
+        "replay-20261005/lab-07-ci",
+        "--summary",
+        "--steps"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+      "started_at": "2026-10-05T12:29:36.774628+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "1da3537d80f9e0758b60ecf3b6583e4102ef807c",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-05T12:29:38.804470+03:00",
+      "duration_seconds": 2.031,
+      "provenance_after": {
+        "head_sha": "1da3537d80f9e0758b60ecf3b6583e4102ef807c",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "1da3537d80f9e0758b60ecf3b6583e4102ef807c",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 238,
+        "length": 695,
+        "sha256": "dfcf35e91d507d6739f4cb7a045898cb043594a9444c79a91391970804220989",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 949,
+        "length": 35,
+        "sha256": "f63925207fb2dd4ad464055032fdd42b03a16cdfc93651fba38d252e9b710655",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 2,
+      "label": "Журнал CI",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "../github_build_log.py",
+        "--run-id",
+        "37290855761",
+        "--output",
+        "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft\\.verification\\lab7-run-37290855761-a783aab6f0aa473ba4f98574af732f69.log"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+      "started_at": "2026-10-05T12:29:39.223737+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "1da3537d80f9e0758b60ecf3b6583e4102ef807c",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-05T12:29:42.857515+03:00",
+      "duration_seconds": 3.625,
+      "provenance_after": {
+        "head_sha": "1da3537d80f9e0758b60ecf3b6583e4102ef807c",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "1da3537d80f9e0758b60ecf3b6583e4102ef807c",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 1320,
+        "length": 1103,
+        "sha256": "19dfa00d6c8be7f9772dafcfda8309a40683de955ec9042f352b767d4bfb2f07",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 2439,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    }
+  ]
+}
