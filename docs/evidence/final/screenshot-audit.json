@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "audited_at_local": "2026-10-05T12:54:11.958849+03:00",
+  "target_ref": "6dfab1c6e779e05a3c927d0bcd09f8b7c8fb2e9e",
+  "target_sha": "6dfab1c6e779e05a3c927d0bcd09f8b7c8fb2e9e",
+  "checkout_head": "6dfab1c6e779e05a3c927d0bcd09f8b7c8fb2e9e",
+  "tracked_clean": true,
+  "counts": {
+    "expected_png": 30,
+    "existing_final_png": 30,
+    "tracked_final_png": 30,
+    "manifests": 12,
+    "commands": 68,
+    "sidecars": 34,
+    "matching_png_hashes": 34,
+    "verified_sha_references": 98,
+    "provenance_sha_references": 204,
+    "expected_conflict_nulls": 4,
+    "html_sources": 30,
+    "local_links": 4,
+    "raw_image_links": 4,
+    "remote_sources": 4
+  },
+  "unique_commit_shas": 11,
+  "issues": [],
+  "limits": [
+    "No repeated visual review or HTTP requests",
+    "Remote clock timestamps are not normalized",
+    "External run/tag SHA strings inside logs are not treated as local provenance SHAs"
+  ],
+  "verification_context": {
+    "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+    "run_root": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005",
+    "head_sha": "6dfab1c6e779e05a3c927d0bcd09f8b7c8fb2e9e",
+    "checked_at": "2026-10-05T12:54:12.328005+03:00"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "files_checked": 112,
+  "capture_metadata_checked": 34,
+  "command_records_checked": 68,
+  "errors": [],
+  "target_sha": "6dfab1c6e779e05a3c927d0bcd09f8b7c8fb2e9e",
+  "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+  "verification_context": {
+    "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+    "run_root": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005",
+    "head_sha": "6dfab1c6e779e05a3c927d0bcd09f8b7c8fb2e9e",
+    "checked_at": "2026-10-05T12:54:52.427752+03:00"
+  }
+}
