@@ -1,0 +1,63 @@
+{
+  "head_sha": "6dfab1c6e779e05a3c927d0bcd09f8b7c8fb2e9e",
+  "schema_equal": true,
+  "canonical_schema_sha256": "2cb42b747bfaf17e35292cdbb09c3f432ed4d56a342204e98f16122f50905978",
+  "paths": [
+    "/health",
+    "/model-info",
+    "/predict"
+  ],
+  "text_comparison": "LF/CRLF normalized",
+  "responses": [
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/",
+      "status": 200,
+      "bytes": 1658,
+      "sha256": "654bcf74546746f4d52df1cf06060056b2525222db951300150ecd7c3ddb0b48",
+      "content_type": "text/html; charset=utf-8",
+      "date": "Mon, 05 Oct 2026 09:59:22 GMT",
+      "etag": "\"6ac374cc-67a\"",
+      "last_modified": "Mon, 05 Oct 2026 09:58:36 GMT",
+      "checked_at": "2026-10-05T12:54:06.040502+03:00"
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/openapi.json",
+      "status": 200,
+      "bytes": 11812,
+      "sha256": "68e2c2ea862a58d8f82a7e13a26d9377e50effa5b99e32be81b1341fbd4e5964",
+      "content_type": "application/json; charset=utf-8",
+      "date": "Mon, 05 Oct 2026 09:59:23 GMT",
+      "etag": "\"6ac374cc-2e24\"",
+      "last_modified": "Mon, 05 Oct 2026 09:58:36 GMT",
+      "checked_at": "2026-10-05T12:54:06.592973+03:00"
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui.css",
+      "status": 200,
+      "bytes": 186154,
+      "sha256": "1ac324f7dcd27e4b9386b4bd6421271ec147e922a22c05ba24b11515e9aa6321",
+      "content_type": "text/css; charset=utf-8",
+      "date": "Mon, 05 Oct 2026 09:59:23 GMT",
+      "etag": "\"6ac374cc-2d72a\"",
+      "last_modified": "Mon, 05 Oct 2026 09:58:36 GMT",
+      "checked_at": "2026-10-05T12:54:08.332440+03:00"
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui-bundle.js",
+      "status": 200,
+      "bytes": 1586002,
+      "sha256": "050bc415ee7048dcd881682678f720264e7da5e373f7461d7c58c755305255f7",
+      "content_type": "application/javascript; charset=utf-8",
+      "date": "Mon, 05 Oct 2026 09:59:25 GMT",
+      "etag": "\"6ac374cc-183352\"",
+      "last_modified": "Mon, 05 Oct 2026 09:58:36 GMT",
+      "checked_at": "2026-10-05T12:54:09.166213+03:00"
+    }
+  ],
+  "verification_context": {
+    "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+    "run_root": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005",
+    "head_sha": "6dfab1c6e779e05a3c927d0bcd09f8b7c8fb2e9e",
+    "checked_at": "2026-10-05T12:54:09.467859+03:00"
+  }
+}
