@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "title": "Git и коллективная разработка",
+  "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+  "started_at": "2026-10-05T12:14:42.492506+03:00",
+  "finished_at": "2026-10-05T12:15:04.131025+03:00",
+  "status": "succeeded",
+  "log_file": "commands.log",
+  "commands": [
+    {
+      "sequence": 1,
+      "label": "Формат JSON",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "-m",
+        "src.predict",
+        "--output-format",
+        "json"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+      "started_at": "2026-10-05T12:14:42.760002+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-05T12:14:46.414917+03:00",
+      "duration_seconds": 3.656,
+      "provenance_after": {
+        "head_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 93,
+        "length": 54,
+        "sha256": "ae9bfa469fa68c6730e8de10bac25b96242126bd8c538dc7454eb3d1a428c68b",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 163,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 2,
+      "label": "Формат text",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "-m",
+        "src.predict",
+        "--output-format",
+        "text"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+      "started_at": "2026-10-05T12:14:46.828609+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-05T12:14:48.630160+03:00",
+      "duration_seconds": 1.813,
+      "provenance_after": {
+        "head_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 257,
+        "length": 41,
+        "sha256": "e44593f66ed003c5a81e527cddcd237e18c4628837a4f1c7f9d65f39f5e64926",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 314,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 3,
+      "label": "Граф Git",
+      "argv": [
+        "git",
+        "log",
+        "--graph",
+        "--oneline",
+        "-12"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+      "started_at": "2026-10-05T12:14:49.047451+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-05T12:14:49.108727+03:00",
+      "duration_seconds": 0.062,
+      "provenance_after": {
+        "head_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 385,
+        "length": 1095,
+        "sha256": "74b0a794e9744c63b75ed67afb2239f2249a09f4ecb330902b2a3a1f70722d71",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 1496,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    },
+    {
+      "sequence": 4,
+      "label": "pytest",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+      "started_at": "2026-10-05T12:14:49.453267+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-05T12:15:03.944135+03:00",
+      "duration_seconds": 14.5,
+      "provenance_after": {
+        "head_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "adc79831a6c5c205d9071603b290dd1e30583872",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 1556,
+        "length": 102,
+        "sha256": "e00ecb077434a1a695512ca4af8a4aba014bbbbf4c8d9147053ea299d6d65b1c",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 1674,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    }
+  ]
+}
