@@ -1,8 +1,8 @@
-# Разработка и интеграция — Учебная доставка
+# Разработка и интеграция — Swagger UI и Pages
 
 Один [репозиторий дисциплины](https://github.com/Kirill-Erofeev/development-and-integration-labs) содержит код проекта в корне,
 условия и материалы по папкам семинаров. Этот этап развивает существующий
-классификатор Iris; ветка этапа — `replay-20261005/lab-08-delivery`.
+классификатор Iris; ветка этапа — `replay-20261005/lab-09-pages`.
 GitHub используется по решению владельца: pull request, Actions и Pages заменяют
 соответствующие механизмы GitVerse из учебных материалов.
 
@@ -18,6 +18,7 @@ GitHub используется по решению владельца: pull req
 - [Docker Compose](<Семинар 18.09.2026/PRACTICE_6.md>).
 - [GitHub Actions CI](<Семинар 25.09.2026/PRACTICE_7.md>).
 - [Учебная доставка](<Семинар 25.09.2026/PRACTICE_8.md>).
+- [Swagger UI и Pages](<Семинар 02.10.2026/PRACTICE_9.md>).
 
 Лекции и организационные материалы сохранены в своих исходных папках.
 Word-отчёты пользователь оформляет отдельно; они не подменяются этим README.
@@ -135,10 +136,35 @@ Get-Content -Encoding UTF8 results/prediction.json
 в журнал. Это предусмотренная заданием имитация: workflow не запускает эти
 команды, не публикует образ и не обращается к рабочему серверу.
 
+## Статическая документация API
+
+[Publish API documentation](.github/workflows/publish-api-docs.yaml) импортирует
+`app.api:app` и вызывает `app.openapi()` через экспортёр без запуска API и модели.
+Схема создаётся во временном каталоге CI; в Git остаются исходные страницы,
+локальные CSS/JS Swagger UI и лицензии. CDN не используется.
+
+```powershell
+py -3.11 -m pytest -q scripts/tests/test_export_openapi.py
+py -3.11 -m scripts.build_api_docs --output site
+py -3.11 -m http.server 8090 --bind 127.0.0.1 --directory site
+```
+
+Локальная страница: <http://127.0.0.1:8090/api/>. `site/` исключён из Git.
+Для GitHub Pages выбирается источник **GitHub Actions**. Сборка выполняется при
+PR, push в `main` и ручном запуске; публикация разрешена только на `main`.
+Ручной запуск: **Actions → Publish API documentation → Run workflow → main**.
+
+Ожидаемые адреса после подтверждённой публикации:
+[Swagger UI](https://kirill-erofeev.github.io/development-and-integration-labs/api/) и
+[OpenAPI JSON](https://kirill-erofeev.github.io/development-and-integration-labs/api/openapi.json).
+До появления фактического run/протокола эти ссылки не означают, что сайт уже опубликован.
+Pages не запускает Python: отправка запросов в статическом Swagger UI отключена.
+Для работы с моделью используйте `/docs` запущенного API.
+
 ## Статус проверок
 
-Фактический прогон и снимки этого этапа зафиксированы в протоколе.
-Протокол: [Семинар 25.09.2026/CHECKS.md](<Семинар 25.09.2026/CHECKS.md>).
-Сценарий и перечень снимков: [PRACTICE_8.md](<Семинар 25.09.2026/PRACTICE_8.md>).
+Для этого этапа ещё требуется зафиксировать фактический прогон и снимки.
+Протокол: [Семинар 02.10.2026/CHECKS.md](<Семинар 02.10.2026/CHECKS.md>).
+Сценарий и перечень снимков: [PRACTICE_9.md](<Семинар 02.10.2026/PRACTICE_9.md>).
 До заполнения протокола команды и ожидаемые ответы не являются утверждением об успешном запуске.
 Новые ссылки на PR, Actions и Pages добавляются по результату реальных действий.
