@@ -1,0 +1,66 @@
+{
+  "head_sha": "0450a17c15f163d614b8ca31d40a5dd8868cf8f4",
+  "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/#/default/predict_predict_post",
+  "schema_url": "./openapi.json",
+  "supported_submit_methods": [],
+  "validator_url": null,
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "expanded": true
+    },
+    {
+      "method": "POST",
+      "path": "/predict",
+      "expanded": true
+    }
+  ],
+  "resources": [
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui.css",
+      "host": "kirill-erofeev.github.io",
+      "initiator": "link",
+      "status": 200
+    },
+    {
+      "url": "https://gc.kis.v2.scr.kaspersky-labs.com/<path-omitted>",
+      "host": "gc.kis.v2.scr.kaspersky-labs.com",
+      "initiator": "script",
+      "status": 0
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/swagger-ui-bundle.js",
+      "host": "kirill-erofeev.github.io",
+      "initiator": "script",
+      "status": 200
+    },
+    {
+      "url": "https://gc.kis.v2.scr.kaspersky-labs.com/<path-omitted>",
+      "host": "gc.kis.v2.scr.kaspersky-labs.com",
+      "initiator": "script",
+      "status": 0
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/development-and-integration-labs/api/openapi.json",
+      "host": "kirill-erofeev.github.io",
+      "initiator": "fetch",
+      "status": 200
+    },
+    {
+      "url": "https://kirill-erofeev.github.io/favicon.ico",
+      "host": "kirill-erofeev.github.io",
+      "initiator": "other",
+      "status": 404
+    }
+  ],
+  "favicon_note": "Chrome может проверять /favicon.ico на корне хоста (404); это не ресурс Swagger UI",
+  "local_software_injection": {
+    "blocked_host": "gc.kis.v2.scr.kaspersky-labs.com",
+    "reason": "Локальный антивирус добавляет script; загрузка заблокирована только в изолированном CDP-сеансе",
+    "source_html_check": "Отдельная HTTP-проверка опубликованного HTML сохранена в http.json; CSS/JS локальные"
+  },
+  "canonical_schema_sha256": "d6df0a98e98e69455c2230acb5263efe18c5a981d290515ec63080040e1bbae9",
+  "schema_equal": true,
+  "schema_source": "Исходный JSON, загруженный Swagger UI (specSelectors.specStr)"
+}
