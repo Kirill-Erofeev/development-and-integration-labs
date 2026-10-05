@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 4 · проверки модели и API</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 4 · проверки модели и API</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-05T12:21:06.847499+03:00 — 2026-10-05T12:21:24.293820+03:00<br>Git: aeb903054c467aa149a42b6f2b6968cd8f99460d<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0</div><section><h2>pytest</h2><pre>&gt; py -3.11 -B -m pytest -v
+Код завершения: 0; ожидаемый: 0; длительность: 16.984 с
+
+stdout:
+Показаны последние 28 из 81 строк; полный вывод — commands.log.
+
+tests/test_output_format.py::test_json_format_preserves_predictions_and_integer_classes[explicit] PASSED [ 64%]
+tests/test_output_format.py::test_text_format_preserves_multiple_predictions_in_order PASSED [ 65%]
+tests/test_output_format.py::test_unknown_output_format_is_rejected PASSED [ 67%]
+tests/test_output_format.py::test_format_does_not_mutate_predictions[json] PASSED [ 68%]
+tests/test_output_format.py::test_format_does_not_mutate_predictions[text] PASSED [ 70%]
+tests/test_output_format.py::test_cli_explicit_json_matches_default PASSED [ 71%]
+tests/test_output_format.py::test_cli_text_contains_one_line_per_prediction PASSED [ 72%]
+tests/test_output_format.py::test_cli_rejects_unknown_output_format PASSED [ 74%]
+tests/test_predict.py::test_read_features_returns_canonical_feature_order[multiple_rows] PASSED [ 75%]
+tests/test_predict.py::test_read_features_returns_canonical_feature_order[reordered_columns] PASSED [ 77%]
+tests/test_predict.py::test_read_features_returns_canonical_feature_order[trailing_blank_line] PASSED [ 78%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[empty_input] PASSED [ 80%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[no_data_rows] PASSED [ 81%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[missing_column] PASSED [ 82%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[duplicate_column] PASSED [ 84%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[extra_column] PASSED [ 85%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[short_row] PASSED [ 87%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[long_row] PASSED [ 88%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[empty_value] PASSED [ 90%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[nonnumeric_value] PASSED [ 91%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[nan] PASSED [ 92%]
+tests/test_predict.py::test_read_features_rejects_invalid_input[infinities] PASSED [ 94%]
+tests/test_predict.py::test_saved_model_predicts_sample_without_fitting PASSED [ 95%]
+tests/test_predict.py::test_predict_cli_finds_default_input_from_another_directory PASSED [ 97%]
+tests/test_predict.py::test_predict_cli_reports_missing_model_without_traceback PASSED [ 98%]
+tests/test_predict.py::test_train_cli_saves_requested_model_from_another_directory PASSED [100%]
+
+============================= 70 passed in 12.57s =============================
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft\Семинар 11.09.2026\evidence\practice4-20261005-122106\manifest.json и commands.log.<br>Сформировано: 2026-10-05T12:21:27.177832+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
