@@ -1,0 +1,17 @@
+# Only the API runtime and its saved model belong in the build context.
+**
+!Dockerfile
+!requirements.txt
+!app/
+app/**
+!app/__init__.py
+!app/api.py
+!app/schemas.py
+!src/
+src/**
+!src/__init__.py
+!src/common.py
+!src/model_service.py
+!models/
+models/**
+!models/model.pkl
