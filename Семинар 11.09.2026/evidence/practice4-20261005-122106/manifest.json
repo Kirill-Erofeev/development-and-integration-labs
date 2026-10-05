@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "title": "Модульные и интеграционные тесты",
+  "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+  "started_at": "2026-10-05T12:21:06.847499+03:00",
+  "finished_at": "2026-10-05T12:21:24.293820+03:00",
+  "status": "succeeded",
+  "log_file": "commands.log",
+  "commands": [
+    {
+      "sequence": 1,
+      "label": "pytest",
+      "argv": [
+        "py",
+        "-3.11",
+        "-B",
+        "-m",
+        "pytest",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+      "started_at": "2026-10-05T12:21:07.036591+03:00",
+      "expected_returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "returncode": 0,
+      "provenance_before": {
+        "head_sha": "aeb903054c467aa149a42b6f2b6968cd8f99460d",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "finished_at": "2026-10-05T12:21:24.032027+03:00",
+      "duration_seconds": 16.984,
+      "provenance_after": {
+        "head_sha": "aeb903054c467aa149a42b6f2b6968cd8f99460d",
+        "repository": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+        "status_porcelain": "",
+        "tracked_clean": true
+      },
+      "verified_sha": "aeb903054c467aa149a42b6f2b6968cd8f99460d",
+      "status": "succeeded",
+      "stdout": {
+        "offset": 59,
+        "length": 7133,
+        "sha256": "a5c97156ec7c171fbf40d4d046901656c42cb5b64d61bf6277f345a871931e9e",
+        "utf8_lossless": true
+      },
+      "stderr": {
+        "offset": 7208,
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "utf8_lossless": true
+      }
+    }
+  ]
+}
