@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 5 · работа API в Docker</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 5 · работа API в Docker</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-05T12:22:24.484245+03:00 — 2026-10-05T12:22:59.699132+03:00<br>Git: a8a0fa9d529b31f40608bf38154b2dccc0e623fe<br>Статус всего прогона: Код завершения соответствует ожидаемому: 0. Выбрано команд: 4 из 12</div><section><h2>Готовность</h2><pre>&gt; py -3.11 -B ../container_checks.py wait --url http://127.0.0.1:8090
+Код завершения: 0; ожидаемый: 0; длительность: 5.985 с
+
+stdout:
+HTTP 200
+JSON: {&quot;model_ready&quot;: true, &quot;status&quot;: &quot;ok&quot;}
+X-Request-ID: None
+</pre></section><section><h2>Состояние контейнера</h2><pre>&gt; &quot;C:\Program Files\Docker\Docker\resources\bin\docker.exe&quot; ps --filter name=^/codex-course-lab5-20261005$ --format &quot;table {{.Names}}	{{.Status}}	{{.Ports}}&quot;
+Код завершения: 0; ожидаемый: 0; длительность: 0.172 с
+
+stdout:
+NAMES                        STATUS          PORTS
+codex-course-lab5-20261005   Up 13 seconds   127.0.0.1:8090-&gt;8000/tcp
+</pre></section><section><h2>Контрольное предсказание</h2><pre>&gt; py -3.11 -B scripts/check_api.py --base-url http://127.0.0.1:8090
+Код завершения: 0; ожидаемый: 0; длительность: 0.375 с
+
+stdout:
+API http://127.0.0.1:8090 готов; предсказание: {&quot;prediction&quot;: 0, &quot;class_name&quot;: &quot;setosa&quot;}
+</pre></section><section><h2>Логи API</h2><pre>&gt; &quot;C:\Program Files\Docker\Docker\resources\bin\docker.exe&quot; logs codex-course-lab5-20261005
+Код завершения: 0; ожидаемый: 0; длительность: 0.125 с
+
+stdout:
+INFO:     172.17.0.1:52912 - &quot;GET /health HTTP/1.1&quot; 200 OK
+INFO:     172.17.0.1:52918 - &quot;GET /health HTTP/1.1&quot; 200 OK
+INFO:     172.17.0.1:52932 - &quot;POST /predict HTTP/1.1&quot; 200 OK
+
+
+stderr:
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft\Семинар 18.09.2026\evidence\practice5-20261005-122224\manifest.json и commands.log.<br>Сформировано: 2026-10-05T12:23:07.844735+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
