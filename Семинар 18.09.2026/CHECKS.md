@@ -3,27 +3,6 @@
 Ниже сохранены протоколы фактических проверок. Незавершённые этапы обозначены отдельно. Записи ранних практик при
 добавлении следующей сохраняются; старые SHA и runs из прежней истории не переносятся.
 
-## Практика 6: Docker Compose
-
-Статус: **ожидает фактической проверки этапа**.
-
-- Проверенный новый commit: не заполнен.
-- Дата, ОС, Python и версии инструментов: не заполнены.
-- Команды, коды завершения и итог тестов: не заполнены.
-- Новый PR и workflow runs, если применимо: не заполнены.
-- Саморазбор и внешнее ревью: фактические результаты не внесены.
-
-- [ ] состояния api и client.
-- [ ] prediction.json.
-- [ ] ошибка localhost внутри client.
-- [ ] сохранность результата после down.
-
-Планируемые снимки:
-
-- [practice6-status.png](screenshots/practice6-status.png).
-- [practice6-localhost.png](screenshots/practice6-localhost.png).
-- [practice6-persistence.png](screenshots/practice6-persistence.png).
-
 ## Контейнер API — фактическая проверка
 
 Проверенный коммит: `a8a0fa9d529b31f40608bf38154b2dccc0e623fe`. Дата: 2026-10-05T12:22:24.484245+03:00.
@@ -50,3 +29,28 @@
 ![practice5-runtime](screenshots/practice5-runtime.png)
 
 ![practice5-repeat](screenshots/practice5-repeat.png)
+
+## Docker Compose — фактическая проверка
+
+Проверенный коммит: `b438ea1d47b418836390616d67654b9bfcb324e5`. Дата: 2026-10-05T12:24:22.312292+03:00.
+
+| Проверка | Фактический код | Результат |
+| --- | --- | --- |
+| Сборка API и клиента | 0 | succeeded |
+| Запуск Compose | 0 | succeeded |
+| Готовность API | 0 | succeeded |
+| Завершение клиента | 0 | succeeded |
+| Состояния сервисов | 0 | succeeded |
+| Логи сервисов | 0 | succeeded |
+| Результат клиента | 0 | succeeded |
+| Неверный адрес API | 1 | expected_failure |
+| Остановка Compose | 0 | succeeded |
+| Сохранность результата | 0 | succeeded |
+
+[Полный журнал](evidence/practice6-20261005-122422/commands.log), [манифест](evidence/practice6-20261005-122422/manifest.json).
+
+![practice6-status](screenshots/practice6-status.png)
+
+![practice6-localhost](screenshots/practice6-localhost.png)
+
+![practice6-persistence](screenshots/practice6-persistence.png)
