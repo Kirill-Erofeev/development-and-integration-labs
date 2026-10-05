@@ -1,0 +1,37 @@
+
+=== 1: Попытка merge ===
+git merge --no-edit github/main
+--- stdout ---
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+--- stderr ---
+
+
+=== 2: Состояние конфликта ===
+git status --short --untracked-files=no
+--- stdout ---
+UU README.md
+
+--- stderr ---
+
+
+=== 3: Конфликтная строка ===
+git diff --cc --unified=1 -- README.md
+--- stdout ---
+diff --cc README.md
+index bdf1576,275efc2..0000000
+--- a/README.md
++++ b/README.md
+@@@ -8,3 -8,3 +8,7 @@@ GitHub используется по р
+  
+++<<<<<<< HEAD
+ +Вывод CLI: JSON используется по умолчанию, --output-format text включает текст; диагностика поступает в stderr.
+++=======
++ Вывод CLI: JSON поступает в stdout, диагностика — в stderr.
+++>>>>>>> github/main
+  
+
+--- stderr ---
+
