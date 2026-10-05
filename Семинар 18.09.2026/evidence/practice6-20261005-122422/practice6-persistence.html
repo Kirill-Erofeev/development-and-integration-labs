@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Практика 6 · результат после остановки</title><style>*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#152536;font-family:Segoe UI,Arial,sans-serif}
+main{max-width:1360px;margin:36px auto;padding:36px 42px;background:#fff;border-top:8px solid #245f90;border-radius:10px}
+.label{font-size:18px;font-weight:600;letter-spacing:1px;color:#245f90}h1{font-size:34px;margin:14px 0 16px}
+.description{font-size:21px;line-height:1.5;margin-bottom:20px}.metadata{font-size:17px;color:#45576a;line-height:1.55}
+h2{font-size:22px;margin:25px 0 12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px 22px;
+font:19px/1.55 Consolas,monospace;background:#f3f6f9;border:1px solid #cbd5df;border-radius:6px}
+footer{font-size:17px;margin-top:26px;line-height:1.5;color:#45576a}</style></head><body><main><div class="label">РАЗРАБОТКА И ИНТЕГРАЦИЯ · ФАКТИЧЕСКАЯ ПРОВЕРКА</div><h1>Практика 6 · результат после остановки</h1><div class="description">Фактические результаты выполненных команд.</div><div class="metadata">Проверка: 2026-10-05T12:24:22.312292+03:00 — 2026-10-05T12:24:51.524731+03:00<br>Git: b438ea1d47b418836390616d67654b9bfcb324e5<br>Статус всего прогона: Получен ожидаемый ненулевой код завершения. Выбрано команд: 2 из 10</div><section><h2>Остановка Compose</h2><pre>&gt; &quot;C:\Program Files\Docker\Docker\resources\bin\docker.exe&quot; compose -p codex-course-lab6-20261005 down
+Код завершения: 0; ожидаемый: 0; длительность: 2.437 с
+
+stderr:
+ Container codex-course-lab6-20261005-client-1  Stopping
+ Container codex-course-lab6-20261005-client-1  Stopped
+ Container codex-course-lab6-20261005-client-1  Removing
+ Container codex-course-lab6-20261005-client-1  Removed
+ Container codex-course-lab6-20261005-api-1  Stopping
+ Container codex-course-lab6-20261005-api-1  Stopped
+ Container codex-course-lab6-20261005-api-1  Removing
+ Container codex-course-lab6-20261005-api-1  Removed
+ Network codex-course-lab6-20261005_app_net  Removing
+ Network codex-course-lab6-20261005_app_net  Removed
+</pre></section><section><h2>Сохранность результата</h2><pre>&gt; py -3.11 -B ../container_checks.py check-result
+Код завершения: 0; ожидаемый: 0; длительность: 0.234 с
+
+stdout:
+results/prediction.json: {&quot;class_name&quot;: &quot;setosa&quot;, &quot;prediction&quot;: 0}
+SHA256: 8232037d2c7344416c5abbdf6d3a2f889201d8832f86c19af3ee7462945a9ec8
+Result preserved after compose down
+</pre></section><footer>Рабочий каталог: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft<br>Источник: C:\Users\user\Desktop\Институт\Магистратура\Разработка и интеграция\.verification\course-20261005\history-draft\Семинар 18.09.2026\evidence\practice6-20261005-122422\manifest.json и commands.log.<br>Сформировано: 2026-10-05T12:24:57.193004+03:00. Снимок HTML-карточки с фактическим выводом команд.</footer></main></body></html>
