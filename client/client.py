@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import sys
 import tempfile
+from uuid import UUID
 
 import requests
 
@@ -20,15 +21,18 @@ FEATURES = {
 
 def validate_prediction(data: object) -> dict[str, int | str]:
     """Accept only the API response schema with a consistent Iris class name."""
-    if not isinstance(data, dict) or set(data) != {"prediction", "class_name"}:
-        raise ValueError("Ответ API должен содержать только prediction и class_name")
-    prediction = data["prediction"]
+    if not isinstance(data, dict) or set(data) != {"class_id", "class_name", "request_id"}:
+        raise ValueError("Ответ API должен содержать только class_id, class_name и request_id")
+    prediction = data["class_id"]
     if type(prediction) is not int or not 0 <= prediction < len(CLASS_NAMES):
-        raise ValueError("Поле prediction должно быть целым числом от 0 до 2")
+        raise ValueError("Поле class_id должно быть целым числом от 0 до 2")
     class_name = data["class_name"]
     if not isinstance(class_name, str) or class_name != CLASS_NAMES[prediction]:
-        raise ValueError("Поле class_name не соответствует значению prediction")
-    return {"prediction": prediction, "class_name": class_name}
+        raise ValueError("Поле class_name не соответствует значению class_id")
+    request_id = data["request_id"]
+    if not isinstance(request_id, str) or str(UUID(request_id)) != request_id:
+        raise ValueError("Поле request_id должно содержать канонический UUID")
+    return {"class_id": prediction, "class_name": class_name, "request_id": request_id}
 
 
 def run_prediction(api_url: str, result_path: Path) -> dict[str, int | str]:
@@ -75,7 +79,8 @@ def main() -> int:
         return 1
     print(
         f"Предсказание сохранено в {result_path}: "
-        f"класс {prediction['prediction']} ({prediction['class_name']})"
+        f"класс {prediction['class_id']} ({prediction['class_name']}), "
+        f"request ID {prediction['request_id']}"
     )
     return 0
 
