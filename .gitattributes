@@ -1,0 +1,2 @@
+# Preserve exact bytes of recorded command and server output.
+**/evidence/**/*.log -text
