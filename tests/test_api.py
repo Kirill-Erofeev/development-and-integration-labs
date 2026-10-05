@@ -28,7 +28,7 @@ def test_health_reports_loaded_model(client: TestClient) -> None:
     response = client.get("/health")
 
     assert response.status_code == 200
-    assert response.json() == {"status": "ok", "model_ready": True}
+    assert response.json() == {"status": "ok", "model_loaded": True}
 
 
 def test_predict_uses_explicit_artifact_before_environment(
@@ -43,8 +43,8 @@ def test_predict_uses_explicit_artifact_before_environment(
         response = client.post("/predict", json=payload)
 
     assert response.status_code == 200
-    assert response.json() == {"prediction": 2, "class_name": "gamma"}
-    assert type(response.json()["prediction"]) is int
+    assert response.json() == {"class_id": 2, "class_name": "gamma", "request_id": response.headers["X-Request-ID"]}
+    assert type(response.json()["class_id"]) is int
 
 
 def test_predict_uses_artifact_selected_by_environment(
@@ -58,7 +58,7 @@ def test_predict_uses_artifact_selected_by_environment(
         response = client.post("/predict", json=payload)
 
     assert response.status_code == 200
-    assert response.json() == {"prediction": 2, "class_name": "gamma"}
+    assert response.json() == {"class_id": 2, "class_name": "gamma", "request_id": response.headers["X-Request-ID"]}
 
 
 def test_predict_with_real_saved_model(payload: dict[str, float]) -> None:
@@ -66,7 +66,7 @@ def test_predict_with_real_saved_model(payload: dict[str, float]) -> None:
         response = client.post("/predict", json=payload)
 
     assert response.status_code == 200
-    assert response.json() == {"prediction": 0, "class_name": "setosa"}
+    assert response.json() == {"class_id": 0, "class_name": "setosa", "request_id": response.headers["X-Request-ID"]}
 
 
 def test_json_key_order_does_not_change_model_feature_order(
@@ -112,7 +112,7 @@ def test_predict_accepts_integer_numbers(client: TestClient) -> None:
     )
 
     assert response.status_code == 200
-    assert response.json() == {"prediction": 2, "class_name": "gamma"}
+    assert response.json() == {"class_id": 2, "class_name": "gamma", "request_id": response.headers["X-Request-ID"]}
 
 
 @pytest.mark.parametrize("value", [0.0, -0.5], ids=["zero", "negative"])
@@ -155,7 +155,7 @@ def test_predict_rejects_nonfinite_json(client: TestClient, literal: str) -> Non
     )
 
     assert_field_error(response, "petal_width")
-    assert client.get("/health").json() == {"status": "ok", "model_ready": True}
+    assert client.get("/health").json() == {"status": "ok", "model_loaded": True}
 
 
 def test_model_is_loaded_once_for_multiple_requests(
@@ -174,10 +174,11 @@ def test_model_is_loaded_once_for_multiple_requests(
 
     with client_for(synthetic_model_path) as client:
         assert loaded_paths == [synthetic_model_path]
+        assert client.get("/model-info").status_code == 200
         for _ in range(2):
             response = client.post("/predict", json=payload)
             assert response.status_code == 200
-            assert response.json() == {"prediction": 2, "class_name": "gamma"}
+            assert response.json() == {"class_id": 2, "class_name": "gamma", "request_id": response.headers["X-Request-ID"]}
         assert loaded_paths == [synthetic_model_path]
 
 
@@ -194,10 +195,11 @@ def test_requests_do_not_fit_estimators(
 
     with client_for(synthetic_model_path) as client:
         assert client.get("/health").status_code == 200
+        assert client.get("/model-info").status_code == 200
         response = client.post("/predict", json=payload)
 
     assert response.status_code == 200
-    assert response.json() == {"prediction": 2, "class_name": "gamma"}
+    assert response.json() == {"class_id": 2, "class_name": "gamma", "request_id": response.headers["X-Request-ID"]}
 
 
 def test_documentation_and_openapi_expose_request_and_response_contracts(
@@ -212,8 +214,10 @@ def test_documentation_and_openapi_expose_request_and_response_contracts(
     assert response.status_code == 200
     specification = response.json()
     assert "get" in specification["paths"]["/health"]
+    assert "get" in specification["paths"]["/model-info"]
     operation = specification["paths"]["/predict"]["post"]
     assert "422" in operation["responses"]
+    assert any(parameter["name"] == "x-request-id" and parameter["in"] == "header" for parameter in operation["parameters"])
     schemas = specification["components"]["schemas"]
     request = schemas["PredictRequest"]
     assert set(request["required"]) == set(FEATURE_COLUMNS)
@@ -222,10 +226,11 @@ def test_documentation_and_openapi_expose_request_and_response_contracts(
         assert request["properties"][column]["type"] == "number"
         assert request["properties"][column]["exclusiveMinimum"] == 0
     prediction = schemas["PredictResponse"]
-    assert set(prediction["required"]) == {"prediction", "class_name"}
-    assert prediction["properties"]["prediction"]["type"] == "integer"
+    assert set(prediction["required"]) == {"class_id", "class_name", "request_id"}
+    assert prediction["properties"]["class_id"]["type"] == "integer"
     assert prediction["properties"]["class_name"]["type"] == "string"
-    assert schemas["HealthResponse"]["properties"]["model_ready"]["type"] == "boolean"
+    assert prediction["properties"]["request_id"]["format"] == "uuid"
+    assert schemas["HealthResponse"]["properties"]["model_loaded"]["type"] == "boolean"
 
 
 def test_missing_model_fails_during_startup(tmp_path: Path) -> None:

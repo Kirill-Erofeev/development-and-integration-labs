@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-m",
+    "uvicorn",
+    "app.api:app",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8087"
+  ],
+  "cwd": "C:\\Users\\user\\Desktop\\Институт\\Магистратура\\Разработка и интеграция\\.verification\\course-20261005\\history-draft",
+  "sha": "d0e4c43c6a7eb3cded52ffbf6dcdef861185f835",
+  "pid": 24900,
+  "started_at": "2026-10-05T12:45:21.439872+03:00",
+  "stopped_at": "2026-10-05T12:45:40.086521+03:00",
+  "returncode": 1,
+  "stop_method": "terminate owned process"
+}
