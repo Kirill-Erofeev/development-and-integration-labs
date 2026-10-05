@@ -1,0 +1,51 @@
+
+=== 1: Готовность модели ===
+py -3.11 -B ../live_checks.py health --base-url http://127.0.0.1:8087
+--- stdout ---
+HTTP 200
+JSON: {"model_ready": true, "status": "ok"}
+X-Request-ID: None
+Проверка пройдена
+
+--- stderr ---
+
+
+=== 2: Контрольный прогноз ===
+py -3.11 -B ../live_checks.py predict --base-url http://127.0.0.1:8087
+--- stdout ---
+HTTP 200
+JSON: {"class_name": "setosa", "prediction": 0}
+X-Request-ID: None
+Проверка пройдена
+
+--- stderr ---
+
+
+=== 3: Ошибка валидации ===
+py -3.11 -B ../live_checks.py error --base-url http://127.0.0.1:8087
+--- stdout ---
+HTTP 422
+JSON: {"detail": [{"loc": ["body", "petal_width"], "msg": "Input should be greater than 0", "type": "greater_than"}]}
+X-Request-ID: None
+Проверка пройдена
+
+--- stderr ---
+
+
+=== 4: Журнал Uvicorn ===
+py -3.11 -B -c "from pathlib import Path; import sys; print(Path(sys.argv[1]).read_text(encoding=\"utf-8\"))" "Семинар 11.09.2026\evidence\practice3-20261005-121610\server.log"
+--- stdout ---
+INFO:     Started server process [21264]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8087 (Press CTRL+C to quit)
+INFO:     127.0.0.1:62709 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62710 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62711 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62712 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:62733 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62733 - "GET /openapi.json HTTP/1.1" 200 OK
+
+
+--- stderr ---
+
